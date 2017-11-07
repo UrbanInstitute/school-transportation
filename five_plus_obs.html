@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Washington, D.C.</title>
+<style>
+
+svg {
+  font: 12px sans-serif;
+}
+
+.points {
+  fill: red;
+}
+
+.caption {
+  font-weight: bold;
+}
+
+.key path {
+  display: none;
+}
+
+.key line {
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+</style>
+</head>
+<body>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3-polygon.v1.min.js"></script>
+
+<script src="https://d3js.org/queue.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script>
+
+function slugify(text)
+{
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-')           // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+    .replace(/^-+/, '')             // Trim - from start of text
+    .replace(/-+$/, '');            // Trim - from end of text
+}
+
+
+var width = 1600,
+    height = 800,
+    maxscale = 7,
+    formatPercent = d3.format(".0%");
+    
+var rateByTract = d3.map();
+
+var quantize = d3.scale.quantize()
+    .domain([0, 1])
+    .range(["#c6d8ef", "#9ecae1", "#6baed6", "#4292c6", "#2171b5", "#085192", "#08306b"]);
+
+// return quantize thresholds for the key    
+var qrange = function(max, num) {
+    var a = [];
+    for (var i=0; i<num; i++) {
+        a.push(i*max/num);
+    }
+    return a;
+}
+    
+var projection = d3.geo.albersUsa();
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+queue()
+    .defer(d3.json, "dc.json")
+    .defer(d3.csv, "schools.csv", cleanSchools)
+    .defer(d3.csv, "transit_five_plus_obs.csv", cleanTransit)
+    .await(ready);
+
+function cleanSchools(d){
+  d[1] = +d.latitude
+  d[0] = +d.longitude
+  return d;
+}
+
+function cleanTransit(d){
+  d.school = slugify(d.school_name);
+  d.duration = +d.duration
+  var fullTract = +d.tract
+  var tract =  String(Math.round(fullTract*100.0)/100.0).replace(".","")
+  if (tract == "841"){ d.tract = "8410"}
+  else if(tract == "981"){ d.tract = "9810"}
+  else{ d.tract = tract}
+
+  return d;
+}
+
+    
+function ready(error, dc, schools, transit) {
+
+
+
+  var tracts = topojson.feature(dc, dc.objects.dctracts);
+
+  // define and scale the projection so the map fits nicely in the screen
+  projection
+    .scale(1)
+    .translate([0, 0]);
+
+  var b = path.bounds(tracts),
+    s = 1.0 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
+    t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+
+  projection
+      .scale(s)
+      .translate(t);
+   
+  // add census tracts
+  svg.selectAll("path")
+      .data(tracts.features)
+    .enter().append("path")
+      .attr("class", function(d){
+        var tId = d.properties.NAMELSAD.replace("Census Tract ","").replace(".","")
+        return "tract_" + tId;
+      })
+      .attr("fill", "#696969" )
+      .attr("stroke", "#9d9d9d" )
+      .attr("d", path)
+
+
+  var dots = svg.append("g")
+  dots.selectAll(".school")
+    .data(schools)
+    .enter()
+    .append("circle")
+      .attr("class", function(d){
+        return "school " + slugify(d.school_name)
+      })
+      .attr("cx", function(d){ return projection([d[0], d[1] ])[0]})
+      .attr("cy", function(d){ return projection([d[0], d[1] ])[1]})
+      .attr("r", 3)
+      .attr("fill", "#1696d2");
+
+  var lines = svg.append("g")
+  // d3.select("body")
+  //   .on("click", function(){
+
+  lines.selectAll(".transit")
+    .data(transit)
+    .enter()
+    .append("line")
+      .attr("class", function(d){ return "transit line_" + d.tract})
+      .attr("x1", function(d){ return projection(d3.polygonCentroid(d3.select(".tract_" + d.tract).datum().geometry.coordinates[0]))[0] })
+      .attr("y1", function(d){ return projection(d3.polygonCentroid(d3.select(".tract_" + d.tract).datum().geometry.coordinates[0]))[1] })
+      .attr("x2", function(d){ return projection(d3.polygonCentroid(d3.select(".tract_" + d.tract).datum().geometry.coordinates[0]))[0] })
+      .attr("y2", function(d){ return projection(d3.polygonCentroid(d3.select(".tract_" + d.tract).datum().geometry.coordinates[0]))[1] })
+      // .transition()
+      // .duration(5000)
+
+      .attr("stroke", "#fdbf11")
+      .attr("stroke-width",2)
+      .attr("opacity",.5)
+
+
+    // })
+
+d3.selectAll("path")
+  .on("click", function(d){
+    // console.log(d)
+  lines.selectAll(".transit")
+      .attr("x2", function(d){ return projection(d3.polygonCentroid(d3.select(".tract_" + d.tract).datum().geometry.coordinates[0]))[0] })
+      .attr("y2", function(d){ return projection(d3.polygonCentroid(d3.select(".tract_" + d.tract).datum().geometry.coordinates[0]))[1] })
+
+
+
+    var tId = d.properties.NAMELSAD.replace("Census Tract ","").replace(".","")
+    //max is 28.7
+    lines.selectAll(".transit")
+      .transition()
+      .delay(function(d){ return 10000 - d.duration*174.2*2 })
+      .ease("linear")
+      .duration(function(d){ return d.duration * 174.2*2})
+          .attr("x2", function(d){
+        var s = d3.select(".school." + d.school)
+        return s.attr("cx")
+
+      })
+      .attr("y2", function(d){
+        var s = d3.select(".school." + d.school)
+        return s.attr("cy")
+
+      })
+
+  })
+
+
+      
+
+
+}
+</script>
+</body>
+</html>
