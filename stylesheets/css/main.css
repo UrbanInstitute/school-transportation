@@ -1,0 +1,190 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*colors*/
+/* Text styles */
+/* line 3, ../sass/_typography.scss */
+h1 {
+  font-family: Lato;
+  font-size: 36px;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 10, ../sass/_typography.scss */
+h2 {
+  font-family: Lato;
+  font-size: 25px;
+  line-height: 1.36;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 18, ../sass/_typography.scss */
+.h-1-mobile {
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 26, ../sass/_typography.scss */
+.h-2-mobile {
+  font-family: Lato;
+  font-size: 20px;
+  line-height: 1.3;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 34, ../sass/_typography.scss */
+.placeholder {
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.56;
+  text-align: left;
+  color: #db2b27;
+}
+
+/* line 43, ../sass/_typography.scss */
+.button-text {
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.28;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* line 52, ../sass/_typography.scss */
+.chart-title {
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 60, ../sass/_typography.scss */
+p {
+  font-family: Lato;
+  font-size: 18px;
+  line-height: 1.56;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 68, ../sass/_typography.scss */
+link {
+  font-family: Lato;
+  font-size: 18px;
+  line-height: 1.56;
+  text-align: left;
+  color: #0096d2;
+  color: #0096d2;
+}
+
+/* line 77, ../sass/_typography.scss */
+.title-mobile {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.25;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 86, ../sass/_typography.scss */
+.p-mobile {
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 94, ../sass/_typography.scss */
+h3 {
+  font-family: Lato;
+  font-size: 15px;
+  text-align: left;
+  color: #0096d2;
+  color: #0096d2;
+}
+
+/* line 102, ../sass/_typography.scss */
+.subtitle {
+  font-family: Lato;
+  font-size: 14px;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 109, ../sass/_typography.scss */
+.data-labels {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 117, ../sass/_typography.scss */
+.x-and-y-axis-titles {
+  font-family: Lato;
+  font-size: 12px;
+  font-style: italic;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 125, ../sass/_typography.scss */
+.p-small {
+  font-family: Lato;
+  font-size: 12px;
+  line-height: 1.67;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 133, ../sass/_typography.scss */
+.key-labels {
+  font-family: Lato;
+  font-size: 12px;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 140, ../sass/_typography.scss */
+.x-and-y-axis-labels {
+  font-family: Lato;
+  font-size: 12px;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 147, ../sass/_typography.scss */
+.source-and-notes {
+  font-family: Lato;
+  font-size: 11px;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 154, ../sass/_typography.scss */
+.data-point-label {
+  font-family: Lato;
+  font-size: 11px;
+  text-align: left;
+  color: #000000;
+}
+
+/*
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+*/

@@ -1,0 +1,513 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+     border: 0px none;
+     margin: 0px;
+     padding: 0px;
+     vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+     display: block;
+}
+
+body, html {
+     color: #000;
+     font-family: "Lato",sans-serif;
+     font-size: 16px;
+     height: 100%;
+     line-height: 1.2;
+     margin: 0px;
+     padding: 0px;
+     text-align: left;
+
+}
+
+ol, ul {
+
+}
+
+blockquote, q {
+     quotes: none;
+}
+
+blockquote::before, blockquote::after, q::before, q::after {
+     content: none;
+}
+
+table {
+     border-collapse: collapse;
+     border-spacing: 0px;
+}
+
+*, *::before, *::after {
+     box-sizing: border-box;
+}
+
+.clearfix::after {
+     clear: both;
+     content: "";
+     display: table;
+}
+
+
+
+a{
+ color:#1696d2;
+ text-decoration: none;
+   
+}
+
+a:hover{
+ color:#000;
+ text-decoration: none;    
+    
+}
+
+
+h3{
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.bold{
+    
+    font-weight: 700;
+}
+
+.emphasis{
+    
+   font-style: italic;
+}
+
+
+
+/************subnav***************/
+.subnav{
+    width: 100%;
+    position: fixed;
+    top: 51px;
+    height: 40px;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #eee;
+
+}
+
+
+.subnav ul{
+    text-align: center;
+    margin: 0px;
+}
+.subnav ul li{
+    display: inline-block;
+    text-align: center;
+    padding: 0px;
+    margin-top: 0px;
+    padding-left: 24px;
+    padding-top: 10px;
+    
+}
+
+
+
+
+
+
+/*****************mobile chapter (replacing the subnav for smaller screens) ******************/
+
+#mobilenavcontainer{
+    display: none;
+}
+
+
+.show-menu {
+	display: none;
+    margin-top:50px;
+
+}
+
+
+/*Style for menu links*/
+ul#menu li a {
+    display: block;
+    min-width: 140px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    background-color: #000;
+    height: 36px;
+    padding-top: 8px;
+}
+
+/*Hover state for top level links*/
+ul#menu li:hover a {
+  color: #0096d2;
+}
+
+/*Style for dropdown links*/
+ul#menu li:hover ul a {
+	background: #333;
+color:#fff;
+border-right-color: #222;
+    border-right:1px solid;
+    border-color: #222;
+    border-top:5px solid;
+    border-top-color:#222;
+}
+
+
+
+
+
+/***********structure***********/
+.wrapper{
+    width:990px;
+    margin:0 auto;
+    padding-top: 110px;
+    border-top:1px solid #eee;
+}
+
+.content{
+    width:1100px;
+    margin: 0 auto;
+    padding: 0px 30px;
+
+}
+
+
+
+
+
+/********Title and intro of interactive**********/
+
+.pubDate{
+  font-size: 12px;
+  font-style: italic;
+  margin: 0 auto;
+  top: -10px;
+  position: relative;
+}
+h1{
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 0px;
+    text-align: left;
+    color: #000;    
+}
+
+
+h2{
+     font-size: 20px;
+    margin-top: 15px;
+    font-weight: 300;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.3;
+}
+h2 div{
+    margin-bottom: 10px;
+}
+
+
+
+
+/************** steps ******************/
+
+
+#nav_options{
+    position: relative;
+    width:100%;
+    height:50px;
+    margin-bottom: 30px;
+}
+
+#steps{
+    width: 60%;
+    padding-top: 10px;
+    float: left;
+}
+
+#steps ul{
+    margin-left:0px;
+    margin-bottom:0px;
+    text-indent: 0px;
+    text-align: left;
+
+    
+}
+
+#steps li{
+    display: inline-block;
+    list-style: none;
+    padding-left:0px;
+    margin-bottom:0px;
+    margin-right: 30px;  
+}
+
+.step_button span{
+    color:#333;
+    background-color: #f2f2f2;
+    padding: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size:15px;
+    border:solid 1px #e1e1e1;
+}
+
+/***Ben, I'm just placing this here for now. I know you've already got the active coloring in the interactive *****/
+#steps li .active {
+   background-color: #0096d2; 
+     color:#fff;
+}
+
+.step_button span:hover{
+    background-color:#000;
+  
+}
+
+
+
+
+/************ place holder for dropdown **************/
+#dropdown{
+    width: 20%;
+    height: 50px;
+    background-color: #999;
+    float: right;
+    
+}
+
+
+
+/********placeholder for charts********/
+.charts{
+    margin-bottom:60px;
+    
+}
+
+/************** general text styles***************/
+
+
+
+
+
+
+
+/*footer*/
+
+footer {
+  display: block;
+  width: 100%;
+    background-color: #f1f2f2;
+    margin-top: 185px;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    bottom: 0;
+   overflow: hidden;
+     height:auto;
+     z-index: 10000;  
+ 
+}
+@media (max-height: 880px){
+  footer{
+    margin-top: 25px;
+  }
+}
+footer .content{
+  
+    max-width: 1100px;
+
+}
+   
+
+h4 {
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    line-height: 1.3;
+     text-transform: uppercase;
+    font-weight: 700;
+}
+
+#left {
+  float: left;
+  width: 45%;
+  padding-left: 0px;
+  padding-right:0px;
+
+}
+
+#right {
+
+  margin: 0 auto;
+  width: 500px;
+   padding-right: 0px;
+  padding-left: 0px;
+  margin-top: 50px;
+    font-size:14px;
+    line-height: 1.3;
+}
+
+.footerButton{
+  float: left;
+  height: 40px;
+  width: 135px;
+  border: 1px solid #333;
+  cursor: pointer;
+  font: 13px Lato;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none !important;
+  color: #333 !important;
+}
+.footerButton:hover{
+  background: #fdbf11;
+  color: #fff !important;
+}
+.footerButton.researchButton{
+  margin-left: 15px;
+}
+.footerTopP{
+  clear: both;
+  padding-top: 14px;
+}
+#learnMore{
+    display: inline-block;
+    padding-bottom: 33px;
+    padding-top: 9px;
+}
+#learnMore a{
+  display: inline-block;
+  line-height: 20px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer h2 {
+    text-transform: uppercase;
+     font-weight: 700;
+}
+
+footer h3, footer h4{
+   font-weight: 700; 
+}
+
+.credits {
+    font-size: 14px;
+    margin-top: 1em;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.job {
+    font-size: 16px;
+    margin-bottom: 4px;
+    margin-top: 12px;
+}
+
+.urbanstatement {
+    font-style: italic;
+    color: #666666;
+    font-size: 13px;
+    margin-bottom: 1em;
+}
+
+
+
+@media (max-width: 993px){
+    #axis_label{
+        top: 25px;
+    }
+}
+@media (max-width: 450px){
+  .footerButton.researchButton {
+      margin-left: 0px;
+      margin-top: 10px;
+      clear: both;
+  }
+}
+@media (max-width: 768px){
+    rect.states.selected, rect.states.hover{
+        stroke: #ec008b !important;
+    }
+    .slope_line.selected, .slope_line.hover{
+        stroke: #ec008b !important;
+    }
+    .key_box{
+        margin-left: 0px;
+    }
+    #tooltip, #tooltip-no{
+        bottom: -77px;
+        left: 0px;
+        width: 100%;
+        top: inherit;
+    }
+    #legend{
+        margin-top: 100px;
+    }
+    .step_button{
+        margin-bottom: 0px;
+        margin-top: 35px;
+        width: 240px;
+    }
+    #state-menu-button{
+        position: relative;
+        margin-top: 23px;
+    }
+    .chart-svg{
+        margin-top: 120px;
+    }
+    #axis_label{
+        top: 240px !important;
+        pointer-events: none;
+    }
+    #finra_bar-chart{
+        z-index: -1;
+    }
+    .bar-icon, .x.axis .tick text{
+        display: none;
+    }
+    #extra_text_us, #extra_text_all{
+        opacity: 0;
+        pointer-events: none;
+    }
+    #mobile-text{
+        margin-top: 30px;
+    }
+    #slope_label_2012, #slope_label_2015 {
+        top: 100px;
+    }
+}
+
+
+
+@media (max-width: 1000px) {
+   
+    .subnav a{
+        font-size:14px;
+    }
+}
+
+
+/*browser windows smaller than 850px*/
+@media (max-width: 1100px) {
+  .wrapper {width:100%; padding-top:100px;}
+  .content {width:auto; padding:0px 30px}
+  .container {width:auto; padding:0px 30px; margin-bottom: 40px;}
+  ul {margin-left: 15px;}
+  li {padding-left:0px;}
+    #left{ width:100%;}
+    #right{ width:100%; margin-top:30px;}
+}
+
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/*browser windows smaller than 850px*/
+@media (max-width: 600px) {
+   .wrapper {padding-top:80px;} 
+   .headerimage{ height:250px;}
+    h1{font-size: 45px;padding-top: 100px;}
+    .overhalf{width:100%;}
