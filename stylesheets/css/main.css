@@ -3,6 +3,39 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /*colors*/
+/* line 21, ../sass/_variables.scss */
+#isPhone, #isTablet, #isDesktop {
+  display: none;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  /* line 33, ../sass/_variables.scss */
+  #isPhone {
+    display: block;
+  }
+
+  /* line 37, ../sass/_variables.scss */
+  #isTablet, #isDesktop {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  /* line 43, ../sass/_variables.scss */
+  #isTablet {
+    display: block;
+  }
+
+  /* line 47, ../sass/_variables.scss */
+  #isPhone, #isDesktop {
+    display: none;
+  }
+}
 /* Text styles */
 /* line 3, ../sass/_typography.scss */
 h1 {

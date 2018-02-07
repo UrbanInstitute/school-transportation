@@ -17,3 +17,35 @@ $dark-orange: #ca5800;
 $blush: #f1aaa9;
 $purple-grey: #848081;
 $cerulean: #0096d2;
+
+#isPhone, #isTablet, #isDesktop {
+  display: none;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+// Can edit these as time goes on. 
+@media (max-width: 768px){
+  #isPhone {
+    display: block;
+  }
+
+  #isTablet, #isDesktop {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px){
+  #isTablet {
+    display: block;
+  }
+
+  #isPhone, #isDesktop {
+    display: none;
+  }
+}
+
