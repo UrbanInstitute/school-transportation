@@ -25,7 +25,7 @@
     display: none;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 960px) {
   /* line 43, ../sass/_variables.scss */
   #isTablet {
     display: block;
@@ -55,24 +55,6 @@ h2 {
 }
 
 /* line 18, ../sass/_typography.scss */
-.h-1-mobile {
-  font-family: Lato;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: left;
-  color: #000000;
-}
-
-/* line 26, ../sass/_typography.scss */
-.h-2-mobile {
-  font-family: Lato;
-  font-size: 20px;
-  line-height: 1.3;
-  text-align: left;
-  color: #000000;
-}
-
-/* line 34, ../sass/_typography.scss */
 .placeholder {
   font-family: Lato;
   font-size: 18px;
@@ -80,9 +62,10 @@ h2 {
   line-height: 1.56;
   text-align: left;
   color: #db2b27;
+  color: #db2b27;
 }
 
-/* line 43, ../sass/_typography.scss */
+/* line 28, ../sass/_typography.scss */
 .button-text {
   font-family: Lato;
   font-size: 18px;
@@ -92,7 +75,7 @@ h2 {
   color: #ffffff;
 }
 
-/* line 52, ../sass/_typography.scss */
+/* line 37, ../sass/_typography.scss */
 .chart-title {
   font-family: Lato;
   font-size: 18px;
@@ -101,7 +84,16 @@ h2 {
   color: #000000;
 }
 
-/* line 60, ../sass/_typography.scss */
+/* line 45, ../sass/_typography.scss */
+.tagline {
+  font-family: Lato;
+  font-size: 18px;
+  font-style: italic;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 53, ../sass/_typography.scss */
 p {
   font-family: Lato;
   font-size: 18px;
@@ -110,7 +102,7 @@ p {
   color: #000000;
 }
 
-/* line 68, ../sass/_typography.scss */
+/* line 61, ../sass/_typography.scss */
 link {
   font-family: Lato;
   font-size: 18px;
@@ -120,7 +112,7 @@ link {
   color: #0096d2;
 }
 
-/* line 77, ../sass/_typography.scss */
+/* line 70, ../sass/_typography.scss */
 .title-mobile {
   font-family: Lato;
   font-size: 16px;
@@ -130,16 +122,17 @@ link {
   color: #000000;
 }
 
-/* line 86, ../sass/_typography.scss */
-.p-mobile {
+/* line 79, ../sass/_typography.scss */
+.tagline-mobile {
   font-family: Lato;
   font-size: 16px;
-  line-height: 1.5;
+  font-style: italic;
+  line-height: 1.31;
   text-align: left;
   color: #000000;
 }
 
-/* line 94, ../sass/_typography.scss */
+/* line 88, ../sass/_typography.scss */
 h3 {
   font-family: Lato;
   font-size: 15px;
@@ -148,7 +141,7 @@ h3 {
   color: #0096d2;
 }
 
-/* line 102, ../sass/_typography.scss */
+/* line 96, ../sass/_typography.scss */
 .subtitle {
   font-family: Lato;
   font-size: 14px;
@@ -156,7 +149,7 @@ h3 {
   color: #000000;
 }
 
-/* line 109, ../sass/_typography.scss */
+/* line 103, ../sass/_typography.scss */
 .data-labels {
   font-family: Lato;
   font-size: 12px;
@@ -165,7 +158,7 @@ h3 {
   color: #000000;
 }
 
-/* line 117, ../sass/_typography.scss */
+/* line 111, ../sass/_typography.scss */
 .x-and-y-axis-titles {
   font-family: Lato;
   font-size: 12px;
@@ -174,7 +167,7 @@ h3 {
   color: #000000;
 }
 
-/* line 125, ../sass/_typography.scss */
+/* line 119, ../sass/_typography.scss */
 .p-small {
   font-family: Lato;
   font-size: 12px;
@@ -183,7 +176,7 @@ h3 {
   color: #000000;
 }
 
-/* line 133, ../sass/_typography.scss */
+/* line 127, ../sass/_typography.scss */
 .key-labels {
   font-family: Lato;
   font-size: 12px;
@@ -191,7 +184,7 @@ h3 {
   color: #000000;
 }
 
-/* line 140, ../sass/_typography.scss */
+/* line 134, ../sass/_typography.scss */
 .x-and-y-axis-labels {
   font-family: Lato;
   font-size: 12px;
@@ -199,15 +192,7 @@ h3 {
   color: #000000;
 }
 
-/* line 147, ../sass/_typography.scss */
-.source-and-notes {
-  font-family: Lato;
-  font-size: 11px;
-  text-align: left;
-  color: #000000;
-}
-
-/* line 154, ../sass/_typography.scss */
+/* line 141, ../sass/_typography.scss */
 .data-point-label {
   font-family: Lato;
   font-size: 11px;
@@ -215,6 +200,32 @@ h3 {
   color: #000000;
 }
 
+/* line 148, ../sass/_typography.scss */
+.source-and-notes {
+  font-family: Lato;
+  font-size: 11px;
+  text-align: left;
+  color: #000000;
+}
+
+@media (max-width: 960px) {
+  /* line 157, ../sass/_typography.scss */
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* line 161, ../sass/_typography.scss */
+  h1 {
+    font-size: 24px;
+  }
+
+  /* line 165, ../sass/_typography.scss */
+  h2 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+}
 /*
 body {
   font: 100% $font-stack;

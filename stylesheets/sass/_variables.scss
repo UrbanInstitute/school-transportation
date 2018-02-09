@@ -39,13 +39,17 @@ $cerulean: #0096d2;
   }
 }
 
-@media (max-width: 1000px){
-  #isTablet {
+@media (max-width: 960px){
+	#isTablet {
     display: block;
   }
 
   #isPhone, #isDesktop {
     display: none;
   }
+}
+
+@media (max-width: 1100px){
+
 }
 
