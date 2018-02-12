@@ -15,18 +15,115 @@ body {
 */
 
 
-// make content
+.headerimage {
+	img {
+		width: 100%;
+		margin:0 auto;
+	}
+}
+
+#main-content-text {
+	padding-top: 72px;
+}
 
 .content {
     padding-left: 125px;
     padding-right: 125px;
+    clear: both;
 
-    img {
-    	float: right;
+    .inset-image {
+		float: right;
     	margin-right: -125px;
     	padding-left: 10px;
-    	padding-top: 10px;
+    	padding-top: 25px;
     	padding-bottom: 10px;
+    	max-width: 500px;
+
+    	img {
+    		width: 100%;
+	    }
+
+	    p {	
+			font-size: 11px;
+			line-height: 1.27;	
+	    }	
     }
+    
 }
 
+.full-feature {
+	width: 100%;
+	max-width: 1440px;
+	display: table;
+
+	.full-feature-map {
+		width: 60%;
+		// float: left;
+		display: table-cell;
+		
+		img {			
+			width: 100%;
+		}	
+	}
+	
+
+	.full-feature-text {
+		// float: left;
+		// width: 30%;
+		padding-left: 20px;
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+// Tablet size styles
+@media (max-width: $MaxTabletSize){	
+	#main-content-text {
+		padding-top: 32px;
+	}
+
+	.content {
+		padding-left: 48px;
+		padding-right: 48px;
+
+    	.inset-image {
+    		margin-right: 0px;
+    		max-width: 300px;
+    		padding-left: 0px;
+    		padding-top: 10px;
+    	}
+    }
+
+}
+
+@media (max-width: $MaxPhoneSize){	
+
+	.content {
+		padding-left: 20px;
+		padding-right: 20px;
+
+    	.inset-image {
+    		width: 100%;
+			max-width: none;
+    	}
+    }
+
+    .full-feature {
+		display: block;
+
+		.full-feature-map {
+			width: 100%;
+			display: block;			
+		}
+		
+
+		.full-feature-text {
+			width: 100%;
+			display: block;						
+			vertical-align: none;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+}

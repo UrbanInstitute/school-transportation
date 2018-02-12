@@ -18,6 +18,13 @@ $blush: #f1aaa9;
 $purple-grey: #848081;
 $cerulean: #0096d2;
 
+// Media Query sizes
+$MaxDesktopSize: 1100px;
+$MaxTabletSize: 960px;
+$MaxPhoneSize:	768px;
+$MidPhoneSize: 500px;
+
+
 #isPhone, #isTablet, #isDesktop {
   display: none;
   pointer-events: none;
@@ -28,8 +35,16 @@ $cerulean: #0096d2;
   left: 0;
 }
 
+.hide-for-mobile-only {
+	display: block;	
+}
+
+.show-for-mobile-only {
+	display: none;
+}
+
 // Can edit these as time goes on. 
-@media (max-width: 768px){
+@media (max-width: $MaxPhoneSize){
   #isPhone {
     display: block;
   }
@@ -37,9 +52,16 @@ $cerulean: #0096d2;
   #isTablet, #isDesktop {
     display: none;
   }
+
+  .hide-for-mobile-only {
+  	display: none;
+  }
+  .show-for-mobile-only {
+  	display: block;
+  }
 }
 
-@media (max-width: 960px){
+@media (max-width: $MaxTabletSize){
 	#isTablet {
     display: block;
   }
@@ -49,7 +71,7 @@ $cerulean: #0096d2;
   }
 }
 
-@media (max-width: 1100px){
+@media (max-width: $MaxDesktopSize){
 
 }
 
