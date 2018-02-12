@@ -310,18 +310,24 @@ body {
   vertical-align: middle;
 }
 
+/* line 79, ../sass/main.scss */
+.headerimage p {
+  font-size: 11px;
+  line-height: 1.27;
+}
+
 @media (max-width: 960px) {
-  /* line 81, ../sass/main.scss */
+  /* line 86, ../sass/main.scss */
   #main-content-text {
     padding-top: 32px;
   }
 
-  /* line 85, ../sass/main.scss */
+  /* line 90, ../sass/main.scss */
   .content {
     padding-left: 48px;
     padding-right: 48px;
   }
-  /* line 89, ../sass/main.scss */
+  /* line 94, ../sass/main.scss */
   .content .inset-image {
     margin-right: 0px;
     max-width: 300px;
@@ -330,27 +336,27 @@ body {
   }
 }
 @media (max-width: 768px) {
-  /* line 101, ../sass/main.scss */
+  /* line 106, ../sass/main.scss */
   .content {
     padding-left: 20px;
     padding-right: 20px;
   }
-  /* line 105, ../sass/main.scss */
+  /* line 110, ../sass/main.scss */
   .content .inset-image {
     width: 100%;
     max-width: none;
   }
 
-  /* line 111, ../sass/main.scss */
+  /* line 116, ../sass/main.scss */
   .full-feature {
     display: block;
   }
-  /* line 114, ../sass/main.scss */
+  /* line 119, ../sass/main.scss */
   .full-feature .full-feature-map {
     width: 100%;
     display: block;
   }
-  /* line 120, ../sass/main.scss */
+  /* line 125, ../sass/main.scss */
   .full-feature .full-feature-text {
     width: 100%;
     display: block;

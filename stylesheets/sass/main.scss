@@ -76,6 +76,11 @@ body {
 	}
 }
 
+.headerimage p {	
+	font-size: 11px;
+	line-height: 1.27;	
+}	
+
 // Tablet size styles
 @media (max-width: $MaxTabletSize){	
 	#main-content-text {
