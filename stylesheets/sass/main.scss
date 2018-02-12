@@ -13,3 +13,20 @@ body {
   color: $primary-color;
 }
 */
+
+
+// make content
+
+.content {
+    padding-left: 125px;
+    padding-right: 125px;
+
+    img {
+    	float: right;
+    	margin-right: -125px;
+    	padding-left: 10px;
+    	padding-top: 10px;
+    	padding-bottom: 10px;
+    }
+}
+
