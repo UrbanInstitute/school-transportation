@@ -23,10 +23,16 @@ function mapDraw(geojson) {
 	var map = new mapboxgl.Map({
 	  container: 'map', 
 	  style: 'mapbox://styles/urbaninstitute/cjdozdvbd02lv2sswwwuxsxmr', 
-	  center: [-77.0265709, 38.8970754], 
-	  zoom: 9,
+	  // center: [-77.0265709, 38.8970754], 
+	  // zoom: 9,
 	  interactive: false
 	});
+
+	var sw = new mapboxgl.LngLat(-77.1220677, 38.7916431);
+	var ne = new mapboxgl.LngLat(-76.9116897, 38.9932155);
+	var llb = new mapboxgl.LngLatBounds(sw, ne);
+
+	map.fitBounds(llb, { duration: 0, padding: 20 })
 
     var container = map.getCanvasContainer()
     var svg = d3.select(container).append("svg")
