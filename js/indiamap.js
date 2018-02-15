@@ -1,3 +1,5 @@
+// https://bl.ocks.org/shimizu/5f4cee0fddc7a64b55a9
+
 function IS_DESKTOP(){
 	return d3.select("#isDesktop").style("display") == "block";
 }
@@ -36,10 +38,23 @@ function mapDraw(geojson) {
 		.data(geojson.features.filter(function(d){return d.properties.WARD === 7}))
 		.enter()
 		.append("path")
+		.attr("class","ward w7")
     
     function update() {
         featureElement.attr("d",path);
     }
+
+    map.on("viewreset", update)
+    map.on("movestart", function(){
+		svg.classed("hidden", true);
+	});	
+    map.on("rotate", function(){
+		svg.classed("hidden", true);
+	});	
+    map.on("moveend", function(){
+		update()
+		svg.classed("hidden", false);
+	})
 
     update()
 

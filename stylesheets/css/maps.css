@@ -1,0 +1,282 @@
+/*colors*/
+/* line 28, ../sass/_variables.scss */
+#isPhone, #isTablet, #isDesktop {
+  display: none;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* line 38, ../sass/_variables.scss */
+.hide-for-mobile-only {
+  display: block;
+}
+
+/* line 42, ../sass/_variables.scss */
+.show-for-mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* line 48, ../sass/_variables.scss */
+  #isPhone {
+    display: block;
+  }
+
+  /* line 52, ../sass/_variables.scss */
+  #isTablet, #isDesktop {
+    display: none;
+  }
+
+  /* line 56, ../sass/_variables.scss */
+  .hide-for-mobile-only {
+    display: none;
+  }
+
+  /* line 59, ../sass/_variables.scss */
+  .show-for-mobile-only {
+    display: block;
+  }
+}
+@media (max-width: 960px) {
+  /* line 65, ../sass/_variables.scss */
+  #isTablet {
+    display: block;
+  }
+
+  /* line 69, ../sass/_variables.scss */
+  #isPhone, #isDesktop {
+    display: none;
+  }
+}
+/* Text styles */
+/* line 3, ../sass/_typography.scss */
+h1 {
+  font-family: Lato;
+  font-size: 36px;
+  text-align: left;
+  color: #000000;
+  font-weight: 400;
+}
+
+/* line 11, ../sass/_typography.scss */
+h2 {
+  font-family: Lato;
+  font-size: 25px;
+  line-height: 1.36;
+  text-align: left;
+  color: #000000;
+  font-weight: 400;
+}
+
+/* line 20, ../sass/_typography.scss */
+.placeholder {
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.56;
+  text-align: left;
+  color: #db2b27;
+  color: #db2b27;
+}
+
+/* line 30, ../sass/_typography.scss */
+.button-text {
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.28;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* line 39, ../sass/_typography.scss */
+.chart-title {
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 47, ../sass/_typography.scss */
+.tagline {
+  font-family: Lato;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.31;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 57, ../sass/_typography.scss */
+p {
+  font-family: Lato;
+  font-size: 18px;
+  line-height: 1.56;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 65, ../sass/_typography.scss */
+link {
+  font-family: Lato;
+  font-size: 18px;
+  line-height: 1.56;
+  text-align: left;
+  color: #0096d2;
+  color: #0096d2;
+}
+
+/* line 74, ../sass/_typography.scss */
+.title-mobile {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.25;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 83, ../sass/_typography.scss */
+h3 {
+  font-family: Lato;
+  font-size: 15px;
+  text-align: left;
+  color: #0096d2;
+  color: #0096d2;
+}
+
+/* line 91, ../sass/_typography.scss */
+.subtitle {
+  font-family: Lato;
+  font-size: 14px;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 98, ../sass/_typography.scss */
+.data-labels {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 106, ../sass/_typography.scss */
+.x-and-y-axis-titles {
+  font-family: Lato;
+  font-size: 12px;
+  font-style: italic;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 114, ../sass/_typography.scss */
+.p-small {
+  font-family: Lato;
+  font-size: 12px;
+  line-height: 1.67;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 122, ../sass/_typography.scss */
+.key-labels {
+  font-family: Lato;
+  font-size: 12px;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 129, ../sass/_typography.scss */
+.x-and-y-axis-labels {
+  font-family: Lato;
+  font-size: 12px;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 136, ../sass/_typography.scss */
+.data-point-label {
+  font-family: Lato;
+  font-size: 11px;
+  text-align: left;
+  color: #000000;
+}
+
+/* line 143, ../sass/_typography.scss */
+.source-and-notes {
+  font-family: Lato;
+  font-size: 11px;
+  text-align: left;
+  color: #000000;
+}
+
+@media (max-width: 960px) {
+  /* line 157, ../sass/_typography.scss */
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* line 161, ../sass/_typography.scss */
+  h1 {
+    font-size: 24px;
+  }
+
+  /* line 165, ../sass/_typography.scss */
+  h2 {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  /* line 171, ../sass/_typography.scss */
+  .tagline {
+    font-size: 16px;
+    line-height: 1.31;
+  }
+}
+/* line 4, ../sass/maps.scss */
+html, body, #wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 10, ../sass/maps.scss */
+#map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto auto;
+}
+
+/* line 16, ../sass/maps.scss */
+svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 21, ../sass/maps.scss */
+.hidden {
+  display: none;
+}
+
+/* line 24, ../sass/maps.scss */
+.ward {
+  fill: none;
+  stroke-width: 2px;
+}
+
+/* line 29, ../sass/maps.scss */
+.ward.w7 {
+  stroke: #0096d2;
+}
