@@ -243,40 +243,56 @@ h3 {
   }
 }
 /* line 4, ../sass/maps.scss */
-html, body, #wrapper {
-  width: 100%;
-  height: 100%;
+html, body {
   padding: 0px;
   margin: 0px;
 }
 
-/* line 10, ../sass/maps.scss */
+/* line 11, ../sass/maps.scss */
 #map {
   position: relative;
   width: 100%;
-  height: 100%;
-  margin: auto auto;
+  height: 632px;
 }
 
-/* line 16, ../sass/maps.scss */
+/* line 19, ../sass/maps.scss */
 svg {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-/* line 21, ../sass/maps.scss */
+/* line 24, ../sass/maps.scss */
 .hidden {
   display: none;
 }
 
-/* line 24, ../sass/maps.scss */
+/* line 27, ../sass/maps.scss */
 .ward {
   fill: none;
   stroke-width: 2px;
 }
 
-/* line 29, ../sass/maps.scss */
+/* line 32, ../sass/maps.scss */
 .ward.w7 {
   stroke: #0096d2;
+}
+
+@media (max-width: 460.8px) {
+  /* line 37, ../sass/maps.scss */
+  #map {
+    height: 300px;
+  }
+}
+@media (max-width: 576px) {
+  /* line 44, ../sass/maps.scss */
+  #map {
+    height: 374px;
+  }
+}
+@media (max-width: 660px) {
+  /* line 51, ../sass/maps.scss */
+  #map {
+    height: 474px;
+  }
 }

@@ -1,3 +1,5 @@
+var pymChild = new pym.Child();
+
 // https://bl.ocks.org/shimizu/5f4cee0fddc7a64b55a9
 
 function IS_DESKTOP(){
@@ -11,9 +13,6 @@ function IS_PHONE(){
 }
 	
 d3.json("data/wards.geojson", function(err, data) {
-	console.log(data)
-	// var dataIndex = d3.map(data.features, function(d) { return d.properties.WARD; });
-	// console.log(dataIndex.$7)
     mapDraw(data);
 });
 
@@ -50,16 +49,23 @@ function mapDraw(geojson) {
         featureElement.attr("d",path);
     }
 
-    map.on("viewreset", update)
+    map.on("viewreset", function(){    	
+    	// map.fitBounds(llb, { duration: 0, padding: 20 })
+    	update()
+		// pymChild.sendHeight()
+    });	    	
     map.on("movestart", function(){
-		svg.classed("hidden", true);
+		// svg.classed("hidden", true);
 	});	
     map.on("rotate", function(){
-		svg.classed("hidden", true);
+		// svg.classed("hidden", true);
 	});	
     map.on("moveend", function(){
+		// getHeight()
 		update()
-		svg.classed("hidden", false);
+		map.fitBounds(llb, { duration: 0, padding: 20 })
+		pymChild.sendHeight()
+		// svg.classed("hidden", false);
 	})
 
     update()
@@ -70,6 +76,13 @@ function mapDraw(geojson) {
 		this.stream.point(point.x, point.y);
 	}
 
+	function getHeight(){
+		var width = document.getElementById("map").offsetWidth;
+		var height = width * 0.79;
+		document.getElementById("map").style.height = height;
+
+		pymChild.sendHeight()
+	}
 }
 
   

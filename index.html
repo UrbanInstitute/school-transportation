@@ -75,9 +75,9 @@
       <br>
       <p>Hardy is in the Georgetown neighborhood of Washington, DC, 10 miles from India’s home in Deanwood, in the northeast area of the city. During rush hour, driving from the eastern to the western edge of the city can take Vanessa and India between 45 minutesand 1.5 hours. DC doesn’t provide school buses (except for students with special needs), so many students commute by car or public transportation.</p>      
     </div>
-    <div class="full-feature" id="ff1">
-      <div class="full-feature-map">
-        <img src="img/map1.jpg">  
+    <div class="full-feature">
+      <div class="full-feature-map" id="ff1">
+        <!-- <img src="img/map1.jpg">   -->
       </div>      
       <div class="full-feature-text">
         <h2>India’s average commute is about 60 minutes. The average driving commute time of all sixth grade students in DC is 12.7 minutes.</h2>
@@ -208,6 +208,9 @@
 </footer>
 
   <script src="js/lib/pym.min.js"></script>
+  <script>
+      var pymParent1 = new pym.Parent('ff1', 'indiamap.html', {});
+  </script>
 	<script src="js/lib/d3.v4.min.js"></script>  
 	<script src="js/lib/jquery.min.js"></script>
   <script src="js/waypoints/lib/jquery.waypoints.min.js"></script>
