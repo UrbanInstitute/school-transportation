@@ -1,5 +1,13 @@
 var pymChild = new pym.Child();
 
+pymChild.onMessage('arrival', onArrivalMessage);
+
+function onArrivalMessage(data){
+	console.log(data)
+	// Initialize the d3 event where India's dot flys across screen to other dots
+		// on end, other dots and India's fly to destinations
+}
+
 // https://bl.ocks.org/shimizu/5f4cee0fddc7a64b55a9
 
 function IS_DESKTOP(){

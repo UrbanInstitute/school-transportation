@@ -15,3 +15,15 @@ var waypoint = new Waypoint({
     $(".follow-dot.india").toggleClass("active")
   }
 })
+
+var map1waypoint = new Waypoint({
+  element: document.getElementById('ff1'),
+  handler: function() {    
+    // send a message to the map1 child IF it hasn't been done yet (only send it first time. Then have play button on map?)
+    pymParent1.sendMessage('arrival', "dataGoesHere");
+    
+  },
+  offset: function(){
+  	return 230;
+  }
+})
