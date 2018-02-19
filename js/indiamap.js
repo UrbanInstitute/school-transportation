@@ -25,7 +25,8 @@ d3.json("data/wards.geojson", function(err, data) {
 });
 
 function mapDraw(geojson) {
-	
+	var indiaLoc = [-76.933793,38.904854];
+
 	mapboxgl.accessToken = 'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ';
 	var map = new mapboxgl.Map({
 	  container: 'map', 
@@ -52,9 +53,28 @@ function mapDraw(geojson) {
 		.enter()
 		.append("path")
 		.attr("class","ward w7")
+
+	var IndiaContainer = svg.append("g")
+	IndiaContainer.append("circle")
+		.attr("class","indiapoint")
+		.attr("cx", function (d) { return 30})
+		.attr("cy", function (d) { return 30})
+		.attr("r", function (d) { return 5 })
+		.style("fill", function(d) { return "#ff00ff" });
+
+	var IndiaPoint = IndiaContainer.selectAll(".indiapoint");
     
+	$("#indiaclick").click(function(){
+
+		var point = map.project(new mapboxgl.LngLat(indiaLoc[0], indiaLoc[1]));
+
+		IndiaPoint.transition().ease(d3.easeLinear).duration(2000)
+			.attr("cx", function (d) { return point.x})
+			.attr("cy", function (d) { return point.y})
+	})
+
     function update() {
-        featureElement.attr("d",path);
+        featureElement.attr("d",path);        
     }
 
     map.on("viewreset", function(){    	
@@ -79,18 +99,12 @@ function mapDraw(geojson) {
     update()
 
 
-	function projectPoint(lon, lat) {		
+	function projectPoint(lon, lat) {
         var point = map.project(new mapboxgl.LngLat(lon, lat));
 		this.stream.point(point.x, point.y);
 	}
 
-	function getHeight(){
-		var width = document.getElementById("map").offsetWidth;
-		var height = width * 0.79;
-		document.getElementById("map").style.height = height;
 
-		pymChild.sendHeight()
-	}
 }
 
   
