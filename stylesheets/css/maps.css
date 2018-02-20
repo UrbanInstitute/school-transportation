@@ -278,20 +278,30 @@ svg {
   stroke: #0096d2;
 }
 
+/* line 36, ../sass/maps.scss */
+.indiapoint {
+  fill: #0096d2;
+}
+
+/* line 40, ../sass/maps.scss */
+.dot {
+  fill: #73bfe2;
+}
+
 @media (max-width: 460.8px) {
-  /* line 37, ../sass/maps.scss */
+  /* line 45, ../sass/maps.scss */
   #map {
     height: 300px;
   }
 }
 @media (max-width: 576px) {
-  /* line 44, ../sass/maps.scss */
+  /* line 52, ../sass/maps.scss */
   #map {
     height: 374px;
   }
 }
 @media (max-width: 660px) {
-  /* line 51, ../sass/maps.scss */
+  /* line 59, ../sass/maps.scss */
   #map {
     height: 474px;
   }

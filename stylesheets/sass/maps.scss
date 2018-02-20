@@ -33,6 +33,14 @@ svg {
   stroke: $cerulean;
 }
 
+.indiapoint {
+  fill: $cerulean;
+}
+
+.dot {
+  fill: $soft-blue
+}
+
 @media (max-width: $MaxPhoneSize * 0.6){
   #map {
     // width: 600px;
