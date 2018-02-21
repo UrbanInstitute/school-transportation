@@ -282,72 +282,123 @@ svg {
 .ward.wardmap {
   stroke: #fff !important;
   fill-opacity: 0.75;
+  cursor: pointer;
 }
 
-/* line 41, ../sass/maps.scss */
+/* line 42, ../sass/maps.scss */
+.ward.wardmap.active {
+  fill-opacity: 0.9;
+}
+
+/* line 46, ../sass/maps.scss */
 .ward.wardmap.w1 {
   fill: #fdbf11;
 }
 
-/* line 42, ../sass/maps.scss */
+/* line 47, ../sass/maps.scss */
 .ward.wardmap.w2 {
   fill: #12719e;
 }
 
-/* line 43, ../sass/maps.scss */
+/* line 48, ../sass/maps.scss */
 .ward.wardmap.w3 {
   fill: #78c26d;
 }
 
-/* line 44, ../sass/maps.scss */
+/* line 49, ../sass/maps.scss */
 .ward.wardmap.w4 {
   fill: #848081;
 }
 
-/* line 45, ../sass/maps.scss */
+/* line 50, ../sass/maps.scss */
 .ward.wardmap.w5 {
   fill: #ca5800;
 }
 
-/* line 46, ../sass/maps.scss */
+/* line 51, ../sass/maps.scss */
 .ward.wardmap.w6 {
   fill: #e25552;
 }
 
-/* line 47, ../sass/maps.scss */
+/* line 52, ../sass/maps.scss */
 .ward.wardmap.w7 {
   fill: #0096d2;
 }
 
-/* line 48, ../sass/maps.scss */
+/* line 53, ../sass/maps.scss */
 .ward.wardmap.w8 {
   fill: #e88e2d;
 }
 
-/* line 52, ../sass/maps.scss */
+/* line 55, ../sass/maps.scss */
+div.tooltip {
+  position: fixed;
+  text-align: center;
+  width: 200px;
+  /*height: 100px;         */
+  padding: 11px;
+  font-size: 14px;
+  background: #353535;
+  color: #fff;
+  /*border: 2px solid #e2e2e2;            */
+}
+
+/* line 67, ../sass/maps.scss */
+div.tooltip.bottom:after {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #353535;
+  border-width: 11px;
+  margin-left: -11px;
+}
+
+/* line 82, ../sass/maps.scss */
+div.tooltip.top:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #353535;
+  border-width: 11px;
+  margin-left: -11px;
+}
+
+/* line 98, ../sass/maps.scss */
 .indiapoint {
   fill: #0096d2;
 }
 
-/* line 56, ../sass/maps.scss */
+/* line 102, ../sass/maps.scss */
 .dot {
   fill: #73bfe2;
 }
 
 @media (max-width: 460.8px) {
-  /* line 61, ../sass/maps.scss */
+  /* line 107, ../sass/maps.scss */
   #map {
     height: 300px;
   }
 }
 @media (max-width: 576px) {
-  /* line 68, ../sass/maps.scss */
+  /* line 114, ../sass/maps.scss */
   #map {
     height: 374px;
   }
 }
 @media (max-width: 660px) {
-  /* line 75, ../sass/maps.scss */
+  /* line 121, ../sass/maps.scss */
   #map {
     height: 474px;
   }

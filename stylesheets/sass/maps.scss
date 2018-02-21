@@ -36,6 +36,11 @@ svg {
 .ward.wardmap {
   stroke: #fff !important;
   fill-opacity: 0.75;
+  cursor: pointer;
+}
+
+.ward.wardmap.active {
+  fill-opacity: 0.9;
 }
 
 .ward.wardmap.w1 {fill: $orangey-yellow}
@@ -47,6 +52,49 @@ svg {
 .ward.wardmap.w7 {fill: $cerulean}
 .ward.wardmap.w8 {fill: #e88e2d}
 
+div.tooltip { 
+  position: fixed;     
+  text-align: center;     
+  width: 200px;          
+  /*height: 100px;         */
+  padding: 11px;       
+  font-size: 14px;  
+  background: #353535;
+  color: #fff;
+  top:-1000px;
+  left:-1000px;
+  /*border: 2px solid #e2e2e2;            */
+}
+
+div.tooltip.bottom:after {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #353535;
+  border-width: 11px;
+  margin-left: -11px;
+}
+
+div.tooltip.top:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #353535;
+  border-width: 11px;
+  margin-left: -11px;
+}
 
 
 .indiapoint {

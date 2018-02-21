@@ -49,11 +49,51 @@ function mapDraw(geojson) {
 	var featureElement = svg.selectAll("path")
 		.data(geojson.features)
 		.enter()
-		.append("path")
+		.append("path")		
 		.attr("class",function(d){
 			return "wardmap ward w" + d.properties.WARD;
 		})
+		.on("mouseover", function(d) {
+            d3.select(this).classed("active", true);
+            createTooltip(d)
+        })
+        .on("mouseout", function() {
+            d3.select(this).classed("active", false);            	
+            removeTooltip()
+        })
+
+	var tooltip = d3.select("body").append("div") 
+	    .attr("class", "tooltip")       
+	    .style("opacity", 0.9);
+
+
+
 	// Functions!!!!
+
+	function createTooltip(d) {
+		var centroid = path.centroid(d);
+		
+        // var contents = "<strong>" + drugtypeIndex(d.drugtype) + ", " + d.Year + " Q" + d.Qtr + "</strong><br>Units Sold: <span style='color:rgb(253, 191, 17)'>" + formatNum(d.units) + "</span><br>Amount Spent: <span style='color:rgb(253, 191, 17)'>$" + formatNum(d.adjmedamt) + "</span>";
+        var contents = "test"
+
+        tooltip.html(contents);
+
+        tooltip.classed("top",true)
+            .style("left", function(d){
+            	console.log(centroid[0])
+            	return (centroid[0] - 100) + "px";
+            })   
+      		.style("top", function(d){
+      			console.log(centroid[1])
+      			return (centroid[1] - 70) + "px";
+      		});  
+	}
+
+	function removeTooltip() {
+		tooltip.style("left", "-1000px").style("top","-1000px"); 
+	  	tooltip.classed("top",false);
+	  	tooltip.classed("bottom",false);
+	}
 
     function update() {
         featureElement.attr("d",path);        
