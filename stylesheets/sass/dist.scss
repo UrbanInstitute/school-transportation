@@ -1,0 +1,25 @@
+@import "variables";
+@import "typography";
+
+html, body {
+  padding: 0px;
+  margin: 0px;
+}
+
+#map { 
+  position:relative;   
+  width: 100%;
+}
+
+.domain {
+  stroke: $gray;
+}
+
+.tick line {
+  display: none;
+}
+
+.tick text {
+  font-family: Lato;
+}
+

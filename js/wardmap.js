@@ -58,8 +58,8 @@ function mapDraw(geojson) {
             createTooltip(d)
         })
         .on("mouseout", function() {
-            d3.select(this).classed("active", false);            	
-            removeTooltip()
+            // d3.select(this).classed("active", false);            	
+            // removeTooltip()
         })
 
 	var tooltip = d3.select("body").append("div") 
@@ -74,17 +74,17 @@ function mapDraw(geojson) {
 		var centroid = path.centroid(d);
 		
         // var contents = "<strong>" + drugtypeIndex(d.drugtype) + ", " + d.Year + " Q" + d.Qtr + "</strong><br>Units Sold: <span style='color:rgb(253, 191, 17)'>" + formatNum(d.units) + "</span><br>Amount Spent: <span style='color:rgb(253, 191, 17)'>$" + formatNum(d.adjmedamt) + "</span>";
-        var contents = "test"
+        var contents = "<div><h2> Ward" + d.properties.WARD + "</h2><p>Total Population: " + d.properties.POP_2010 + "</p><p>Number of Students: XXX</p><p>percent of students in poverty</p></div>";
 
         tooltip.html(contents);
 
         tooltip.classed("top",true)
             .style("left", function(d){
-            	console.log(centroid[0])
+            	// console.log(centroid[0])
             	return (centroid[0] - 100) + "px";
             })   
       		.style("top", function(d){
-      			console.log(centroid[1])
+      			// console.log(centroid[1])
       			return (centroid[1] - 70) + "px";
       		});  
 	}

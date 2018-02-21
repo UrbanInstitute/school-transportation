@@ -125,12 +125,12 @@ function mapDraw(geojson,ward7) {
 						.on("end",function(){
 							var point = map.project(new mapboxgl.LngLat(indiaSchool[0], indiaSchool[1]));
 
-							d3.select(this).transition().ease(d3.easeLinear).duration(100*35)
+							d3.select(this).transition().ease(d3.easeLinear).duration(200*35)
 								.attr("cx", function (d) { return point.x})
 								.attr("cy", function (d) { return point.y})
 
 							Ward7Points.transition().ease(d3.easeLinear).duration(function(d){
-									return 100*d.transdura_mean;
+									return 200*d.drive_traf_dura_mean;
 								})
 								.attr("cx", function(d) { 
 						        	var point = map.project(new mapboxgl.LngLat(d.schoolLon,d.schoolLat));

@@ -16,6 +16,14 @@ html, body {
   // background-color: pink;
 }
 
+#chart {
+  position:relative; 
+  width: 100%;
+  height: 632px;
+  // padding-top: 50%;
+  background-color: pink;
+}
+
 svg {
   position: absolute;
   width: 100%;
@@ -43,27 +51,36 @@ svg {
   fill-opacity: 0.9;
 }
 
-.ward.wardmap.w1 {fill: $orangey-yellow}
-.ward.wardmap.w2 {fill: $nice-blue}
-.ward.wardmap.w3 {fill: $soft-green}
-.ward.wardmap.w4 {fill: $purple-grey}
-.ward.wardmap.w5 {fill: $dark-orange}
-.ward.wardmap.w6 {fill: #e25552}
-.ward.wardmap.w7 {fill: $cerulean}
-.ward.wardmap.w8 {fill: #e88e2d}
+.ward.distro.w1, .ward.wardmap.w1 {fill: $orangey-yellow}
+.ward.distro.w2, .ward.wardmap.w2 {fill: $nice-blue}
+.ward.distro.w3, .ward.wardmap.w3 {fill: $soft-green}
+.ward.distro.w4, .ward.wardmap.w4 {fill: $purple-grey}
+.ward.distro.w5, .ward.wardmap.w5 {fill: $dark-orange}
+.ward.distro.w6, .ward.wardmap.w6 {fill: #e25552}
+.ward.distro.w7, .ward.wardmap.w7 {fill: $cerulean}
+.ward.distro.w8, .ward.wardmap.w8 {fill: #e88e2d}
 
 div.tooltip { 
   position: fixed;     
   text-align: center;     
   width: 200px;          
-  /*height: 100px;         */
+  // height: 100px;         
   padding: 11px;       
   font-size: 14px;  
-  background: #353535;
-  color: #fff;
+  background: #fff;
+  // color: #fff;
   top:-1000px;
   left:-1000px;
-  /*border: 2px solid #e2e2e2;            */
+  // border: 2px solid #e2e2e2;            
+}
+
+div.tooltip h2 {
+  font-size: 10px !important;
+}
+
+div.tooltip p {
+  font-size: 10px !important;
+
 }
 
 div.tooltip.bottom:after {
