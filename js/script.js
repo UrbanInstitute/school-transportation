@@ -27,3 +27,15 @@ var map1waypoint = new Waypoint({
   	return 230;
   }
 })
+
+var map3waypoint = new Waypoint({
+  element: document.getElementById('ff3'),
+  handler: function() {    
+    // send a message to the map1 child IF it hasn't been done yet (only send it first time. Then have play button on map?)
+    pymParent3.sendMessage('arrival', "messageGoesHere");
+    
+  },
+  offset: function(){
+  	return 230;
+  }
+})

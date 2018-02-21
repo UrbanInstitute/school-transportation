@@ -33,6 +33,22 @@ svg {
   stroke: $cerulean;
 }
 
+.ward.wardmap {
+  stroke: #fff !important;
+  fill-opacity: 0.75;
+}
+
+.ward.wardmap.w1 {fill: $orangey-yellow}
+.ward.wardmap.w2 {fill: $nice-blue}
+.ward.wardmap.w3 {fill: $soft-green}
+.ward.wardmap.w4 {fill: $purple-grey}
+.ward.wardmap.w5 {fill: $dark-orange}
+.ward.wardmap.w6 {fill: #e25552}
+.ward.wardmap.w7 {fill: $cerulean}
+.ward.wardmap.w8 {fill: #e88e2d}
+
+
+
 .indiapoint {
   fill: $cerulean;
 }

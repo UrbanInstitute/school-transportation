@@ -279,29 +279,75 @@ svg {
 }
 
 /* line 36, ../sass/maps.scss */
+.ward.wardmap {
+  stroke: #fff !important;
+  fill-opacity: 0.75;
+}
+
+/* line 41, ../sass/maps.scss */
+.ward.wardmap.w1 {
+  fill: #fdbf11;
+}
+
+/* line 42, ../sass/maps.scss */
+.ward.wardmap.w2 {
+  fill: #12719e;
+}
+
+/* line 43, ../sass/maps.scss */
+.ward.wardmap.w3 {
+  fill: #78c26d;
+}
+
+/* line 44, ../sass/maps.scss */
+.ward.wardmap.w4 {
+  fill: #848081;
+}
+
+/* line 45, ../sass/maps.scss */
+.ward.wardmap.w5 {
+  fill: #ca5800;
+}
+
+/* line 46, ../sass/maps.scss */
+.ward.wardmap.w6 {
+  fill: #e25552;
+}
+
+/* line 47, ../sass/maps.scss */
+.ward.wardmap.w7 {
+  fill: #0096d2;
+}
+
+/* line 48, ../sass/maps.scss */
+.ward.wardmap.w8 {
+  fill: #e88e2d;
+}
+
+/* line 52, ../sass/maps.scss */
 .indiapoint {
   fill: #0096d2;
 }
 
-/* line 40, ../sass/maps.scss */
+/* line 56, ../sass/maps.scss */
 .dot {
   fill: #73bfe2;
 }
 
 @media (max-width: 460.8px) {
-  /* line 45, ../sass/maps.scss */
+  /* line 61, ../sass/maps.scss */
   #map {
     height: 300px;
   }
 }
 @media (max-width: 576px) {
-  /* line 52, ../sass/maps.scss */
+  /* line 68, ../sass/maps.scss */
   #map {
     height: 374px;
   }
 }
 @media (max-width: 660px) {
-  /* line 59, ../sass/maps.scss */
+  /* line 75, ../sass/maps.scss */
   #map {
     height: 474px;
   }
