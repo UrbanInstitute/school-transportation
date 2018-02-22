@@ -39,7 +39,9 @@ function chartDraw(data) {
 	// width = (parseInt(d3.select("#master_container").style("width")) > 1000) ? 1000 : parseInt(d3.select("#master_container").style("width")),
 	height = 400;
 
-	var labels = ["Black","White","Hispanic & Latino","Asian"]
+	var labels = ["Black","White","Hispanic & Latino","Asian"];
+	var labels2 = ["K","6TH","9TH"];
+
 	var colorScale = d3.scaleOrdinal()
 		.domain(zipped)
 		.range(["#a2d4ec","#0a4c6a","#062635","#0096d2"]);
@@ -50,8 +52,10 @@ function chartDraw(data) {
 		barHeight = 10,
 		numOfgroups = data.length,
 		numPerGroup = numOfRecs / numOfgroups,
-		spaceForLabels   = 30,
-    	spacer = 10;
+		spaceForLabelsLeft   = 70,
+		spaceForLabelsRight = 30,
+    	spacer = 10,
+    	groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-1));
 
 	var chartHeight = ((numPerGroup*barHeight) + ((numPerGroup-1)*gapBetweenBars) + gapBetweenGroups)*numOfgroups;	
 
@@ -60,7 +64,7 @@ function chartDraw(data) {
 
   	var x = d3.scaleLinear()
 	    .domain([0, d3.max(zipped)])
-	    .range([0, chartWidth-spaceForLabels]);
+	    .range([0, chartWidth-(spaceForLabelsLeft+spaceForLabelsRight)]);
 
 	var svg = d3.select("#map").append("svg")
 	    .attr("width", width)
@@ -75,7 +79,7 @@ function chartDraw(data) {
 	    .data(zipped)
 	    .enter().append("g")
 	    .attr("transform", function(d, i) {
-	      return "translate(" + spaceForLabels + "," + ((i * barHeight)+(i*gapBetweenBars) + gapBetweenGroups * (0.5 + Math.floor(i/numPerGroup))) + ")";
+	      return "translate(" + spaceForLabelsLeft + "," + ((i * barHeight)+(i*gapBetweenBars) + gapBetweenGroups * (0.5 + Math.floor(i/numPerGroup))) + ")";
 	    });
 
 	bar.append("rect")
@@ -100,8 +104,21 @@ function chartDraw(data) {
 	      return labels[i % numPerGroup]
 	    });
 
+	bar.append("text")
+	    .attr("class", "Biglabel")
+	    .attr("x", function(d) { return - 120; })
+	    .attr("y", groupHeight / 2)
+	    .attr("dy", ".35em")
+	    .text(function(d,i) {
+	    	if (i % numPerGroup === 0)
+		        return labels2[i % numOfgroups];
+		      else
+		        return ""
+		});	      
+	    
+
   	g.append("g")
-      .attr("transform", "translate(" + spaceForLabels +"," + (chartHeight+2*margin.bottom) + ")")
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+2*margin.bottom) + ")")
       .call(d3.axisBottom(x).ticks(4).tickFormat(d3.format(".0%")));    
 
 

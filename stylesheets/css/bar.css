@@ -278,6 +278,14 @@ html, body {
 }
 
 /* line 34, ../sass/bar.scss */
+.Biglabel {
+  font-family: Lato;
+  font-size: 15px;
+  fill: #0096d2;
+  text-anchor: end;
+}
+
+/* line 41, ../sass/bar.scss */
 .axis path,
 .axis line {
   fill: none;

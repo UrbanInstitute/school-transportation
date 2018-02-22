@@ -31,6 +31,13 @@ html, body {
   text-anchor: end;
 }
 
+.Biglabel {
+  font-family: Lato;
+  font-size: 15px;  
+  fill: $cerulean;
+  text-anchor: end; 
+}
+
 .axis path,
 .axis line {
   fill: none;
