@@ -27,10 +27,10 @@ function chartDraw(data) {
 	})
 
 	// initialize
-    var margin = {top: 10, right: 50, bottom: 20, left: 75},
+    var margin = {top: 10, right: 100, bottom: 20, left: 90},
 	width = parseInt(d3.select("#map").style("width")),
 	// width = (parseInt(d3.select("#master_container").style("width")) > 1000) ? 1000 : parseInt(d3.select("#master_container").style("width")),
-	height = 200
+	height = 200;
 
 	var svg = d3.select("#map").append("svg")
 	    .attr("width", width)
@@ -53,11 +53,6 @@ function chartDraw(data) {
 
 	var ytransit = d3.scaleLinear()
 	    .rangeRound([((2*chartHeight)+spacer+margin.top), (margin.top+chartHeight+spacer)]);
-
-
-
-	console.log((chartHeight+margin.top)-margin.top)
-	console.log(((2*chartHeight)+spacer+margin.top)-(margin.top+chartHeight+spacer))
 
 	var areadrive = d3.area()
 	    .x(function(d) { return x(d.time); })
@@ -91,6 +86,31 @@ function chartDraw(data) {
       .call(d3.axisBottom(x).ticks(20));
 
 	// Functions!!!!
+	var contents = "<p>Mean Time</p><h2>14 mins</h2>";
+	var meanTop = d3.select("body").append("div") 
+	    .attr("class", "meanTime")       
+	    .html(contents)
+	    .style("left", width - margin.right + spacer + "px")
+	    .style("top", margin.top+spacer+spacer + "px"); 
+	    // This is from the above calculation (see notebook) PLUS two spacers
+
+	var meanBottom = d3.select("body").append("div") 
+	    .attr("class", "meanTime")       
+	    .html(contents)
+	    .style("left", width - margin.right + spacer + "px")
+	    .style("top",margin.top+chartHeight+spacer+spacer+spacer + "px"); 
+
+	var nameTop = d3.select("body").append("div") 
+	    .attr("class", "name")       
+	    .html("<p>Driving with<br> Taffic</p>")
+	    .style("left", spacer + "px")
+	    .style("top", margin.top+spacer+spacer+spacer + "px"); 
+
+	var nameBottom = d3.select("body").append("div") 
+	    .attr("class", "name")       
+	    .html("<p>Transit</p>")
+	    .style("left", spacer + "px")
+	    .style("top",margin.top+chartHeight+spacer+spacer+spacer+spacer + "px"); 	    
 
 
     function update() {

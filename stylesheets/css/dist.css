@@ -252,7 +252,7 @@ html, body {
 #map {
   position: relative;
   width: 100%;
-  background-color: pink;
+  height: 200px;
 }
 
 /* line 15, ../sass/dist.scss */
@@ -268,4 +268,37 @@ html, body {
 /* line 23, ../sass/dist.scss */
 .tick text {
   font-family: Lato;
+}
+
+/* line 27, ../sass/dist.scss */
+div.meanTime, div.name {
+  position: fixed;
+  font-family: Lato;
+}
+
+/* line 32, ../sass/dist.scss */
+div.meanTime p, div.name p {
+  font-size: 12px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  font-weight: 700;
+}
+
+/* line 40, ../sass/dist.scss */
+div.name {
+  width: 70px;
+}
+
+/* line 44, ../sass/dist.scss */
+div.name p {
+  text-align: right;
+}
+
+/* line 48, ../sass/dist.scss */
+div.meanTime h2 {
+  font-size: 24px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
 }
