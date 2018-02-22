@@ -71,6 +71,19 @@ body {
     }
 }
 
+.chart-feature {
+	width: 100%;
+	// max-width: 1440px;
+	display: table;
+	margin: 0 auto;
+
+	.full-feature-dist {
+		width: 100%;
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
 .full-feature {
 	width: 100%;
 	max-width: 1440px;
@@ -92,12 +105,6 @@ body {
 		// float: left;
 		// width: 30%;
 		padding-left: 20px;
-		display: table-cell;
-		vertical-align: middle;
-	}
-
-	.full-feature-dist {
-		width: 100%;
 		display: table-cell;
 		vertical-align: middle;
 	}
