@@ -53,13 +53,14 @@ function mapDraw(geojson) {
 		.attr("class",function(d){
 			return "wardmap ward w" + d.properties.WARD;
 		})
-		.on("mouseover", function(d) {
+		.on("mouseenter", function(d) {
+            removeTooltip()
             d3.select(this).classed("active", true);
             createTooltip(d)
         })
-        .on("mouseout", function() {
-            // d3.select(this).classed("active", false);            	
-            // removeTooltip()
+        .on("mouseleave", function() {
+            d3.select(this).classed("active", false);            	
+            
         })
 
 	var tooltip = d3.select("body").append("div") 
@@ -73,7 +74,8 @@ function mapDraw(geojson) {
 		var centroid = path.centroid(d);
 		
         // var contents = "<strong>" + drugtypeIndex(d.drugtype) + ", " + d.Year + " Q" + d.Qtr + "</strong><br>Units Sold: <span style='color:rgb(253, 191, 17)'>" + formatNum(d.units) + "</span><br>Amount Spent: <span style='color:rgb(253, 191, 17)'>$" + formatNum(d.adjmedamt) + "</span>";
-        var contents = "<div><h2> Ward" + d.properties.WARD + "</h2><p>Total Population: " + d.properties.POP_2010 + "</p><p>Number of Students: XXX</p><p>percent of students in poverty</p></div>";
+        var contents = "<div><h2> Ward" + d.properties.WARD + "</h2><p>Total Population: " + d3.format(",")(d.properties.POP_2010) + "</p><p>More data to come.</p></div>";
+        var contents = 
 
         tooltip.html(contents);
 

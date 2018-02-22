@@ -86,7 +86,7 @@ function chartDraw(data) {
       .call(d3.axisBottom(x).ticks(20));
 
 	// Functions!!!!
-	var contents = "<p>Mean Time</p><h2>14 mins</h2>";
+	var contents = "<p>Mean Time</p><h2>XX mins</h2>";
 	var meanTop = d3.select("body").append("div") 
 	    .attr("class", "meanTime")       
 	    .html(contents)
@@ -102,7 +102,7 @@ function chartDraw(data) {
 
 	var nameTop = d3.select("body").append("div") 
 	    .attr("class", "name")       
-	    .html("<p>Driving with<br> Taffic</p>")
+	    .html("<p>Driving<br>with Traffic</p>")
 	    .style("left", spacer + "px")
 	    .style("top", margin.top+spacer+spacer+spacer + "px"); 
 
