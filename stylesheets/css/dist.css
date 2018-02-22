@@ -252,19 +252,20 @@ html, body {
 #map {
   position: relative;
   width: 100%;
+  background-color: pink;
 }
 
-/* line 14, ../sass/dist.scss */
+/* line 15, ../sass/dist.scss */
 .domain {
   stroke: #e6e5e5;
 }
 
-/* line 18, ../sass/dist.scss */
+/* line 19, ../sass/dist.scss */
 .tick line {
   display: none;
 }
 
-/* line 22, ../sass/dist.scss */
+/* line 23, ../sass/dist.scss */
 .tick text {
   font-family: Lato;
 }

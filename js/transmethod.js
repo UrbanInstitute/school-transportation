@@ -27,7 +27,7 @@ function chartDraw(data) {
 	})
 
 	// initialize
-    var margin = {top: 25, right: 50, bottom: 40, left: 75},
+    var margin = {top: 10, right: 50, bottom: 20, left: 75},
 	width = parseInt(d3.select("#map").style("width")),
 	// width = (parseInt(d3.select("#master_container").style("width")) > 1000) ? 1000 : parseInt(d3.select("#master_container").style("width")),
 	height = 200
@@ -41,7 +41,8 @@ function chartDraw(data) {
   	var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + 0 + ")");
 
   	var spacer = 10;
-  	var chartHeight = (height - (2*margin.top) - spacer - margin.bottom) / 2;
+  	var numOfRecs = 2;
+  	var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
   	var chartWidth = width - margin.left-margin.right;
 
 	var x = d3.scaleLinear()
@@ -51,7 +52,12 @@ function chartDraw(data) {
 	    .rangeRound([(chartHeight+margin.top), margin.top]);
 
 	var ytransit = d3.scaleLinear()
-	    .rangeRound([((height-margin.bottom)-margin.top), (margin.top+chartHeight+spacer)]);
+	    .rangeRound([((2*chartHeight)+spacer+margin.top), (margin.top+chartHeight+spacer)]);
+
+
+
+	console.log((chartHeight+margin.top)-margin.top)
+	console.log(((2*chartHeight)+spacer+margin.top)-(margin.top+chartHeight+spacer))
 
 	var areadrive = d3.area()
 	    .x(function(d) { return x(d.time); })
