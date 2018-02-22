@@ -60,6 +60,7 @@ function mapDraw(geojson,ward7) {
 
     var transform = d3.geoTransform({point: projectPoint});
 	var path = d3.geoPath().projection(transform);
+	var speed = 100;
 
 	var featureElement = svg.selectAll("path")
 		.data(geojson.features.filter(function(d){return d.properties.WARD === 7}))
@@ -67,12 +68,16 @@ function mapDraw(geojson,ward7) {
 		.append("path")
 		.attr("class","ward w7")
 
+	var point = map.project(new mapboxgl.LngLat(indiaLoc[0], indiaLoc[1]));
+
 	var IndiaContainer = svg.append("g")
 	IndiaContainer.append("circle")
 		.attr("class","indiapoint")
-		.attr("cx", function (d) { return 200})
-		.attr("cy", function (d) { return -30})
-		.attr("r", 15)
+		// .attr("cx", function (d) { return 200})
+		// .attr("cy", function (d) { return -30})
+		.attr("cx", function (d) { return point.x})
+		.attr("cy", function (d) { return point.y})
+		.attr("r", 5)
 
 	var IndiaPoint = IndiaContainer.selectAll(".indiapoint");
 
@@ -82,7 +87,7 @@ function mapDraw(geojson,ward7) {
 		.data(ward7)
 		.enter().append("circle")
 		.attr("class","dot")
-        .attr("r", 5)
+        .attr("r", 3)
         .attr("cx", function(d) { 
         	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
         	return point.x; 
@@ -105,6 +110,8 @@ function mapDraw(geojson,ward7) {
 				var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
 	        	return point.y }
 	        );
+
+	    //How to do the India Point reset!!??!
     }	
 
 
@@ -119,27 +126,31 @@ function mapDraw(geojson,ward7) {
 			// if is mobile, india starting point is x
 			// else if is desktop, india starting point x
 
-		
+			// var point = map.project(new mapboxgl.LngLat(indiaLoc[0], indiaLoc[1]));
+
 			// Initialize the d3 event where India's dot flys across screen to other dots
 				// on end, other dots and India's fly to destinations
-			IndiaPoint.transition().ease(d3.easeLinear).duration(1000)	
-				.attr("cy", function (d) { return 100})
-				.style("opacity","1")
-				.attr("r",5)
-				.on("end",function(){
+			// IndiaPoint.transition().ease(d3.easeLinear).duration(1000)	
+			// 	.attr("cy", function (d) { return 100})
+			// 	.style("opacity","1")
+			// 	.attr("r",5)
+			// 	.on("end",function(){
 
-					d3.select(this).transition().delay(1000).ease(d3.easeLinear).duration(3000)
-						.attr("cx", function (d) { return point.x})
-						.attr("cy", function (d) { return point.y})
-						.on("end",function(){
+					// d3.select(this).transition().delay(1000).ease(d3.easeLinear).duration(3000)
+					// 	.attr("cx", function (d) { return point.x})
+					// 	.attr("cy", function (d) { return point.y})
+					// 	.on("end",function(){
+
 							var point = map.project(new mapboxgl.LngLat(indiaSchool[0], indiaSchool[1]));
 
-							d3.select(this).transition().ease(d3.easeLinear).duration(200*35)
+							// d3.select(this).transition().ease(d3.easeLinear).duration(200*35)
+
+							IndiaPoint.transition().ease(d3.easeLinear).duration(speed*35)
 								.attr("cx", function (d) { return point.x})
 								.attr("cy", function (d) { return point.y})
 
 							Ward7Points.transition().ease(d3.easeLinear).duration(function(d){
-									return 200*d.drive_traf_dura_mean;
+									return speed*d.drive_traf_dura_mean;
 								})
 								.attr("cx", function(d) { 
 						        	var point = map.project(new mapboxgl.LngLat(d.schoolLon,d.schoolLat));
@@ -153,16 +164,8 @@ function mapDraw(geojson,ward7) {
 						        	d3.select(this).transition().ease(d3.easeLinear).duration(1000)
 						        		.style("fill","#C5E4F3")
 						        })
-						})
-				})
-
-			var point = map.project(new mapboxgl.LngLat(indiaLoc[0], indiaLoc[1]));
-
-
-				// On end, we bring out all the other points
-					//on end of that we move them all to school
-
-
+						// })
+				// })
 		}
 	}
 
