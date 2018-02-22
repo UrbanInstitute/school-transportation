@@ -95,8 +95,17 @@ function mapDraw(geojson,ward7) {
 	// Functions!!!!
 
     function update() {
-        featureElement.attr("d",path);        
-    }
+        featureElement.attr("d",path);
+        Ward7Points        
+	        .attr("cx", function(d) { 
+	        	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
+	        	return point.x; 
+	        })
+	        .attr("cy", function(d) { 
+				var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
+	        	return point.y }
+	        );
+    }	
 
 
 	function projectPoint(lon, lat) {
@@ -158,23 +167,17 @@ function mapDraw(geojson,ward7) {
 	}
 
     // Event Listeners
-    map.on("viewreset", function(){    	
-    	// map.fitBounds(llb, { duration: 0, padding: 20 })
-    	update()
-		// pymChild.sendHeight()
-    });	    	
-    map.on("movestart", function(){
-		// svg.classed("hidden", true);
-	});	
-    map.on("rotate", function(){
-		// svg.classed("hidden", true);
-	});	
-    map.on("moveend", function(){
-		// getHeight()
-		update()
-		map.fitBounds(llb, { duration: 0, padding: 20 })
-		pymChild.sendHeight()
-		// svg.classed("hidden", false);
+   	var resizeTimer;	
+    map.on("moveend", function(e){
+		clearTimeout(resizeTimer);
+		  resizeTimer = setTimeout(function() {	   	
+
+			map.fitBounds(llb, { duration: 0, padding: 20 })
+			update()
+
+			pymChild.sendHeight()
+
+		  }, 250);
 	})
 
     update()

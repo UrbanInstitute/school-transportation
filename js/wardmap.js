@@ -99,30 +99,30 @@ function mapDraw(geojson) {
         featureElement.attr("d",path);        
     }
 
-
 	function projectPoint(lon, lat) {
         var point = map.project(new mapboxgl.LngLat(lon, lat));
 		this.stream.point(point.x, point.y);
 	}
 
     // Event Listeners
-    map.on("viewreset", function(){    	
-    	// map.fitBounds(llb, { duration: 0, padding: 20 })
-    	update()
-		// pymChild.sendHeight()
-    });	    	
-    map.on("movestart", function(){
-		// svg.classed("hidden", true);
-	});	
-    map.on("rotate", function(){
-		// svg.classed("hidden", true);
-	});	
-    map.on("moveend", function(){
-		// getHeight()
-		update()
+ //    map.on("viewreset", function(){    	
+ //    	// map.fitBounds(llb, { duration: 0, padding: 20 })
+ //    	update()
+	// 	// pymChild.sendHeight()
+	// 	// console.log("viewreset")
+ //    });	    	
+
+	var resizeTimer;	
+
+    map.on("moveend", function(e){
+	  clearTimeout(resizeTimer);
+	  resizeTimer = setTimeout(function() {	   	
 		map.fitBounds(llb, { duration: 0, padding: 20 })
+		update()
+		removeTooltip()
 		pymChild.sendHeight()
-		// svg.classed("hidden", false);
+
+	  }, 250);
 	})
 
     update()
