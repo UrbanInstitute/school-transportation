@@ -63,8 +63,7 @@ function mapDraw(geojson) {
         })
 
 	var tooltip = d3.select("body").append("div") 
-	    .attr("class", "tooltip")       
-	    .style("opacity", 0.9);
+	    .attr("class", "tooltip");
 
 
 
@@ -85,7 +84,7 @@ function mapDraw(geojson) {
             })   
       		.style("top", function(d){
       			// console.log(centroid[1])
-      			return (centroid[1] - 70) + "px";
+      			return (centroid[1] - 100) + "px";
       		});  
 	}
 

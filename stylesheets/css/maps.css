@@ -338,46 +338,35 @@ svg {
   fill: #e88e2d;
 }
 
-/* line 63, ../sass/maps.scss */
+/* line 64, ../sass/maps.scss */
+div.tooltip h2 {
+  font-size: 12px !important;
+  margin: 0px;
+  padding: 0px;
+  font-weight: 700;
+  border-bottom: 1px solid #e6e5e5;
+}
+
+/* line 72, ../sass/maps.scss */
+div.tooltip p {
+  font-size: 11px !important;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 93, ../sass/maps.scss */
 div.tooltip {
   position: fixed;
-  text-align: center;
   width: 200px;
   padding: 11px;
-  font-size: 14px;
   background: #fff;
   top: -1000px;
   left: -1000px;
+  border: 1px solid #0096d2;
 }
 
-/* line 77, ../sass/maps.scss */
-div.tooltip h2 {
-  font-size: 10px !important;
-}
-
-/* line 81, ../sass/maps.scss */
-div.tooltip p {
-  font-size: 10px !important;
-}
-
-/* line 86, ../sass/maps.scss */
-div.tooltip.bottom:after {
-  bottom: 100%;
-  left: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: #353535;
-  border-width: 11px;
-  margin-left: -11px;
-}
-
-/* line 101, ../sass/maps.scss */
-div.tooltip.top:after {
+/* line 104, ../sass/maps.scss */
+div.tooltip.top:after, div.tooltip.top:before {
   top: 100%;
   left: 50%;
   border: solid transparent;
@@ -387,35 +376,43 @@ div.tooltip.top:after {
   position: absolute;
   pointer-events: none;
   border-color: rgba(255, 255, 255, 0);
-  border-top-color: #353535;
-  border-width: 11px;
-  margin-left: -11px;
+  border-top-color: #fff;
+  border-width: 6px;
+  margin-left: -6px;
 }
 
-/* line 117, ../sass/maps.scss */
+/* line 119, ../sass/maps.scss */
+div.tooltip.top:before {
+  border-color: rgba(0, 150, 210, 0);
+  border-top-color: #0096d2;
+  border-width: 8px;
+  margin-left: -8px;
+}
+
+/* line 140, ../sass/maps.scss */
 .indiapoint {
   fill: #0096d2;
 }
 
-/* line 121, ../sass/maps.scss */
+/* line 144, ../sass/maps.scss */
 .dot {
   fill: #73bfe2;
 }
 
 @media (max-width: 460.8px) {
-  /* line 126, ../sass/maps.scss */
+  /* line 149, ../sass/maps.scss */
   #map {
     height: 300px;
   }
 }
 @media (max-width: 576px) {
-  /* line 133, ../sass/maps.scss */
+  /* line 156, ../sass/maps.scss */
   #map {
     height: 374px;
   }
 }
 @media (max-width: 660px) {
-  /* line 140, ../sass/maps.scss */
+  /* line 163, ../sass/maps.scss */
   #map {
     height: 474px;
   }
