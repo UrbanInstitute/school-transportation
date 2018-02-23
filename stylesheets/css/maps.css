@@ -364,7 +364,6 @@ div.tooltip p {
 /* line 99, ../sass/maps.scss */
 div.tooltip {
   position: fixed;
-  width: 200px;
   padding: 11px;
   background: #fff;
   top: -1000px;

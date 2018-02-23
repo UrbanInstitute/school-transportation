@@ -15,10 +15,12 @@ function IS_PHONE(){
 }
 	
 d3.json("data/wards.geojson", function(err, data) {	
-	mapDraw(data);		
+	d3.csv("data/wardDemographics.csv", function(err, demo) {	
+		mapDraw(data,demo);		
+	});		
 });
 
-function mapDraw(geojson) {
+function mapDraw(geojson,demo) {
 	// var indiaLoc = [-76.9274017,38.903382];
 	// var indiaSchool = [-77.0707787,38.915167];
 
@@ -73,16 +75,27 @@ function mapDraw(geojson) {
 	function createTooltip(d) {
 		var centroid = path.centroid(d);
 		
+
+		var x = d.properties.WARD - 1;
+		var demosNow = {pop: demo[x].pop, white: demo[x].white, black: demo[x].black, asian: demo[x].asian, latino:demo[x].latino};
+		console.log(demosNow)
+
         // var contents = "<strong>" + drugtypeIndex(d.drugtype) + ", " + d.Year + " Q" + d.Qtr + "</strong><br>Units Sold: <span style='color:rgb(253, 191, 17)'>" + formatNum(d.units) + "</span><br>Amount Spent: <span style='color:rgb(253, 191, 17)'>$" + formatNum(d.adjmedamt) + "</span>";
-        var contents = "<div><h2> Ward " + d.properties.WARD + "</h2><p>Total Population: " + d3.format(",")(d.properties.POP_2010) + "</p><p>More data to come.</p></div>";
-        var contents = 
+        var contents = "<div><h2> Ward " + d.properties.WARD + "</h2><p><strong>Total Population: " + d3.format(",")(demosNow.pop) + "</strong></p>" 
+        + "<div class='racial'><p>" 
+        + d3.format(".0%")(demosNow.black) + " Black&nbsp;&nbsp;&nbsp;"
+		+ d3.format(".0%")(demosNow.white) + " White&nbsp;&nbsp;&nbsp;"
+		+ d3.format(".0%")(demosNow.asian) + " Asian&nbsp;&nbsp;&nbsp;"
+		+ d3.format(".0%")(demosNow.latino) + " Hispanic/Latino&nbsp;&nbsp;&nbsp;"
+        +"</p></div>"
+        +"</div>"      
 
         tooltip.html(contents);
 
         tooltip.classed("top",true)
             .style("left", function(d){
             	// console.log(centroid[0])
-            	return (centroid[0] - 100) + "px";
+            	return (centroid[0] - 130) + "px";
             })   
       		.style("top", function(d){
       			// console.log(centroid[1])
