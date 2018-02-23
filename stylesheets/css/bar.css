@@ -269,7 +269,13 @@ html, body {
   font-size: 11px;
 }
 
-/* line 27, ../sass/bar.scss */
+/* line 26, ../sass/bar.scss */
+.povLabel {
+  font-family: Lato;
+  font-size: 11px;
+}
+
+/* line 32, ../sass/bar.scss */
 .label {
   font-family: Lato;
   font-size: 11px;
@@ -277,7 +283,7 @@ html, body {
   text-anchor: end;
 }
 
-/* line 34, ../sass/bar.scss */
+/* line 39, ../sass/bar.scss */
 .Biglabel {
   font-family: Lato;
   font-size: 15px;
@@ -285,7 +291,7 @@ html, body {
   text-anchor: end;
 }
 
-/* line 41, ../sass/bar.scss */
+/* line 46, ../sass/bar.scss */
 .axis path,
 .axis line {
   fill: none;
