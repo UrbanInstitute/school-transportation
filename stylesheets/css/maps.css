@@ -1,5 +1,5 @@
 /*colors*/
-/* line 28, ../sass/_variables.scss */
+/* line 31, ../sass/_variables.scss */
 #isPhone, #isTablet, #isDesktop {
   display: none;
   pointer-events: none;
@@ -10,44 +10,44 @@
   left: 0;
 }
 
-/* line 38, ../sass/_variables.scss */
+/* line 41, ../sass/_variables.scss */
 .hide-for-mobile-only {
   display: block;
 }
 
-/* line 42, ../sass/_variables.scss */
+/* line 45, ../sass/_variables.scss */
 .show-for-mobile-only {
   display: none;
 }
 
 @media (max-width: 768px) {
-  /* line 48, ../sass/_variables.scss */
+  /* line 51, ../sass/_variables.scss */
   #isPhone {
     display: block;
   }
 
-  /* line 52, ../sass/_variables.scss */
+  /* line 55, ../sass/_variables.scss */
   #isTablet, #isDesktop {
     display: none;
   }
 
-  /* line 56, ../sass/_variables.scss */
+  /* line 59, ../sass/_variables.scss */
   .hide-for-mobile-only {
     display: none;
   }
 
-  /* line 59, ../sass/_variables.scss */
+  /* line 62, ../sass/_variables.scss */
   .show-for-mobile-only {
     display: block;
   }
 }
 @media (max-width: 960px) {
-  /* line 65, ../sass/_variables.scss */
+  /* line 68, ../sass/_variables.scss */
   #isTablet {
     display: block;
   }
 
-  /* line 69, ../sass/_variables.scss */
+  /* line 72, ../sass/_variables.scss */
   #isPhone, #isDesktop {
     display: none;
   }
@@ -282,63 +282,68 @@ svg {
 }
 
 /* line 40, ../sass/maps.scss */
+.ward.w1 {
+  stroke: #fdbf11;
+}
+
+/* line 44, ../sass/maps.scss */
 .ward.w7 {
   stroke: #0096d2;
 }
 
-/* line 44, ../sass/maps.scss */
+/* line 48, ../sass/maps.scss */
 .ward.wardmap {
   stroke: #fff !important;
   fill-opacity: 0.75;
   cursor: pointer;
 }
 
-/* line 50, ../sass/maps.scss */
+/* line 54, ../sass/maps.scss */
 .ward.wardmap.active {
   fill-opacity: 0.9;
 }
 
-/* line 54, ../sass/maps.scss */
+/* line 58, ../sass/maps.scss */
 .ward.distro.w1, .ward.wardmap.w1 {
   fill: #fdbf11;
 }
 
-/* line 55, ../sass/maps.scss */
+/* line 59, ../sass/maps.scss */
 .ward.distro.w2, .ward.wardmap.w2 {
   fill: #12719e;
 }
 
-/* line 56, ../sass/maps.scss */
+/* line 60, ../sass/maps.scss */
 .ward.distro.w3, .ward.wardmap.w3 {
   fill: #78c26d;
 }
 
-/* line 57, ../sass/maps.scss */
+/* line 61, ../sass/maps.scss */
 .ward.distro.w4, .ward.wardmap.w4 {
   fill: #848081;
 }
 
-/* line 58, ../sass/maps.scss */
+/* line 62, ../sass/maps.scss */
 .ward.distro.w5, .ward.wardmap.w5 {
   fill: #ca5800;
 }
 
-/* line 59, ../sass/maps.scss */
+/* line 63, ../sass/maps.scss */
 .ward.distro.w6, .ward.wardmap.w6 {
   fill: #e25552;
 }
 
-/* line 60, ../sass/maps.scss */
+/* line 64, ../sass/maps.scss */
 .ward.distro.w7, .ward.wardmap.w7 {
   fill: #0096d2;
 }
 
-/* line 61, ../sass/maps.scss */
+/* line 65, ../sass/maps.scss */
 .ward.distro.w8, .ward.wardmap.w8 {
   fill: #e88e2d;
 }
 
-/* line 64, ../sass/maps.scss */
+/* line 68, ../sass/maps.scss */
 div.tooltip h2 {
   font-size: 12px !important;
   margin: 0px;
@@ -347,14 +352,14 @@ div.tooltip h2 {
   border-bottom: 1px solid #e6e5e5;
 }
 
-/* line 72, ../sass/maps.scss */
+/* line 76, ../sass/maps.scss */
 div.tooltip p {
   font-size: 11px !important;
   margin: 0px;
   padding: 0px;
 }
 
-/* line 93, ../sass/maps.scss */
+/* line 97, ../sass/maps.scss */
 div.tooltip {
   position: fixed;
   width: 200px;
@@ -365,7 +370,7 @@ div.tooltip {
   border: 1px solid #0096d2;
 }
 
-/* line 104, ../sass/maps.scss */
+/* line 108, ../sass/maps.scss */
 div.tooltip.top:after, div.tooltip.top:before {
   top: 100%;
   left: 50%;
@@ -381,7 +386,7 @@ div.tooltip.top:after, div.tooltip.top:before {
   margin-left: -6px;
 }
 
-/* line 119, ../sass/maps.scss */
+/* line 123, ../sass/maps.scss */
 div.tooltip.top:before {
   border-color: rgba(0, 150, 210, 0);
   border-top-color: #0096d2;
@@ -389,30 +394,40 @@ div.tooltip.top:before {
   margin-left: -8px;
 }
 
-/* line 140, ../sass/maps.scss */
+/* line 144, ../sass/maps.scss */
 .indiapoint {
   fill: #0096d2;
 }
 
-/* line 144, ../sass/maps.scss */
-.dot {
+/* line 148, ../sass/maps.scss */
+.skylerpoint {
+  fill: #fdbf11;
+}
+
+/* line 152, ../sass/maps.scss */
+.dot.india {
   fill: #73bfe2;
 }
 
+/* line 156, ../sass/maps.scss */
+.dot.skyler {
+  fill: #e88e2d;
+}
+
 @media (max-width: 460.8px) {
-  /* line 149, ../sass/maps.scss */
+  /* line 162, ../sass/maps.scss */
   #map {
     height: 300px;
   }
 }
 @media (max-width: 576px) {
-  /* line 156, ../sass/maps.scss */
+  /* line 169, ../sass/maps.scss */
   #map {
     height: 374px;
   }
 }
 @media (max-width: 660px) {
-  /* line 163, ../sass/maps.scss */
+  /* line 176, ../sass/maps.scss */
   #map {
     height: 474px;
   }

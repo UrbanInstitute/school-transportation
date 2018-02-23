@@ -15,8 +15,8 @@ function IS_PHONE(){
 }
 	
 d3.json("data/wards.geojson", function(err, data) {
-	d3.csv("data/ward7_2.csv",function(err,ward7){
-		ward7.forEach(function(d) {
+	d3.csv("data/ward1.csv",function(err,ward1){
+		ward1.forEach(function(d) {
 	        d.drivedura_50 = +d.drivedura_50;
 			d.drivedura_mean = +d.drivedura_mean;
 			d.drive_traf_dura_50 = +d.drive_traf_dura_50;
@@ -28,14 +28,14 @@ d3.json("data/wards.geojson", function(err, data) {
 			d.schoolLat = +d.schoolLat;
 			d.schoolLon = +d.schoolLon;
 	    });
-		mapDraw(data,ward7);	
+		mapDraw(data,ward1);	
 	});    
 });
 
-function mapDraw(geojson,ward7) {
-	var indiaLoc = [-76.9274017,38.903382];
-	var indiaSchool = [-77.0707787,38.915167];
-	// console.log(ward7)
+function mapDraw(geojson,ward1) {
+	var skylerLoc = [-77.032724,38.930235]; 
+	var skylerSchool = [-77.0480068,38.8982283];
+	// console.log(ward1)
 
 ////// Initial map and other initial items//////
 	mapboxgl.accessToken = 'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ';
@@ -63,30 +63,30 @@ function mapDraw(geojson,ward7) {
 	var speed = 100;
 
 	var featureElement = svg.selectAll("path")
-		.data(geojson.features.filter(function(d){return d.properties.WARD === 7}))
+		.data(geojson.features.filter(function(d){return d.properties.WARD === 1}))
 		.enter()
 		.append("path")
-		.attr("class","ward w7")
+		.attr("class","ward w1")
 
-	var point = map.project(new mapboxgl.LngLat(indiaLoc[0], indiaLoc[1]));
+	var point = map.project(new mapboxgl.LngLat(skylerLoc[0], skylerLoc[1]));
 
-	var IndiaContainer = svg.append("g")
-	IndiaContainer.append("circle")
-		.attr("class","indiapoint")
+	var skylerContainer = svg.append("g")
+	skylerContainer.append("circle")
+		.attr("class","skylerpoint")
 		// .attr("cx", function (d) { return 200})
 		// .attr("cy", function (d) { return -30})
 		.attr("cx", function (d) { return point.x})
 		.attr("cy", function (d) { return point.y})
 		.attr("r", 5)
 
-	var IndiaPoint = IndiaContainer.selectAll(".indiapoint");
+	var skylerPoint = skylerContainer.selectAll(".skylerpoint");
 
 	var PointsContainer = svg.append("g")
 
-	var Ward7Points = PointsContainer.selectAll("circle")
-		.data(ward7)
+	var ward1Points = PointsContainer.selectAll("circle")
+		.data(ward1)
 		.enter().append("circle")
-		.attr("class","dot india")
+		.attr("class","dot skyler")
         .attr("r", 3)
         .attr("cx", function(d) { 
         	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
@@ -101,7 +101,7 @@ function mapDraw(geojson,ward7) {
 
     function update() {
         featureElement.attr("d",path);
-        Ward7Points        
+        ward1Points        
 	        .attr("cx", function(d) { 
 	        	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
 	        	return point.x; 
@@ -111,7 +111,7 @@ function mapDraw(geojson,ward7) {
 	        	return point.y }
 	        );
 
-	    //How to do the India Point reset!!??!
+	    //How to do the skyler Point reset!!??!
     }	
 
 
@@ -123,14 +123,14 @@ function mapDraw(geojson,ward7) {
 	function movePoints(message){
 		if (startIndex === 0) {
 			startIndex+=1;
-			// if is mobile, india starting point is x
-			// else if is desktop, india starting point x
+			// if is mobile, skyler starting point is x
+			// else if is desktop, skyler starting point x
 
-			// var point = map.project(new mapboxgl.LngLat(indiaLoc[0], indiaLoc[1]));
+			// var point = map.project(new mapboxgl.LngLat(skylerLoc[0], skylerLoc[1]));
 
-			// Initialize the d3 event where India's dot flys across screen to other dots
-				// on end, other dots and India's fly to destinations
-			// IndiaPoint.transition().ease(d3.easeLinear).duration(1000)	
+			// Initialize the d3 event where skyler's dot flys across screen to other dots
+				// on end, other dots and skyler's fly to destinations
+			// skylerPoint.transition().ease(d3.easeLinear).duration(1000)	
 			// 	.attr("cy", function (d) { return 100})
 			// 	.style("opacity","1")
 			// 	.attr("r",5)
@@ -141,15 +141,15 @@ function mapDraw(geojson,ward7) {
 					// 	.attr("cy", function (d) { return point.y})
 					// 	.on("end",function(){
 
-							var point = map.project(new mapboxgl.LngLat(indiaSchool[0], indiaSchool[1]));
+							var point = map.project(new mapboxgl.LngLat(skylerSchool[0], skylerSchool[1]));
 
 							// d3.select(this).transition().ease(d3.easeLinear).duration(200*35)
 
-							IndiaPoint.transition().ease(d3.easeLinear).duration(speed*35)
+							skylerPoint.transition().ease(d3.easeLinear).duration(speed*35)
 								.attr("cx", function (d) { return point.x})
 								.attr("cy", function (d) { return point.y})
 
-							Ward7Points.transition().ease(d3.easeLinear).duration(function(d){
+							ward1Points.transition().ease(d3.easeLinear).duration(function(d){
 									return speed*d.drive_traf_dura_mean;
 								})
 								.attr("cx", function(d) { 
@@ -162,7 +162,7 @@ function mapDraw(geojson,ward7) {
 						        )
 						        .on("end",function(){
 						        	d3.select(this).transition().ease(d3.easeLinear).duration(1000)
-						        		.style("fill","#C5E4F3")
+						        		.style("fill","#f8e71c")
 						        })
 						// })
 				// })
@@ -186,7 +186,7 @@ function mapDraw(geojson,ward7) {
     update()
 
     
-    $("#indiaclick").click(function(){
+    $("#skylerclick").click(function(){
     	movePoints("clicked")
     })
 

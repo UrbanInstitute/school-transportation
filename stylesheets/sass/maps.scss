@@ -37,6 +37,10 @@ svg {
   stroke-width: 2px;
 }
 
+.ward.w1 {
+  stroke: $orangey-yellow;
+}
+
 .ward.w7 {
   stroke: $cerulean;
 }
@@ -141,9 +145,18 @@ div.tooltip.top:before {
   fill: $cerulean;
 }
 
-.dot {
+.skylerpoint {
+  fill: $orangey-yellow;
+}
+
+.dot.india {
   fill: $soft-blue
 }
+
+.dot.skyler {
+  fill: $dark-orangey-yellow;
+}
+
 
 @media (max-width: $MaxPhoneSize * 0.6){
   #map {
