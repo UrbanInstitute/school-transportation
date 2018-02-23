@@ -33,6 +33,7 @@ d3.json("data/wards.geojson", function(err, data) {
 });
 
 function mapDraw(geojson,ward1) {
+	console.log(ward1)
 	var skylerLoc = [-77.032724,38.930235]; 
 	var skylerSchool = [-77.0480068,38.8982283];
 	// console.log(ward1)
@@ -145,7 +146,7 @@ function mapDraw(geojson,ward1) {
 
 							// d3.select(this).transition().ease(d3.easeLinear).duration(200*35)
 
-							skylerPoint.transition().ease(d3.easeLinear).duration(speed*35)
+							skylerPoint.transition().ease(d3.easeLinear).duration(speed*30)
 								.attr("cx", function (d) { return point.x})
 								.attr("cy", function (d) { return point.y})
 

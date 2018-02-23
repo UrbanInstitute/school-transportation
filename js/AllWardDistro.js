@@ -65,7 +65,7 @@ function chartDraw(transit,drive) {
   	var spacer = 10,
 	  	numOfWards = 8,
 	  	chartHeight = ((height - margin.top - margin.bottom)-((numOfWards)*spacer)) / numOfWards,
-	  	chartWidth = width - margin.left-margin.right;
+	  	chartWidth = width - margin.left;
 
 	var x = d3.scaleLinear()
 	    .rangeRound([0, (chartWidth-(4*spacer))]);
@@ -110,11 +110,11 @@ function chartDraw(transit,drive) {
 	      .attr("class","ward wardmap w" + (i+1))
 	      .attr("d", area["w"+(i+1)]);
 
-		body.append("div")
-		    .attr("class", "meanTime")   
-		    .html(contents)
-		    .style("left", width - margin.right - (3*spacer) + "px")
-		    .style("top", margin.top+(chartHeight*(i+1))+(spacer*(i-3)) + "px");
+		// body.append("div")
+		//     .attr("class", "meanTime")   
+		//     .html(contents)
+		//     .style("left", width - margin.right - (3*spacer) + "px")
+		//     .style("top", margin.top+(chartHeight*(i+1))+(spacer*(i-3)) + "px");
 
 		body.append("div")
 		    .attr("class", "meanTime")   

@@ -42,7 +42,7 @@ function chartDraw(data) {
   	var spacer = 10;
   	var numOfRecs = 2;
   	var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
-  	var chartWidth = width - margin.left-margin.right;
+  	var chartWidth = width - margin.left;
 
 	var x = d3.scaleLinear()
 	    .rangeRound([0, chartWidth]);
@@ -85,19 +85,19 @@ function chartDraw(data) {
       .call(d3.axisBottom(x).ticks(20));
 
 	// Functions!!!!
-	var contents = "<p>Mean Time</p><h2>XX mins</h2>";
-	var meanTop = d3.select("body").append("div") 
-	    .attr("class", "meanTime")       
-	    .html(contents)
-	    .style("left", width - margin.right  + "px")
-	    .style("top", margin.top+spacer+spacer + "px"); 
-	    // This is from the above calculation (see notebook) PLUS two spacers
+	// var contents = "<p>Mean Time</p><h2>XX mins</h2>";
+	// var meanTop = d3.select("body").append("div") 
+	//     .attr("class", "meanTime")       
+	//     .html(contents)
+	//     .style("left", width - margin.right  + "px")
+	//     .style("top", margin.top+spacer+spacer + "px"); 
+	//     // This is from the above calculation (see notebook) PLUS two spacers
 
-	var meanBottom = d3.select("body").append("div") 
-	    .attr("class", "meanTime")       
-	    .html(contents)
-	    .style("left", width - margin.right  + "px")
-	    .style("top",margin.top+chartHeight+spacer+spacer+spacer + "px"); 
+	// var meanBottom = d3.select("body").append("div") 
+	//     .attr("class", "meanTime")       
+	//     .html(contents)
+	//     .style("left", width - margin.right  + "px")
+	//     .style("top",margin.top+chartHeight+spacer+spacer+spacer + "px"); 
 
 	var nameTop = d3.select("body").append("div") 
 	    .attr("class", "name")       

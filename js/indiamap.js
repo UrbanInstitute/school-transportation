@@ -145,7 +145,7 @@ function mapDraw(geojson,ward7) {
 
 							// d3.select(this).transition().ease(d3.easeLinear).duration(200*35)
 
-							IndiaPoint.transition().ease(d3.easeLinear).duration(speed*35)
+							IndiaPoint.transition().ease(d3.easeLinear).duration(speed*60)
 								.attr("cx", function (d) { return point.x})
 								.attr("cy", function (d) { return point.y})
 
