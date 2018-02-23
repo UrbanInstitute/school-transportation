@@ -291,13 +291,18 @@ div.name {
 }
 
 /* line 44, ../sass/dist.scss */
+div.meanTime {
+  width: 100px;
+}
+
+/* line 48, ../sass/dist.scss */
 div.name p {
   text-align: right;
 }
 
-/* line 48, ../sass/dist.scss */
+/* line 52, ../sass/dist.scss */
 div.meanTime h2 {
-  font-size: 24px;
+  font-size: 26px;
   text-align: center;
   margin: 0px;
   padding: 0px;

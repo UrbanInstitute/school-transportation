@@ -337,59 +337,63 @@ body {
   width: 100%;
 }
 /* line 104, ../sass/main.scss */
-.full-feature .full-feature-text {
+.full-feature .full-feature-right-chart, .full-feature .full-feature-text {
   padding-left: 20px;
   display: table-cell;
   vertical-align: middle;
 }
+/* line 112, ../sass/main.scss */
+.full-feature .full-feature-right-chart {
+  padding-left: 0px;
+}
 
-/* line 114, ../sass/main.scss */
+/* line 118, ../sass/main.scss */
 .headerimage p {
   font-size: 11px;
   line-height: 1.27;
 }
 
 @media (max-width: 1100px) {
-  /* line 120, ../sass/main.scss */
+  /* line 124, ../sass/main.scss */
   .content .follow-dot {
     left: 80px;
   }
 }
 @media (max-width: 960px) {
-  /* line 127, ../sass/main.scss */
+  /* line 131, ../sass/main.scss */
   #main-content-text {
     padding-top: 32px;
   }
 
-  /* line 131, ../sass/main.scss */
+  /* line 135, ../sass/main.scss */
   .content {
     padding-left: 48px;
     padding-right: 48px;
   }
-  /* line 135, ../sass/main.scss */
+  /* line 139, ../sass/main.scss */
   .content .inset-image {
     margin-right: 0px;
     max-width: 300px;
     padding-left: 0px;
     padding-top: 10px;
   }
-  /* line 141, ../sass/main.scss */
+  /* line 145, ../sass/main.scss */
   .content .follow-dot {
     left: 5px;
   }
 }
 @media (max-width: 768px) {
-  /* line 150, ../sass/main.scss */
+  /* line 154, ../sass/main.scss */
   .content {
     padding-left: 20px;
     padding-right: 20px;
   }
-  /* line 154, ../sass/main.scss */
+  /* line 158, ../sass/main.scss */
   .content .inset-image {
     width: 100%;
     max-width: none;
   }
-  /* line 158, ../sass/main.scss */
+  /* line 162, ../sass/main.scss */
   .content .follow-dot {
     left: 5px;
     width: 10px;
@@ -397,21 +401,26 @@ body {
     border-radius: 10px;
   }
 
-  /* line 166, ../sass/main.scss */
+  /* line 170, ../sass/main.scss */
   .full-feature {
     display: block;
   }
-  /* line 169, ../sass/main.scss */
+  /* line 173, ../sass/main.scss */
   .full-feature .full-feature-map {
     width: 100%;
     display: block;
   }
-  /* line 175, ../sass/main.scss */
-  .full-feature .full-feature-text {
+  /* line 179, ../sass/main.scss */
+  .full-feature .full-feature-right-chart, .full-feature .full-feature-text {
     width: 100%;
     display: block;
     vertical-align: none;
     padding-left: 20px;
     padding-right: 20px;
+  }
+  /* line 187, ../sass/main.scss */
+  .full-feature .full-feature-right-chart {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }

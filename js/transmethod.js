@@ -90,14 +90,14 @@ function chartDraw(data) {
 	var meanTop = d3.select("body").append("div") 
 	    .attr("class", "meanTime")       
 	    .html(contents)
-	    .style("left", width - margin.right + spacer + "px")
+	    .style("left", width - margin.right  + "px")
 	    .style("top", margin.top+spacer+spacer + "px"); 
 	    // This is from the above calculation (see notebook) PLUS two spacers
 
 	var meanBottom = d3.select("body").append("div") 
 	    .attr("class", "meanTime")       
 	    .html(contents)
-	    .style("left", width - margin.right + spacer + "px")
+	    .style("left", width - margin.right  + "px")
 	    .style("top",margin.top+chartHeight+spacer+spacer+spacer + "px"); 
 
 	var nameTop = d3.select("body").append("div") 

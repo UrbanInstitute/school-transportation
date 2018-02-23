@@ -74,7 +74,7 @@ function mapDraw(geojson) {
 		var centroid = path.centroid(d);
 		
         // var contents = "<strong>" + drugtypeIndex(d.drugtype) + ", " + d.Year + " Q" + d.Qtr + "</strong><br>Units Sold: <span style='color:rgb(253, 191, 17)'>" + formatNum(d.units) + "</span><br>Amount Spent: <span style='color:rgb(253, 191, 17)'>$" + formatNum(d.adjmedamt) + "</span>";
-        var contents = "<div><h2> Ward" + d.properties.WARD + "</h2><p>Total Population: " + d3.format(",")(d.properties.POP_2010) + "</p><p>More data to come.</p></div>";
+        var contents = "<div><h2> Ward " + d.properties.WARD + "</h2><p>Total Population: " + d3.format(",")(d.properties.POP_2010) + "</p><p>More data to come.</p></div>";
         var contents = 
 
         tooltip.html(contents);

@@ -242,194 +242,170 @@ h3 {
     line-height: 1.31;
   }
 }
-/* line 4, ../sass/maps.scss */
+/* line 4, ../sass/allwardsdistro.scss */
+#isPhone40, #isTablet40, #isDesktop40 {
+  display: none;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* line 14, ../sass/allwardsdistro.scss */
+#isDesktop40 {
+  display: block;
+}
+
+/* line 18, ../sass/allwardsdistro.scss */
 html, body {
   padding: 0px;
   margin: 0px;
 }
 
-/* line 11, ../sass/maps.scss */
+/* line 25, ../sass/allwardsdistro.scss */
 #map {
   position: relative;
   width: 100%;
   height: 632px;
 }
 
-/* line 19, ../sass/maps.scss */
-#chart {
-  position: relative;
-  width: 100%;
-  height: 632px;
-  background-color: pink;
-}
-
-/* line 27, ../sass/maps.scss */
+/* line 33, ../sass/allwardsdistro.scss */
 svg {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-/* line 32, ../sass/maps.scss */
-.hidden {
-  display: none;
-}
-
-/* line 35, ../sass/maps.scss */
-.ward {
-  fill: none;
-  stroke-width: 2px;
-}
-
-/* line 40, ../sass/maps.scss */
-.ward.w1 {
-  stroke: #fdbf11;
-}
-
-/* line 44, ../sass/maps.scss */
-.ward.w7 {
-  stroke: #0096d2;
-}
-
-/* line 48, ../sass/maps.scss */
-.ward.wardmap {
-  stroke: #fff !important;
-  fill-opacity: 0.75;
-  cursor: pointer;
-}
-
-/* line 54, ../sass/maps.scss */
-.ward.wardmap.active {
-  fill-opacity: 0.9;
-}
-
-/* line 58, ../sass/maps.scss */
+/* line 39, ../sass/allwardsdistro.scss */
 .ward.distro.w1, .ward.wardmap.w1 {
   fill: #fdbf11;
 }
 
-/* line 59, ../sass/maps.scss */
+/* line 40, ../sass/allwardsdistro.scss */
 .ward.distro.w2, .ward.wardmap.w2 {
   fill: #12719e;
 }
 
-/* line 60, ../sass/maps.scss */
+/* line 41, ../sass/allwardsdistro.scss */
 .ward.distro.w3, .ward.wardmap.w3 {
   fill: #78c26d;
 }
 
-/* line 61, ../sass/maps.scss */
+/* line 42, ../sass/allwardsdistro.scss */
 .ward.distro.w4, .ward.wardmap.w4 {
   fill: #848081;
 }
 
-/* line 62, ../sass/maps.scss */
+/* line 43, ../sass/allwardsdistro.scss */
 .ward.distro.w5, .ward.wardmap.w5 {
   fill: #ca5800;
 }
 
-/* line 63, ../sass/maps.scss */
+/* line 44, ../sass/allwardsdistro.scss */
 .ward.distro.w6, .ward.wardmap.w6 {
   fill: #e25552;
 }
 
-/* line 64, ../sass/maps.scss */
+/* line 45, ../sass/allwardsdistro.scss */
 .ward.distro.w7, .ward.wardmap.w7 {
   fill: #0096d2;
 }
 
-/* line 65, ../sass/maps.scss */
+/* line 46, ../sass/allwardsdistro.scss */
 .ward.distro.w8, .ward.wardmap.w8 {
   fill: #e88e2d;
 }
 
-/* line 68, ../sass/maps.scss */
-div.tooltip h2 {
-  font-size: 12px !important;
+/* line 48, ../sass/allwardsdistro.scss */
+div.meanTime, div.name {
+  position: fixed;
+  font-family: Lato;
+}
+
+/* line 53, ../sass/allwardsdistro.scss */
+div.meanTime p, div.name p {
+  font-size: 12px;
+  text-align: center;
   margin: 0px;
   padding: 0px;
   font-weight: 700;
-  border-bottom: 1px solid #e6e5e5;
-  margin-bottom: 5px;
-  padding-bottom: 5px;
+  line-height: 80%;
 }
 
-/* line 78, ../sass/maps.scss */
-div.tooltip p {
-  font-size: 11px !important;
+/* line 62, ../sass/allwardsdistro.scss */
+div.name {
+  width: 70px;
+}
+
+/* line 66, ../sass/allwardsdistro.scss */
+div.meanTime {
+  width: 100px;
+}
+
+/* line 70, ../sass/allwardsdistro.scss */
+div.name p {
+  text-align: right;
+}
+
+/* line 74, ../sass/allwardsdistro.scss */
+div.meanTime h2 {
+  font-size: 26px;
+  text-align: center;
   margin: 0px;
   padding: 0px;
 }
 
-/* line 99, ../sass/maps.scss */
-div.tooltip {
-  position: fixed;
-  width: 200px;
-  padding: 11px;
-  background: #fff;
-  top: -1000px;
-  left: -1000px;
-  border: 1px solid #0096d2;
+/* line 81, ../sass/allwardsdistro.scss */
+.domain {
+  stroke: #e6e5e5;
 }
 
-/* line 110, ../sass/maps.scss */
-div.tooltip.top:after, div.tooltip.top:before {
-  top: 100%;
-  left: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(255, 255, 255, 0);
-  border-top-color: #fff;
-  border-width: 6px;
-  margin-left: -6px;
+/* line 85, ../sass/allwardsdistro.scss */
+.tick line {
+  display: none;
 }
 
-/* line 125, ../sass/maps.scss */
-div.tooltip.top:before {
-  border-color: rgba(0, 150, 210, 0);
-  border-top-color: #0096d2;
-  border-width: 8px;
-  margin-left: -8px;
+/* line 89, ../sass/allwardsdistro.scss */
+.tick text {
+  font-family: Lato;
 }
 
-/* line 146, ../sass/maps.scss */
-.indiapoint {
-  fill: #0096d2;
-}
-
-/* line 150, ../sass/maps.scss */
-.skylerpoint {
-  fill: #fdbf11;
-}
-
-/* line 154, ../sass/maps.scss */
-.dot.india {
-  fill: #73bfe2;
-}
-
-/* line 158, ../sass/maps.scss */
-.dot.skyler {
-  fill: #e88e2d;
-}
-
-@media (max-width: 460.8px) {
-  /* line 164, ../sass/maps.scss */
+@media (max-width: 307.2px) {
+  /* line 94, ../sass/allwardsdistro.scss */
   #map {
     height: 300px;
   }
+
+  /* line 98, ../sass/allwardsdistro.scss */
+  #isPhone40 {
+    display: block;
+  }
+
+  /* line 102, ../sass/allwardsdistro.scss */
+  #isTablet40, #isDesktop40 {
+    display: none;
+  }
 }
-@media (max-width: 576px) {
-  /* line 171, ../sass/maps.scss */
+@media (max-width: 384px) {
+  /* line 108, ../sass/allwardsdistro.scss */
   #map {
     height: 374px;
   }
+
+  /* line 112, ../sass/allwardsdistro.scss */
+  #isTablet {
+    display: block;
+  }
+
+  /* line 116, ../sass/allwardsdistro.scss */
+  #isPhone, #isDesktop {
+    display: none;
+  }
 }
-@media (max-width: 660px) {
-  /* line 178, ../sass/maps.scss */
+@media (max-width: 440px) {
+  /* line 123, ../sass/allwardsdistro.scss */
   #map {
     height: 474px;
   }
