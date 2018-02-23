@@ -22,7 +22,7 @@ function chartDraw(data) {
 		d.Asian = +d.Asian;
 	})
 
-	console.log(data)
+	// console.log(data)
 
 	var zipped = [];
 	for (var i = data.length - 1; i >= 0; i--) {
@@ -31,7 +31,7 @@ function chartDraw(data) {
 		zipped.push(data[i].Hispanic)
 		zipped.push(data[i].Asian)
 	}
-	console.log(zipped)
+	// console.log(zipped)
 
 	// initialize
     var margin = {top: 10, right: 100, bottom: 20, left: 90},
@@ -68,9 +68,7 @@ function chartDraw(data) {
 
 	var svg = d3.select("#map").append("svg")
 	    .attr("width", width)
-	    .attr("height", chartHeight + margin.top + (3*margin.bottom));
-	    console.log(chartHeight)
-	    console.log(chartHeight + margin.top + (3*margin.bottom));
+	    .attr("height", chartHeight + margin.top + (3*margin.bottom));	    
 
   	// declare main g and stuff
   	var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + 0 + ")");

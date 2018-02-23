@@ -50,7 +50,7 @@ function chartDraw(data) {
   	// var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
   	var chartWidth = width - margin.left-margin.right;
 
-  	var x = d3.scaleLinear()
+	var x = d3.scaleLinear()
 	    .domain([0, d3.max(data,function(d){
 	    	return d.time;
 	    })])
@@ -71,14 +71,16 @@ function chartDraw(data) {
 	    	var n = i+1;
 	    	var Yheight = (n*barHeight)+(Math.floor(n/2)*gapBetweenBars)+(Math.floor((n+1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups)+Math.floor((n+95)/100)*extraAxisGap+extraAxisGap;
 	      	return "translate(" + spaceForLabelsLeft + "," + Yheight + ")";
-	    });
+	    });	
 
 	bar.append("rect")
 	    .attr("fill", function(d,i) { 
 	    	return colorScale(i);})
 	    .attr("class", "bar")
 	    .attr("width", function(d){
-	    	if (d.time === -1) {
+	    	// console.log(x(d.time));
+	    	if (d.time < 0) {
+	    		// console.log('here')
 				return 0
 	    	} else {
 	    		return x(d.time);
@@ -89,14 +91,14 @@ function chartDraw(data) {
 	bar.append("text")
 		.attr("class","afterText")
 	    .attr("x", function(d) { 
-	    	if (d.time === -1) {
+	    	if (d.time < 0) {
 				return 0
 	    	} else {
 	    		return x(d.time) + spacer;
 	    	}
 	    })
 	    .attr("y", function(d){
-	    	if (d.time === -1) {
+	    	if (d.time < 0) {
 	    		return barHeight / 2 - 8;
 	    	} else {
 	    		return barHeight / 2
@@ -104,7 +106,7 @@ function chartDraw(data) {
 	    })
 	    .attr("dy", ".35em")
 	    .text(function(d) { 
-	    	if (d.time === -1) {
+	    	if (d.time < 0) {
 	    		if (d.entry.substring(d.entry.length-3,d.entry.length) === "Low") {
 					return "Data Unavailable"	    			
 	    		} else {

@@ -18,8 +18,7 @@ d3.csv("data/drive_vs_transit.csv", function(err, data) {
 	chartDraw(data);		
 });
 
-function chartDraw(data) {
-	console.log(data)
+function chartDraw(data) {	
 	data.forEach(function(d){
 		d.time = +d.time;
 		d.transit = +d.transit;

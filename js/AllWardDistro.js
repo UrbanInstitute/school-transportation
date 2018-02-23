@@ -5,7 +5,6 @@ var pymChild = new pym.Child();
 // https://bl.ocks.org/shimizu/5f4cee0fddc7a64b55a9
 
 function IS_DESKTOP40(){
-	// console.log(d3.select("#isDesktop40"))
 	return d3.select("#isDesktop40").style("display") == "block";
 }
 function IS_TABLET40(){
@@ -47,8 +46,8 @@ function chartDraw(transit,drive) {
 		d.ward8 = +d.ward8;
 	})
 
-	console.log(transit)
-	console.log(drive)
+	// console.log(transit)
+	// console.log(drive)
 
 	// initialize
     var margin = {top: 10, right: 100, bottom: 40, left: 40},
