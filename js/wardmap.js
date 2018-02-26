@@ -77,17 +77,32 @@ function mapDraw(geojson,demo) {
 		
 
 		var x = d.properties.WARD - 1;
-		var demosNow = {pop: demo[x].pop, white: demo[x].white, black: demo[x].black, asian: demo[x].asian, latino:demo[x].latino};
-		console.log(demosNow)
+		// var demosNow = {pop: demo[x].pop, white: demo[x].white, black: demo[x].black, asian: demo[x].asian, latino:demo[x].latino};
 
         // var contents = "<strong>" + drugtypeIndex(d.drugtype) + ", " + d.Year + " Q" + d.Qtr + "</strong><br>Units Sold: <span style='color:rgb(253, 191, 17)'>" + formatNum(d.units) + "</span><br>Amount Spent: <span style='color:rgb(253, 191, 17)'>$" + formatNum(d.adjmedamt) + "</span>";
-        var contents = "<div><h2> Ward " + d.properties.WARD + "</h2><p><strong>Total Population: " + d3.format(",")(demosNow.pop) + "</strong></p>" 
+        var contents = "<div><h2> Ward " + d.properties.WARD + "</h2><p><strong>Total Population: " + d3.format(",")(demo[x].pop) + "</strong></p>" 
         + "<div class='racial'><p>" 
-        + d3.format(".0%")(demosNow.black) + " Black&nbsp;&nbsp;&nbsp;"
-		+ d3.format(".0%")(demosNow.white) + " White&nbsp;&nbsp;&nbsp;"
-		+ d3.format(".0%")(demosNow.asian) + " Asian&nbsp;&nbsp;&nbsp;"
-		+ d3.format(".0%")(demosNow.latino) + " Hispanic/Latino&nbsp;&nbsp;&nbsp;"
+        + d3.format(".0%")(demo[x].black) + " Black&nbsp;&nbsp;&nbsp;"
+		+ d3.format(".0%")(demo[x].white) + " White&nbsp;&nbsp;&nbsp;"
+		+ d3.format(".0%")(demo[x].asian) + " Asian&nbsp;&nbsp;&nbsp;"
+		+ d3.format(".0%")(demo[x].latino) + " Hispanic/Latino&nbsp;&nbsp;&nbsp;"
         +"</p></div>"
+        +"<div class='times'>"
+	       	+"<div class='times-left times-subset'>"
+	        // + left times
+		        + "<p><strong>6th grade average<br>time to school</strong>"
+		        + "<br>Driving: " + Math.round(demo[x].drive6) + " min"
+		        + "<br>Transit: " + Math.round(demo[x].transit6) + " min"
+		        + "</p>"
+	        +"</div>"
+	        +"<div class='times-right times-subset'>"
+	        // + right times
+				+ "<p><strong>9th grade average<br>time to school</strong>"
+		        + "<br>Driving: " + Math.round(demo[x].drive9) + " min"
+		        + "<br>Transit: " + Math.round(demo[x].transit9) + " min"
+		        + "</p>"
+	        +"</div>" 
+	    +"</div>"
         +"</div>"      
 
         tooltip.html(contents);
@@ -99,7 +114,7 @@ function mapDraw(geojson,demo) {
             })   
       		.style("top", function(d){
       			// console.log(centroid[1])
-      			return (centroid[1] - 100) + "px";
+      			return (centroid[1] - 150) + "px";
       		});  
 	}
 
