@@ -29,11 +29,11 @@ function chartDraw(data) {
 	height = 1010;
 
 	var labels = ["White","Black","Hispanic/Latino","Asian"];
-	var labels2 = ["6th","","9th",""];
+	var labels2 = ["6th","","","","9th","","",""];
 	var labels3 = ["Washington, DC","New York City","New Orleans","Detroit","Denver"];
 
 	var colorScale = d3.scaleOrdinal()
-		.domain(data)
+		// .domain(data)
 		.range(["#0096d2","#a2d4ec","#0a4c6a","#12719e","#fdbf11","#fce39e","#843215","#e88e2d"]);
 
 	var gapBetweenBars = 5,
@@ -44,12 +44,12 @@ function chartDraw(data) {
 		barHeight = 10,
 		numOfgroups = labels3.length,
 		numPerGroup = numOfRecs / (numOfgroups),
-		spaceForLabelsLeft   = 70,
+		spaceForLabelsLeft   = 140,
 		spaceForLabelsRight = 30,
     	spacer = 10,
     	groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-2)+gapBetweenGrades);
 
-	var chartHeight = ((groupHeight + gapBetweenGroups)*numOfgroups)+gapBetweenBars+gapBetweenBars+extraAxisGap;	
+	var chartHeight = ((groupHeight + gapBetweenGroups)*numOfgroups)+gapBetweenBars+gapBetweenBars+extraAxisGap+extraAxisGap;	
 
   	// var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
   	var chartWidth = width - margin.left-margin.right;
@@ -110,48 +110,57 @@ function chartDraw(data) {
 	    })
 	    .attr("dy", ".35em")
 	    .text(function(d) { 
-	    	if (d.value < 0) {
-	    		if (d.entry.substring(d.entry.length-3,d.entry.length) === "Low") {
+	    	if (d.value <= 0) {
+	    		// if (d.entry.substring(d.entry.length-3,d.entry.length) === "Low") {
 					return "Data Unavailable"	    			
-	    		} else {
-	    			return ""
-	    		}
+	    		// } else {
+	    			// return ""
+	    		// }
 	    	} else {
 	    		return d.value + " mins" 	
 	    	}
 	    });	    
 
-	// bar.append("text")
-	//     .attr("class", "label")
-	//     .attr("x", function(d) { return - 10; })
-	//     .attr("y", function(d,i){
-	//     	return (barHeight / 2);
-	// 	})
-	//     .attr("dy", ".35em")
-	//     .text(function(d,i) {
-	//       return labels[i % numPerGroup]
-	//     });  
+	bar.append("text")
+	    .attr("class", "label")
+	    .attr("x", function(d) { return - 10; })
+	    .attr("y", function(d,i){
+	    	return (barHeight / 2);
+		})
+	    .attr("dy", ".35em")
+	    .text(function(d,i) {
+	      return labels[i % (numPerGroup/2)]
+	    });  
 
-	// bar.append("text")
-	//     .attr("class", "Biglabel")
-	//     .attr("x", function(d) { return - 90; })
-	//     .attr("y", groupHeight / 2)
-	//     .attr("dy", ".35em")
-	//     .text(function(d,i) {
-	//     	if (i % numPerGroup === 0)
-	// 	        return labels3[i % numOfgroups];
-	// 	      else
-	// 	        return ""
-	// 	});	      
+	bar.append("text")
+	    .attr("class", "Biglabel")
+	    .attr("x", function(d) { return - 140; })
+	    .attr("y", 5)
+	    .attr("dy", ".35em")
+	    .text(function(d,i) {
+	    	if (i % numPerGroup === 0)
+		        return labels3[i % numOfgroups];
+		      else
+		        return ""
+		});	      
 	    
+	bar.append("text")
+	    .attr("class", "Biglabel")
+	    .attr("x", function(d) { return - 100; })
+	    .attr("y", 5)
+	    .attr("dy", ".35em")
+	    .text(function(d,i) {
+	    	return labels2[i % numPerGroup]
+		});	 
+
 
   	g.append("g")
       .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+margin.bottom) + ")")
       .call(d3.axisBottom(x).ticks(4));    
 
-    // g.append("g")
-    //   .attr("transform", "translate(" + spaceForLabelsLeft +"," + ((barHeight*8)+gapBetweenBars+gapBetweenBars+extraAxisGap+extraAxisGap) + ")")
-    //   .call(d3.axisBottom(x).ticks(4));          
+    g.append("g")
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + ((barHeight*8)+gapBetweenBars+gapBetweenGroups+extraAxisGap+extraAxisGap) + ")")
+      .call(d3.axisBottom(x).ticks(4));          
 
 	// What to do when we get to the map in the parent container
 	pymChild.onMessage('arrival', onArrivalMessage);
