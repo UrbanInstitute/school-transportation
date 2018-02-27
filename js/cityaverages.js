@@ -10,7 +10,7 @@ function IS_PHONE(){
 	return d3.select("#isPhone").style("display") == "block";
 }
 	
-d3.csv("data/poverty.csv", function(err, data) {	
+d3.csv("data/cityaverages.csv", function(err, data) {	
 	chartDraw(data);		
 });
 
@@ -19,18 +19,19 @@ function chartDraw(data) {
 		d.time = +d.time;
 	})
 
+	console.log(data)
+
 	// initialize
     var margin = {top: 10, right: 100, bottom: 20, left: 130},
 	width = parseInt(d3.select("#map").style("width")),
 	// width = (parseInt(d3.select("#master_container").style("width")) > 1000) ? 1000 : parseInt(d3.select("#master_container").style("width")),
-	height = 510;
+	height = 240;
 
-	var labels = ["6th","","9th",""];
+	var labels = ["6th","9th"];
 	var labels2 = ["Washington, DC","New York City","New Orleans","Detroit","Denver"];
 
 	var colorScale = d3.scaleOrdinal()
-		.domain(data)
-		.range(["#0096d2","#a2d4ec"]);
+		.range(["#0096d2","#fdbf11"]);
 	
 	var gapBetweenBars = 5,
 		gapBetweenGrades = 10,
@@ -45,7 +46,9 @@ function chartDraw(data) {
     	spacer = 10,
     	groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-2)+gapBetweenGrades);
 
-	var chartHeight = ((groupHeight + gapBetweenGroups)*numOfgroups)+gapBetweenBars+gapBetweenBars+extraAxisGap;	
+	var chartHeight = ((groupHeight + gapBetweenGroups)*(numOfgroups-1))+extraAxisGap+(spacer);	
+
+	console.log(chartHeight)
 
   	// var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
   	var chartWidth = width - margin.left-margin.right;
@@ -69,7 +72,7 @@ function chartDraw(data) {
 	    .attr("transform", function(d, i) {
 	    	// console.log(0.5 + Math.floor(i/numPerGroup))
 	    	var n = i+1;
-	    	var Yheight = (n*barHeight)+(Math.floor(n/2)*gapBetweenBars)+(Math.floor((n+1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups)+Math.floor((n+95)/100)*extraAxisGap+extraAxisGap;
+	    	var Yheight = (n*barHeight)+(Math.floor(n/2)*gapBetweenBars)+(Math.floor((n+1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups)+Math.floor((n+97)/100)*extraAxisGap+extraAxisGap;
 	      	return "translate(" + spaceForLabelsLeft + "," + Yheight + ")";
 	    });	
 
@@ -106,12 +109,8 @@ function chartDraw(data) {
 	    })
 	    .attr("dy", ".35em")
 	    .text(function(d) { 
-	    	if (d.time < 0) {
-	    		if (d.entry.substring(d.entry.length-3,d.entry.length) === "Low") {
-					return "Data Unavailable"	    			
-	    		} else {
-	    			return ""
-	    		}
+	    	if (d.time <= 0) {
+				return "Data Unavailable"	    			
 	    	} else {
 	    		return d.time + " mins" 	
 	    	}
@@ -121,7 +120,7 @@ function chartDraw(data) {
 	    .attr("class", "label")
 	    .attr("x", function(d) { return - 10; })
 	    .attr("y", function(d,i){
-	    	return (barHeight / 2)+spacer-3;
+	    	return (barHeight / 2);
 		})
 	    .attr("dy", ".35em")
 	    .text(function(d,i) {
@@ -130,8 +129,8 @@ function chartDraw(data) {
 
 	bar.append("text")
 	    .attr("class", "Biglabel")
-	    .attr("x", function(d) { return - 90; })
-	    .attr("y", groupHeight / 2)
+	    .attr("x", function(d) { return - 50; })
+	    .attr("y", 5)
 	    .attr("dy", ".35em")
 	    .text(function(d,i) {
 	    	if (i % numPerGroup === 0)
@@ -146,38 +145,8 @@ function chartDraw(data) {
       .call(d3.axisBottom(x).ticks(4));    
 
     g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + ((barHeight*4)+gapBetweenBars+gapBetweenBars+extraAxisGap+extraAxisGap) + ")")
-      .call(d3.axisBottom(x).ticks(4));    
-
-
-	var circ1 = g.append("g")
-		.attr("transform", "translate(" + spaceForLabelsLeft +"," + (gapBetweenBars*2) + ")")
-	
-	var circ2 = g.append("g")
-		.attr("transform", "translate(" + (spaceForLabelsLeft + 130) +"," + (gapBetweenBars*2) + ")")
-
-
-	circ1.append("circle")      
-      .attr("r",5)
-      .attr("fill","#0096d2");
-
-    circ1.append("text")
-	    .attr("class", "povLabel")
-	    .attr("x", 10)
-	    .attr("y", 0)
-	    .attr("dy", ".35em")
-	    .text("Non Low-Income");	      
-
-    circ2.append("circle")
-	  .attr("r",5)
-      .attr("fill","#a2d4ec")        
-
-    circ2.append("text")
-	    .attr("class", "povLabel")
-	    .attr("x", 10)
-	    .attr("y", 0)
-	    .attr("dy", ".35em")
-	    .text("Low-Income");	      
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + ((barHeight*2)+gapBetweenBars+gapBetweenBars+gapBetweenBars+gapBetweenBars+extraAxisGap) + ")")
+      .call(d3.axisBottom(x).ticks(4));    	      
 
 	// What to do when we get to the map in the parent container
 	pymChild.onMessage('arrival', onArrivalMessage);

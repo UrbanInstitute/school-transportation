@@ -26,7 +26,7 @@ function chartDraw(data) {
     var margin = {top: 10, right: 100, bottom: 20, left: 130},
 	width = parseInt(d3.select("#map").style("width")),
 	// width = (parseInt(d3.select("#master_container").style("width")) > 1000) ? 1000 : parseInt(d3.select("#master_container").style("width")),
-	height = 1010;
+	height = 795;
 
 	var labels = ["White","Black","Hispanic/Latino","Asian"];
 	var labels2 = ["6th","","","","9th","","",""];
@@ -50,6 +50,8 @@ function chartDraw(data) {
     	groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-2)+gapBetweenGrades);
 
 	var chartHeight = ((groupHeight + gapBetweenGroups)*numOfgroups)+gapBetweenBars+gapBetweenBars+extraAxisGap+extraAxisGap;	
+
+	console.log(chartHeight)
 
   	// var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
   	var chartWidth = width - margin.left-margin.right;
