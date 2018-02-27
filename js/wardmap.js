@@ -77,9 +77,7 @@ function mapDraw(geojson,demo) {
 		
 
 		var x = d.properties.WARD - 1;
-		// var demosNow = {pop: demo[x].pop, white: demo[x].white, black: demo[x].black, asian: demo[x].asian, latino:demo[x].latino};
 
-        // var contents = "<strong>" + drugtypeIndex(d.drugtype) + ", " + d.Year + " Q" + d.Qtr + "</strong><br>Units Sold: <span style='color:rgb(253, 191, 17)'>" + formatNum(d.units) + "</span><br>Amount Spent: <span style='color:rgb(253, 191, 17)'>$" + formatNum(d.adjmedamt) + "</span>";
         var contents = "<div><h2> Ward " + d.properties.WARD + "</h2><p><strong>Total Population: " + d3.format(",")(demo[x].pop) + "</strong></p>" 
         + "<div class='racial'><p>" 
         + d3.format(".0%")(demo[x].black) + " Black&nbsp;&nbsp;&nbsp;"
