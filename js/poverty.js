@@ -29,8 +29,8 @@ function chartDraw(data) {
 	var labels2 = ["Washington, DC","New York City","New Orleans","Detroit","Denver"];
 
 	var colorScale = d3.scaleOrdinal()
-		.domain(data)
-		.range(["#0096d2","#a2d4ec"]);
+		// .domain(data)
+		.range(["#0096d2","#a2d4ec","#fdbf11","#fce39e"]);
 	
 	var gapBetweenBars = 5,
 		gapBetweenGrades = 10,
