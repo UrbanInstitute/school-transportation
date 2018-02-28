@@ -19,9 +19,6 @@ function chartDraw(data) {
 		d.value = +d.value;
 	})
 
-
-	console.log(data)
-
 	// initialize
     var margin = {top: 10, right: 100, bottom: 20, left: 130},
 	width = parseInt(d3.select("#map").style("width")),
@@ -44,7 +41,7 @@ function chartDraw(data) {
 		barHeight = 10,
 		numOfgroups = labels3.length,
 		numPerGroup = numOfRecs / (numOfgroups),
-		spaceForLabelsLeft   = 140,
+		spaceForLabelsLeft   = 70,
 		spaceForLabelsRight = 30,
     	spacer = 10,
     	groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-2)+gapBetweenGrades);
@@ -136,7 +133,7 @@ function chartDraw(data) {
 
 	bar.append("text")
 	    .attr("class", "Biglabel")
-	    .attr("x", function(d) { return - 140; })
+	    .attr("x", function(d) { return - 50; })
 	    .attr("y", 5)
 	    .attr("dy", ".35em")
 	    .text(function(d,i) {
@@ -146,14 +143,14 @@ function chartDraw(data) {
 		        return ""
 		});	      
 	    
-	bar.append("text")
-	    .attr("class", "Biglabel")
-	    .attr("x", function(d) { return - 100; })
-	    .attr("y", 5)
-	    .attr("dy", ".35em")
-	    .text(function(d,i) {
-	    	return labels2[i % numPerGroup]
-		});	 
+	// bar.append("text")
+	//     .attr("class", "Biglabel")
+	//     .attr("x", function(d) { return - 100; })
+	//     .attr("y", 5)
+	//     .attr("dy", ".35em")
+	//     .text(function(d,i) {
+	//     	return labels2[i % numPerGroup]
+	// 	});	 
 
 
   	g.append("g")

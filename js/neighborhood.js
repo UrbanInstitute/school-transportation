@@ -22,8 +22,6 @@ function chartDraw(data) {
 		d.Asian = +d.Asian;
 	})
 
-	// console.log(data)
-
 	var zipped = [];
 	for (var i = data.length - 1; i >= 0; i--) {
 		zipped.push(data[i].Black)
@@ -31,8 +29,7 @@ function chartDraw(data) {
 		zipped.push(data[i].Hispanic)
 		zipped.push(data[i].Asian)
 	}
-	// console.log(zipped)
-
+		
 	// initialize
     var margin = {top: 10, right: 100, bottom: 20, left: 90},
 	width = parseInt(d3.select("#map").style("width")),

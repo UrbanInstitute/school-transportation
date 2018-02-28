@@ -130,8 +130,8 @@ function chartDraw(data) {
 
 	bar.append("text")
 	    .attr("class", "Biglabel")
-	    .attr("x", function(d) { return - 90; })
-	    .attr("y", groupHeight / 2)
+	    .attr("x", function(d) { return - 50; })
+	    .attr("y", 5)
 	    .attr("dy", ".35em")
 	    .text(function(d,i) {
 	    	if (i % numPerGroup === 0)
@@ -156,6 +156,12 @@ function chartDraw(data) {
 	var circ2 = g.append("g")
 		.attr("transform", "translate(" + (spaceForLabelsLeft + 130) +"," + (gapBetweenBars*2) + ")")
 
+	var circ3 = g.append("g")
+		.attr("transform", "translate(" + (spaceForLabelsLeft + 240) +"," + (gapBetweenBars*2) + ")")
+	
+	var circ4 = g.append("g")
+		.attr("transform", "translate(" + (spaceForLabelsLeft + 370) +"," + (gapBetweenBars*2) + ")")		
+
 
 	circ1.append("circle")      
       .attr("r",5)
@@ -166,7 +172,7 @@ function chartDraw(data) {
 	    .attr("x", 10)
 	    .attr("y", 0)
 	    .attr("dy", ".35em")
-	    .text("Non Low-Income");	      
+	    .text("6th Non Low-Income");	      
 
     circ2.append("circle")
 	  .attr("r",5)
@@ -177,7 +183,30 @@ function chartDraw(data) {
 	    .attr("x", 10)
 	    .attr("y", 0)
 	    .attr("dy", ".35em")
-	    .text("Low-Income");	      
+	    .text("6th Low-Income");	      
+
+	circ3.append("circle")      
+      .attr("r",5)
+      .attr("fill","#fdbf11");
+
+    circ3.append("text")
+	    .attr("class", "povLabel")
+	    .attr("x", 10)
+	    .attr("y", 0)
+	    .attr("dy", ".35em")
+	    .text("9th Non Low-Income");	      
+
+    circ4.append("circle")
+	  .attr("r",5)
+      .attr("fill","#fce39e")        
+
+    circ4.append("text")
+	    .attr("class", "povLabel")
+	    .attr("x", 10)
+	    .attr("y", 0)
+	    .attr("dy", ".35em")
+	    .text("9th Low-Income");	  
+
 
 	// What to do when we get to the map in the parent container
 	pymChild.onMessage('arrival', onArrivalMessage);

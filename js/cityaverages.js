@@ -18,9 +18,7 @@ function chartDraw(data) {
 	data.forEach(function(d){
 		d.time = +d.time;
 	})
-
-	console.log(data)
-
+	
 	// initialize
     var margin = {top: 10, right: 100, bottom: 20, left: 130},
 	width = parseInt(d3.select("#map").style("width")),
