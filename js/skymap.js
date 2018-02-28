@@ -121,8 +121,8 @@ function mapDraw(geojson,ward1) {
 		this.stream.point(point.x, point.y);
 	}
 
-	function movePoints(message){
-		if (startIndex === 0) {
+	function movePoints(message,replay){
+		if (startIndex === 0 || replay === "yes") {
 			startIndex+=1;
 			// if is mobile, skyler starting point is x
 			// else if is desktop, skyler starting point x
@@ -170,6 +170,26 @@ function mapDraw(geojson,ward1) {
 		}
 	}
 
+function resetPoints(){
+		var point = map.project(new mapboxgl.LngLat(skylerLoc[0], skylerLoc[1]));
+		skylerPoint
+			.attr("cx", function (d) { return point.x})
+			.attr("cy", function (d) { return point.y})
+		
+		ward1Points
+			.attr("cx", function(d) { 
+	        	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
+	        	return point.x; 
+	        })
+	        .attr("cy", function(d) { 
+				var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
+	        	return point.y }
+	        )
+	        .style("fill","#e88e2d")
+
+	        movePoints("clicked","yes");	     
+	}
+
     // Event Listeners
    	var resizeTimer;	
     map.on("moveend", function(e){
@@ -187,14 +207,14 @@ function mapDraw(geojson,ward1) {
     update()
 
     
-    $("#skylerclick").click(function(){
-    	movePoints("clicked")
+    $("#replay").click(function(){
+		resetPoints();
     })
 
 	// What to do when we get to the map in the parent container
 	pymChild.onMessage('arrival', onArrivalMessage);
 	function onArrivalMessage(message){	
-		movePoints(message)	
+		movePoints(message,"no")	
 	}
 
 

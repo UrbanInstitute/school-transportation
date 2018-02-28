@@ -192,7 +192,7 @@ function mapDraw(geojson,ward7) {
 
 	        movePoints("clicked","yes")	
 
-	        return "off"
+	        // return "off"
 	}
 
 
@@ -214,14 +214,7 @@ function mapDraw(geojson,ward7) {
 
     // var resetIndex = "off"
     $("#replay").click(function(){
-    	// if (resetIndex === "off") {
-    		// var resetIndex = "on";
-    		// console.log(resetIndex);
-    		// resetIndex = 
-    		// console.log(resetIndex);
-			resetPoints();
-    	// }
-
+		resetPoints();
     })
 
 	// What to do when we get to the map in the parent container
