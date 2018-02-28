@@ -10,7 +10,7 @@ function IS_PHONE(){
 	return d3.select("#isPhone").style("display") == "block";
 }
 	
-d3.csv("data/race.csv", function(err, data) {	
+d3.csv("data/race2.csv", function(err, data) {	
 	chartDraw(data);		
 });
 
@@ -29,12 +29,12 @@ function chartDraw(data) {
 	height = 795;
 
 	var labels = ["White","Black","Hispanic/Latino","Asian"];
-	var labels2 = ["6th","","","","9th","","",""];
+	var labels2 = ["9th","","",""];
 	var labels3 = ["Washington, DC","New York City","New Orleans","Detroit","Denver"];
 
 	var colorScale = d3.scaleOrdinal()
 		// .domain(data)
-		.range(["#0096d2","#a2d4ec","#0a4c6a","#12719e","#fdbf11","#fce39e","#843215","#e88e2d"]);
+		.range(["#fdbf11","#fce39e","#843215","#e88e2d"]);
 
 	var gapBetweenBars = 5,
 		gapBetweenGrades = 10,
@@ -75,7 +75,7 @@ function chartDraw(data) {
 	    .attr("transform", function(d, i) {
 	    	// console.log(0.5 + Math.floor(i/numPerGroup))
 	    	var n = i+1;
-	    	var Yheight = (n*barHeight)+((n-Math.floor((n+3)/4))*gapBetweenBars)+(Math.floor((n-1)/4)*gapBetweenGrades)+(Math.floor((n-1)/8)*gapBetweenGroups)+Math.floor((n+91)/100)*extraAxisGap+extraAxisGap;
+	    	var Yheight = (n*barHeight)+((n-Math.floor((n+3)/4))*gapBetweenBars)+(Math.floor((n-1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups)+Math.floor((n+95)/100)*extraAxisGap+extraAxisGap;
 	      	return "translate(" + spaceForLabelsLeft + "," + Yheight + ")";
 	    });	
 
@@ -131,7 +131,7 @@ function chartDraw(data) {
 		})
 	    .attr("dy", ".35em")
 	    .text(function(d,i) {
-	      return labels[i % (numPerGroup/2)]
+	      return labels[i % (numPerGroup)]
 	    });  
 
 	bar.append("text")
@@ -157,11 +157,11 @@ function chartDraw(data) {
 
 
   	g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+margin.bottom) + ")")
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight) + ")")
       .call(d3.axisBottom(x).ticks(4));    
 
     g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + ((barHeight*8)+gapBetweenBars+gapBetweenGroups+extraAxisGap+extraAxisGap) + ")")
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + ((barHeight)+gapBetweenBars+gapBetweenGroups+extraAxisGap+extraAxisGap) + ")")
       .call(d3.axisBottom(x).ticks(4));          
 
 	// What to do when we get to the map in the parent container
@@ -172,5 +172,3 @@ function chartDraw(data) {
 
 
 }
-
-  
