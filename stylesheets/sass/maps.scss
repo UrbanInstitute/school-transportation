@@ -24,6 +24,17 @@ html, body {
   background-color: pink;
 }
 
+#replay {
+  position: absolute;
+  left: 20px;
+  top:20px;
+  background-color: $orangey-yellow;
+  height: 36px;
+  width: 46px;
+  cursor: pointer;
+  z-index: 10;
+}
+
 svg {
   position: absolute;
   width: 100%;

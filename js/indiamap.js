@@ -120,8 +120,8 @@ function mapDraw(geojson,ward7) {
 		this.stream.point(point.x, point.y);
 	}
 
-	function movePoints(message){
-		if (startIndex === 0) {
+	function movePoints(message,replay){
+		if (startIndex === 0 || replay === "yes") {
 			startIndex+=1;
 			// if is mobile, india starting point is x
 			// else if is desktop, india starting point x
@@ -169,6 +169,28 @@ function mapDraw(geojson,ward7) {
 		}
 	}
 
+
+	function resetPoints(){
+		var point = map.project(new mapboxgl.LngLat(indiaLoc[0], indiaLoc[1]));
+		IndiaPoint
+			.attr("cx", function (d) { return point.x})
+			.attr("cy", function (d) { return point.y})
+		
+		Ward7Points
+			.attr("cx", function(d) { 
+	        	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
+	        	return point.x; 
+	        })
+	        .attr("cy", function(d) { 
+				var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
+	        	return point.y }
+	        )
+	        .style("fill","#73bfe2")
+
+	        movePoints("clicked","yes")	
+	}
+
+
     // Event Listeners
    	var resizeTimer;	
     map.on("moveend", function(e){
@@ -186,14 +208,14 @@ function mapDraw(geojson,ward7) {
     update()
 
     
-    $("#indiaclick").click(function(){
-    	movePoints("clicked")
+    $("#replay").click(function(){
+    	resetPoints()
     })
 
 	// What to do when we get to the map in the parent container
 	pymChild.onMessage('arrival', onArrivalMessage);
 	function onArrivalMessage(message){	
-		movePoints(message)	
+		movePoints(message,"no")	
 	}
 
 
