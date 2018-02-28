@@ -106,7 +106,7 @@ function chartDraw(transit,drive) {
 
 	for (var i = 0; i < numOfWards; i++) {
 		g.append("rect")
-	      .datum(transit)
+	      // .datum(transit)
 	      .attr("class","hoverbox w" + (i+1))
 	      .attr("y", function(d) { return margin.top+(chartHeight*(i))+(spacer*(i))+spacer/2; })
 		  .attr("x", -(2.5*spacer))
@@ -114,7 +114,7 @@ function chartDraw(transit,drive) {
 		  .attr("height",chartHeight);
 
 		g.append("path")
-	      .datum(transit)
+	      .datum(drive)
 	      .attr("class","ward wardmap w" + (i+1))
 	      .attr("d", area["w"+(i+1)]);
 
@@ -130,7 +130,47 @@ function chartDraw(transit,drive) {
       .attr("transform", "translate(0," + (height-margin.bottom) + ")")
       .call(d3.axisBottom(x).ticks(2));
 
+    $("#drive").click(function(){
+    	switchTo("drive");
+    })
 
+    $("#transit").click(function(){
+    	switchTo("transit");
+    })
+
+    function switchTo(type) {
+    	// console.log(type);
+    	$(".button").removeClass("active");
+    	$("#" + type).addClass("active");
+
+   		if (type === "drive") {
+   			var tada = drive;
+   		} else {
+   			var tada = transit;
+   		}
+
+    	for (var i = 0; i < numOfWards; i++) {
+
+
+    		var nowThis = g.select(".wardmap.w"+(i+1));
+
+			nowThis
+				.datum(tada).transition().ease(d3.easeLinear).duration(1000)
+				.attr("d", area["w"+(i+1)]);
+
+    	}
+
+    // 		g.selectAll("path")
+				// .data(transit)
+				// .transition().ease(d3.easeLinear).duration(2000)
+				// .attr("d", function(d,i){
+				// 	console.log(i)
+				// 	return area["w"+(i+1)]
+				// });
+
+		
+
+    }
 
 
 	// What to do when we get to the map in the parent container
