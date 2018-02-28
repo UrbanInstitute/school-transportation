@@ -35,7 +35,7 @@ function chartDraw(data) {
 
 	var gapBetweenBars = 5,
 		gapBetweenGrades = 10,
-		gapBetweenGroups = 25,
+		gapBetweenGroups = 20,
 		extraAxisGap = 30,
 		numOfRecs = data.length,
 		barHeight = 10,
@@ -46,7 +46,7 @@ function chartDraw(data) {
     	spacer = 10,
     	groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-2)+gapBetweenGrades);
 
-	var chartHeight = ((groupHeight + gapBetweenGroups)*numOfgroups)+gapBetweenBars+gapBetweenBars+extraAxisGap+extraAxisGap;	
+	var chartHeight = ((groupHeight + gapBetweenGroups)*numOfgroups)+gapBetweenBars+gapBetweenBars+extraAxisGap;	
 
 	console.log(chartHeight)
 
@@ -72,7 +72,7 @@ function chartDraw(data) {
 	    .attr("transform", function(d, i) {
 	    	// console.log(0.5 + Math.floor(i/numPerGroup))
 	    	var n = i+1;
-	    	var Yheight = (n*barHeight)+((n-Math.floor((n+3)/4))*gapBetweenBars)+(Math.floor((n-1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups)+Math.floor((n+95)/100)*extraAxisGap+extraAxisGap;
+	    	var Yheight = (n*barHeight)+((n-Math.floor((n+3)/4))*gapBetweenBars)+(Math.floor((n-1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups)+Math.floor((n+95)/100)*extraAxisGap;
 	      	return "translate(" + spaceForLabelsLeft + "," + Yheight + ")";
 	    });	
 
@@ -158,7 +158,7 @@ function chartDraw(data) {
       .call(d3.axisBottom(x).ticks(4));    
 
     g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + ((barHeight)+gapBetweenBars+gapBetweenGroups+extraAxisGap+extraAxisGap) + ")")
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + ((barHeight*4)+(gapBetweenBars*4)+gapBetweenBars+gapBetweenBars) + ")")
       .call(d3.axisBottom(x).ticks(4));          
 
 	// What to do when we get to the map in the parent container

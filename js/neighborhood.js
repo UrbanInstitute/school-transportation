@@ -44,7 +44,7 @@ function chartDraw(data) {
 
 	
 	var gapBetweenBars = 5,
-		gapBetweenGroups = 25,
+		gapBetweenGroups = 20,
 		numOfRecs = zipped.length,
 		barHeight = 10,
 		numOfgroups = data.length,
