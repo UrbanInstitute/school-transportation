@@ -31,7 +31,7 @@ function chartDraw(data) {
 	}
 		
 	// initialize
-    var margin = {top: 10, right: 100, bottom: 20, left: 90},
+    var margin = {top: 10, right: 100, bottom: 20, left: 130},
 	width = parseInt(d3.select("#map").style("width")),
 	// width = (parseInt(d3.select("#master_container").style("width")) > 1000) ? 1000 : parseInt(d3.select("#master_container").style("width")),
 	height = 240;
@@ -49,7 +49,7 @@ function chartDraw(data) {
 		barHeight = 10,
 		numOfgroups = data.length,
 		numPerGroup = numOfRecs / numOfgroups,
-		spaceForLabelsLeft   = 70,
+		spaceForLabelsLeft   = 80,
 		spaceForLabelsRight = 30,
     	spacer = 10,
     	groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-1));
@@ -103,7 +103,7 @@ function chartDraw(data) {
 
 	bar.append("text")
 	    .attr("class", "Biglabel")
-	    .attr("x", function(d) { return - 120; })
+	    .attr("x", function(d) { return - 100; })
 	    .attr("y", 5)
 	    .attr("dy", ".35em")
 	    .text(function(d,i) {

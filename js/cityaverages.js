@@ -39,7 +39,7 @@ function chartDraw(data) {
 		barHeight = 10,
 		numOfgroups = labels2.length,
 		numPerGroup = numOfRecs / numOfgroups,
-		spaceForLabelsLeft   = 70,
+		spaceForLabelsLeft   = 80,
 		spaceForLabelsRight = 30,
     	spacer = 10,
     	groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-2)+gapBetweenGrades);
@@ -127,7 +127,7 @@ function chartDraw(data) {
 
 	bar.append("text")
 	    .attr("class", "Biglabel")
-	    .attr("x", function(d) { return - 50; })
+	    .attr("x", function(d) { return - 100; })
 	    .attr("y", 5)
 	    .attr("dy", ".35em")
 	    .text(function(d,i) {
