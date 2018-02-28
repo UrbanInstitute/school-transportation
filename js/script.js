@@ -40,6 +40,12 @@ var map2waypoint = new Waypoint({
   }
 })
 
+pymParent5.onMessage('hover', onHover);
+
+function onHover(ward){ 
+    pymParent6.sendMessage('hover', ward);  
+  }
+
 // var map3waypoint = new Waypoint({
 //   element: document.getElementById('ff3'),
 //   handler: function() {    

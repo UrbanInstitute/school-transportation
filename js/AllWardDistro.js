@@ -105,22 +105,25 @@ function chartDraw(transit,drive) {
 	var contents = "<p>Mean Time</p><h2>XX mins</h2>";
 
 	for (var i = 0; i < numOfWards; i++) {
+		g.append("rect")
+	      .datum(transit)
+	      .attr("class","hoverbox w" + (i+1))
+	      .attr("y", function(d) { return margin.top+(chartHeight*(i))+(spacer*(i))+spacer/2; })
+		  .attr("x", -(2.5*spacer))
+		  .attr("width",(width-30))
+		  .attr("height",chartHeight);
+
 		g.append("path")
 	      .datum(transit)
 	      .attr("class","ward wardmap w" + (i+1))
 	      .attr("d", area["w"+(i+1)]);
 
-		// body.append("div")
-		//     .attr("class", "meanTime")   
-		//     .html(contents)
-		//     .style("left", width - margin.right - (3*spacer) + "px")
-		//     .style("top", margin.top+(chartHeight*(i+1))+(spacer*(i-3)) + "px");
-
-		body.append("div")
-		    .attr("class", "meanTime")   
-		    .html(i+1)
-		    .style("left", 2*spacer + "px")
-		    .style("top", margin.top+(chartHeight*(i))+(spacer*(i)) + "px");
+		g.append("text")
+		    .attr("class", "numYO")
+		    .attr("y", function(d) { return margin.top+(chartHeight*(i))+(spacer*(i))+spacer+spacer; })
+		    .attr("x", -(2*spacer))
+		    // .attr("dy", ".35em")
+		    .text(i+1);	 		    
 	}  	
 
 	 g.append("g")
@@ -128,28 +131,14 @@ function chartDraw(transit,drive) {
       .call(d3.axisBottom(x).ticks(2));
 
 
-	// // Functions!!!!
-
-	
-	    // This is from the above calculation (see notebook) PLUS two spacers
-
-
- //    function update() {
- //     	// update featured element;
- //        // featureElement.attr("d",path);        
- //    }	
-
- //    // Event Listeners
- //    // On page resize, update the view
-
- //    update()
-
 
 
 	// What to do when we get to the map in the parent container
-	pymChild.onMessage('arrival', onArrivalMessage);
-	function onArrivalMessage(message){	
-		// this fires on arrival from the parent
+	pymChild.onMessage('hover', onHover);
+	
+	function onHover(ward){	
+		d3.selectAll(".hoverbox").classed("active",false);
+		d3.selectAll(".hoverbox.w"+ward).classed("active",true);
 	}
 
 	function getHeight(width){

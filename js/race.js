@@ -26,7 +26,7 @@ function chartDraw(data) {
     var margin = {top: 10, right: 100, bottom: 20, left: 130},
 	width = parseInt(d3.select("#map").style("width")),
 	// width = (parseInt(d3.select("#master_container").style("width")) > 1000) ? 1000 : parseInt(d3.select("#master_container").style("width")),
-	height = 795;
+	height = 495;
 
 	var labels = ["White","Black","Hispanic/Latino","Asian"];
 	var labels2 = ["9th","","",""];

@@ -59,6 +59,8 @@ function mapDraw(geojson,demo) {
             removeTooltip()
             d3.select(this).classed("active", true);
             createTooltip(d)
+            // console.log(d)
+            pymChild.sendMessage('hover', d.properties.WARD);
         })
         .on("mouseleave", function() {
             d3.select(this).classed("active", false);            	

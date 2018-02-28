@@ -245,7 +245,7 @@ h3 {
 /* line 4, ../sass/allwardsdistro.scss */
 #isPhone40, #isTablet40, #isDesktop40 {
   display: none;
-  pointer-events: none;
+  pointer-events: 5one;
   width: 0;
   height: 0;
   position: fixed;
@@ -265,66 +265,91 @@ html, body {
 }
 
 /* line 25, ../sass/allwardsdistro.scss */
-#map {
+#map_container {
   position: relative;
   width: 100%;
   height: 632px;
 }
 
-/* line 33, ../sass/allwardsdistro.scss */
+/* line 32, ../sass/allwardsdistro.scss */
+#map {
+  top: 50px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 40, ../sass/allwardsdistro.scss */
 svg {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-/* line 39, ../sass/allwardsdistro.scss */
+/* line 46, ../sass/allwardsdistro.scss */
 .ward.distro.w1, .ward.wardmap.w1 {
   fill: #fdbf11;
 }
 
-/* line 40, ../sass/allwardsdistro.scss */
+/* line 47, ../sass/allwardsdistro.scss */
 .ward.distro.w2, .ward.wardmap.w2 {
   fill: #12719e;
 }
 
-/* line 41, ../sass/allwardsdistro.scss */
+/* line 48, ../sass/allwardsdistro.scss */
 .ward.distro.w3, .ward.wardmap.w3 {
   fill: #78c26d;
 }
 
-/* line 42, ../sass/allwardsdistro.scss */
+/* line 49, ../sass/allwardsdistro.scss */
 .ward.distro.w4, .ward.wardmap.w4 {
   fill: #848081;
 }
 
-/* line 43, ../sass/allwardsdistro.scss */
+/* line 50, ../sass/allwardsdistro.scss */
 .ward.distro.w5, .ward.wardmap.w5 {
   fill: #ca5800;
 }
 
-/* line 44, ../sass/allwardsdistro.scss */
+/* line 51, ../sass/allwardsdistro.scss */
 .ward.distro.w6, .ward.wardmap.w6 {
   fill: #e25552;
 }
 
-/* line 45, ../sass/allwardsdistro.scss */
+/* line 52, ../sass/allwardsdistro.scss */
 .ward.distro.w7, .ward.wardmap.w7 {
   fill: #0096d2;
 }
 
-/* line 46, ../sass/allwardsdistro.scss */
+/* line 53, ../sass/allwardsdistro.scss */
 .ward.distro.w8, .ward.wardmap.w8 {
   fill: #e88e2d;
 }
 
-/* line 48, ../sass/allwardsdistro.scss */
+/* line 56, ../sass/allwardsdistro.scss */
+.numYO {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* line 62, ../sass/allwardsdistro.scss */
+.hoverbox {
+  fill: #fff;
+}
+
+/* line 66, ../sass/allwardsdistro.scss */
+.hoverbox.active {
+  fill: #a2d4ec;
+}
+
+/* line 70, ../sass/allwardsdistro.scss */
 div.meanTime, div.name {
   position: fixed;
   font-family: Lato;
 }
 
-/* line 53, ../sass/allwardsdistro.scss */
+/* line 75, ../sass/allwardsdistro.scss */
 div.meanTime p, div.name p {
   font-size: 12px;
   text-align: center;
@@ -334,22 +359,22 @@ div.meanTime p, div.name p {
   line-height: 80%;
 }
 
-/* line 62, ../sass/allwardsdistro.scss */
+/* line 84, ../sass/allwardsdistro.scss */
 div.name {
   width: 70px;
 }
 
-/* line 66, ../sass/allwardsdistro.scss */
+/* line 88, ../sass/allwardsdistro.scss */
 div.meanTime {
   width: 100px;
 }
 
-/* line 70, ../sass/allwardsdistro.scss */
+/* line 92, ../sass/allwardsdistro.scss */
 div.name p {
   text-align: right;
 }
 
-/* line 74, ../sass/allwardsdistro.scss */
+/* line 96, ../sass/allwardsdistro.scss */
 div.meanTime h2 {
   font-size: 26px;
   text-align: center;
@@ -357,56 +382,56 @@ div.meanTime h2 {
   padding: 0px;
 }
 
-/* line 81, ../sass/allwardsdistro.scss */
+/* line 103, ../sass/allwardsdistro.scss */
 .domain {
   stroke: #e6e5e5;
 }
 
-/* line 85, ../sass/allwardsdistro.scss */
+/* line 107, ../sass/allwardsdistro.scss */
 .tick line {
   display: none;
 }
 
-/* line 89, ../sass/allwardsdistro.scss */
+/* line 111, ../sass/allwardsdistro.scss */
 .tick text {
   font-family: Lato;
 }
 
 @media (max-width: 307.2px) {
-  /* line 94, ../sass/allwardsdistro.scss */
-  #map {
+  /* line 116, ../sass/allwardsdistro.scss */
+  #map_container {
     height: 300px;
   }
 
-  /* line 98, ../sass/allwardsdistro.scss */
+  /* line 120, ../sass/allwardsdistro.scss */
   #isPhone40 {
     display: block;
   }
 
-  /* line 102, ../sass/allwardsdistro.scss */
+  /* line 124, ../sass/allwardsdistro.scss */
   #isTablet40, #isDesktop40 {
     display: none;
   }
 }
 @media (max-width: 384px) {
-  /* line 108, ../sass/allwardsdistro.scss */
-  #map {
+  /* line 130, ../sass/allwardsdistro.scss */
+  #map_container {
     height: 374px;
   }
 
-  /* line 112, ../sass/allwardsdistro.scss */
+  /* line 134, ../sass/allwardsdistro.scss */
   #isTablet {
     display: block;
   }
 
-  /* line 116, ../sass/allwardsdistro.scss */
+  /* line 138, ../sass/allwardsdistro.scss */
   #isPhone, #isDesktop {
     display: none;
   }
 }
 @media (max-width: 440px) {
-  /* line 123, ../sass/allwardsdistro.scss */
-  #map {
+  /* line 145, ../sass/allwardsdistro.scss */
+  #map_container {
     height: 474px;
   }
 }

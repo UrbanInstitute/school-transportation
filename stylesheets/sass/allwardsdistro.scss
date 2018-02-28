@@ -3,7 +3,7 @@
 
 #isPhone40, #isTablet40, #isDesktop40 {
   display: none;
-  pointer-events: none;
+  pointer-events: 5one;
   width: 0;
   height: 0;
   position: fixed;
@@ -22,11 +22,18 @@ html, body {
   margin: 0px;
   // padding-top:50%;
 }
-#map { 
-  position:relative; 
-  // width: 800px;
+#map_container { 
+  position:relative;   
   width: 100%;
   height: 632px;
+  // background-color: pink;
+}
+
+#map { 
+  top: 50px;
+  position:absolute;   
+  width: 100%;
+  height: 100%;
   // background-color: pink;
 }
 
@@ -44,6 +51,21 @@ svg {
 .ward.distro.w6, .ward.wardmap.w6 {fill: #e25552}
 .ward.distro.w7, .ward.wardmap.w7 {fill: $cerulean}
 .ward.distro.w8, .ward.wardmap.w8 {fill: #e88e2d}
+
+
+.numYO {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hoverbox {
+  fill: #fff;
+}
+
+.hoverbox.active {
+  fill: #a2d4ec;
+}
 
 div.meanTime, div.name { 
   position: fixed;       
@@ -91,7 +113,7 @@ div.meanTime h2 {
 }
 
 @media (max-width: $MaxPhoneSize * 0.4){
-  #map {
+  #map_container {
     // width: 600px;
     height: 300px;  
   }
@@ -105,7 +127,7 @@ div.meanTime h2 {
 }
 
 @media (max-width: $MaxTabletSize * 0.4){
-  #map {
+  #map_container {
     height: 374px;  
   }
 
@@ -120,7 +142,7 @@ div.meanTime h2 {
 }
 
 @media (max-width: $MaxDesktopSize * 0.4){
-  #map {
+  #map_container {
     height: 474px;  
   }
   

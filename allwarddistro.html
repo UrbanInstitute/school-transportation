@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Ward Map</title>
+    <title>Ward Distributions</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     
     <link href='stylesheets/css/mapbox-gl.css' rel='stylesheet' />
@@ -12,6 +12,30 @@
     	body {
     		/*background-color: pink;*/
     	}
+
+        .button-container {
+            width: 100%;
+        }
+
+        .button {
+            width: 50%;
+            height: 30px;
+            background-color: #000;
+            color: #fff;
+            float: left;
+            font-family: Lato;
+            line-height: 120%;
+            cursor: pointer;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+
+        .button.active {
+            background-color: #fdbf11;
+            color: #000;
+        }
+
     </style>
     <!-- <link href="stylesheets/css/wardmap.css" rel='stylesheet' /> -->
 
@@ -22,8 +46,13 @@
 <div id = "isTablet40"></div>
 <div id = "isPhone40"></div>
 
-<div id='map'></div>
-
+<div id='map_container'>
+    <div class="button-container">
+        <div class="button active">Driving</div>
+        <div class="button">Transit</div>
+    </div>
+    <div id='map'></div>
+</div>
 <script src="js/lib/pym.min.js"></script>
 <script src="js/lib/d3.v4.min.js"></script>
 <script src="js/lib/jquery.min.js"></script>
