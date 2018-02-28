@@ -163,6 +163,9 @@ function mapDraw(geojson,ward7) {
 						        .on("end",function(){
 						        	d3.select(this).transition().ease(d3.easeLinear).duration(1000)
 						        		.style("fill","#C5E4F3")
+						        	// if (replay === "yes") {
+						        	// 	return ""
+						        	// }
 						        })
 						// })
 				// })
@@ -188,6 +191,8 @@ function mapDraw(geojson,ward7) {
 	        .style("fill","#73bfe2")
 
 	        movePoints("clicked","yes")	
+
+	        return "off"
 	}
 
 
@@ -207,9 +212,16 @@ function mapDraw(geojson,ward7) {
 
     update()
 
-    
+    // var resetIndex = "off"
     $("#replay").click(function(){
-    	resetPoints()
+    	// if (resetIndex === "off") {
+    		// var resetIndex = "on";
+    		// console.log(resetIndex);
+    		// resetIndex = 
+    		// console.log(resetIndex);
+			resetPoints();
+    	// }
+
     })
 
 	// What to do when we get to the map in the parent container
