@@ -43,11 +43,11 @@ function chartDraw(data) {
 	var labels2 = ["K","6TH","9TH"];
 
 	var colorScale = d3.scaleOrdinal()
-		.domain(zipped)
-		.range(["#a2d4ec","#0a4c6a","#062635","#0096d2"]);
+		.range(["#848081","#d5d5d4","#332d2f","#5c5859","#0096d2","#a2d4ec","#0a4c6a","#12719e","#fdbf11","#fce39e","#843215","#e88e2d"]);
+
 	
-	var gapBetweenBars = 15,
-		gapBetweenGroups = 20,
+	var gapBetweenBars = 5,
+		gapBetweenGroups = 25,
 		numOfRecs = zipped.length,
 		barHeight = 10,
 		numOfgroups = data.length,
@@ -105,7 +105,7 @@ function chartDraw(data) {
 	bar.append("text")
 	    .attr("class", "Biglabel")
 	    .attr("x", function(d) { return - 120; })
-	    .attr("y", groupHeight / 2)
+	    .attr("y", 5)
 	    .attr("dy", ".35em")
 	    .text(function(d,i) {
 	    	if (i % numPerGroup === 0)
@@ -114,9 +114,8 @@ function chartDraw(data) {
 		        return ""
 		});	      
 	    
-
   	g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+2*margin.bottom) + ")")
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+spacer) + ")")
       .call(d3.axisBottom(x).ticks(4).tickFormat(d3.format(".0%")));    
 
 
