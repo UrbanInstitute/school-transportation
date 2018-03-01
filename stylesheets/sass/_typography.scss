@@ -42,6 +42,7 @@ h2 {
 	font-weight: bold;
 	text-align: left;
 	color: #000000;
+	margin-top:48px;
 }
 
 .tagline {
@@ -171,5 +172,9 @@ h3 {
 	.tagline {
 		font-size: 16px;
 		line-height: 1.31;
+	}
+
+	.chart-title {
+		padding-top: 32px;
 	}
 }

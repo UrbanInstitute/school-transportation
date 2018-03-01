@@ -56,7 +56,7 @@ function chartDraw(data) {
 
 	var chartHeight = ((numPerGroup*barHeight) + ((numPerGroup-1)*gapBetweenBars) + gapBetweenGroups)*numOfgroups;	
 
-	console.log(chartHeight)
+	// console.log(chartHeight)
 
   	// var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
   	var chartWidth = width - margin.left-margin.right;
@@ -114,7 +114,7 @@ function chartDraw(data) {
 		});	      
 	    
   	g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+spacer) + ")")
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+(spacer-3)) + ")")
       .call(d3.axisBottom(x).ticks(4).tickFormat(d3.format(".0%")));    
 
 

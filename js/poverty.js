@@ -47,7 +47,8 @@ function chartDraw(data) {
 
 	var chartHeight = ((groupHeight + gapBetweenGroups)*numOfgroups)+gapBetweenBars+gapBetweenBars+extraAxisGap;	
 
-  	// var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
+	// console.log(chartHeight)
+
   	var chartWidth = width - margin.left-margin.right;
 
 	var x = d3.scaleLinear()
@@ -69,7 +70,7 @@ function chartDraw(data) {
 	    .attr("transform", function(d, i) {
 	    	// console.log(0.5 + Math.floor(i/numPerGroup))
 	    	var n = i+1;
-	    	var Yheight = (n*barHeight)+(Math.floor(n/2)*gapBetweenBars)+(Math.floor((n+1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups)+Math.floor((n+95)/100)*extraAxisGap+extraAxisGap;
+	    	var Yheight = (n*barHeight)+(Math.floor(n/2)*gapBetweenBars)+(Math.floor((n+1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups)+Math.floor((n+95)/100)*(extraAxisGap-2)+extraAxisGap;
 	      	return "translate(" + spaceForLabelsLeft + "," + Yheight + ")";
 	    });	
 
@@ -142,11 +143,11 @@ function chartDraw(data) {
 	    
 
   	g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+margin.bottom) + ")")
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+margin.bottom-5) + ")")
       .call(d3.axisBottom(x).ticks(4));    
 
     g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + ((barHeight*4)+gapBetweenBars+gapBetweenBars+extraAxisGap+extraAxisGap) + ")")
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + ((barHeight*4)+gapBetweenBars+gapBetweenBars+extraAxisGap+extraAxisGap-5) + ")")
       .call(d3.axisBottom(x).ticks(4));    
 
 

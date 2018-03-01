@@ -33,7 +33,7 @@ d3.json("data/wards.geojson", function(err, data) {
 });
 
 function mapDraw(geojson,ward1) {
-	console.log(ward1)
+	// console.log(ward1)
 	var skylerLoc = [-77.032724,38.930235]; 
 	var skylerSchool = [-77.0480068,38.8982283];
 	// console.log(ward1)

@@ -38,6 +38,25 @@ body {
 	border-radius: 4px;	
 }
 
+.big-button {
+	background-color: $cerulean;
+    width: 280px;
+    margin: 0 auto;
+    height: 83px;
+	border-radius: 2px;
+	text-align: center;
+	cursor: pointer;
+	padding-top: 30px;	
+	margin-top: 60px;
+	margin-bottom: 60px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.big-button:hover {
+	background-color: $soft-blue;
+}
+
 .content {
     padding-left: 125px;
     padding-right: 125px;
@@ -84,9 +103,9 @@ body {
 
 .chart-feature {
 	width: 100%;
-	// max-width: 1440px;
 	display: table;
 	margin: 0 auto;
+	padding-bottom: 16px;
 
 	.full-feature-dist {
 		width: 100%;
@@ -100,6 +119,7 @@ body {
 	max-width: 1440px;
 	display: table;
 	margin: 0 auto;
+	padding-bottom: 36px;
 
 	.full-feature-map {
 		width: 60%;		
@@ -118,6 +138,10 @@ body {
 		padding-left: 20px;
 		display: table-cell;
 		vertical-align: middle;
+	}
+
+	.full-feature-text {
+		padding-right: 20px;
 	}
 
 	.full-feature-right-chart {
@@ -177,6 +201,10 @@ body {
 	    	border-radius: 10px;
 	   	}
     }
+
+	.full-feature, .chart-feature {		
+		padding-bottom: 14px;
+	}
 
     .full-feature {
 		display: block;
