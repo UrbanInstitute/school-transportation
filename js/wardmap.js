@@ -141,9 +141,8 @@ function mapDraw(geojson,demo) {
 	// 	// console.log("viewreset")
  //    });	    	
 
-	var resizeTimer;	
-
-    map.on("moveend", function(e){
+   	var resizeTimer;	
+	window.addEventListener("resize", function(e){
 	  clearTimeout(resizeTimer);
 	  resizeTimer = setTimeout(function() {	   	
 		map.fitBounds(llb, { duration: 0, padding: 20 })

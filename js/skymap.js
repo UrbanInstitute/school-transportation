@@ -192,7 +192,7 @@ function resetPoints(){
 
     // Event Listeners
    	var resizeTimer;	
-    map.on("moveend", function(e){
+	window.addEventListener("resize", function(e){
 		clearTimeout(resizeTimer);
 		  resizeTimer = setTimeout(function() {	   	
 

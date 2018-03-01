@@ -33,6 +33,7 @@ d3.json("data/wards.geojson", function(err, data) {
 });
 
 function mapDraw(geojson,ward7) {
+	console.log("start mapDraw")
 	var indiaLoc = [-76.9274017,38.903382];
 	var indiaSchool = [-77.0707787,38.915167];
 	// console.log(ward7)
@@ -98,22 +99,6 @@ function mapDraw(geojson,ward7) {
         );
 
 	// Functions!!!!
-
-    function update() {
-        featureElement.attr("d",path);
-        Ward7Points        
-	        .attr("cx", function(d) { 
-	        	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
-	        	return point.x; 
-	        })
-	        .attr("cy", function(d) { 
-				var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
-	        	return point.y }
-	        );
-
-	    //How to do the India Point reset!!??!
-    }	
-
 
 	function projectPoint(lon, lat) {
         var point = map.project(new mapboxgl.LngLat(lon, lat));
@@ -196,19 +181,46 @@ function mapDraw(geojson,ward7) {
 	}
 
 
-    // Event Listeners
+    function update() {
+        featureElement.attr("d",path);
+        Ward7Points        
+	        .attr("cx", function(d) { 	        
+	        	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
+	        	return point.x; 
+	        })
+	        .attr("cy", function(d) { 
+				var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
+	        	return point.y }
+	        );
+
+	    //How to do the India Point reset!!??!
+    }	
+
    	var resizeTimer;	
-    map.on("moveend", function(e){
+	window.addEventListener("resize", function(e){
 		clearTimeout(resizeTimer);
 		  resizeTimer = setTimeout(function() {	   	
-
 			map.fitBounds(llb, { duration: 0, padding: 20 })
 			update()
 
 			pymChild.sendHeight()
 
 		  }, 250);
-	})
+	});
+
+    // Event Listeners
+
+ //    map.on("moveend", function(e){
+	// 	clearTimeout(resizeTimer);
+	// 	  resizeTimer = setTimeout(function() {	   	
+	// 	  	console.log('resize function fired')
+	// 		map.fitBounds(llb, { duration: 0, padding: 20 })
+	// 		update()
+
+	// 		pymChild.sendHeight()
+
+	// 	  }, 250);
+	// })
 
     update()
 
