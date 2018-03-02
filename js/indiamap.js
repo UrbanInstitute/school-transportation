@@ -33,7 +33,7 @@ d3.json("data/wards.geojson", function(err, data) {
 });
 
 function mapDraw(geojson,ward7) {
-	console.log("start mapDraw")
+	// console.log("start mapDraw")
 	var indiaLoc = [-76.9274017,38.903382];
 	var indiaSchool = [-77.0707787,38.915167];
 	// console.log(ward7)

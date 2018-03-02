@@ -81,14 +81,21 @@ body {
     }
 
     .follow-dot {
-    	position: fixed;    	
-    	left: calc(50% - 550px + 125px - 40px);
-    	top: 200px;
+    	position: absolute;
+	    top: unset;	    
+    	left: calc(50% - 550px + 125px - 40px);    	
     	width: 30px;
     	height: 30px;
     	border-radius:30px;    	
     	z-index: -1;
     	opacity:0;
+    	transition: width 1s ease-out, height 1s ease-out;
+    }
+
+    .follow-dot.sticky {
+    	top: 230px;
+    	position: fixed;  
+    	margin-top: 0px !important;  	
     }
 
     .active {
@@ -97,6 +104,7 @@ body {
 
 
     .follow-dot.india {
+    	margin-top: 103px;
     	background-color: $cerulean;
     }
 
@@ -163,7 +171,7 @@ body {
 
 @media (max-width: $MaxDesktopSize){	
 	.content .follow-dot {
-    	left: 80px;
+    	left: 80px;    	
    	}
 }
 
@@ -185,6 +193,10 @@ body {
     	}
     	.follow-dot {
 	    	left: 5px;
+	    	
+	   	}
+	   	.follow-dot.india {
+	   		margin-top: 81px;
 	   	}
     }
 
@@ -205,6 +217,10 @@ body {
 	    	width:10px;
 	    	height: 10px;
 	    	border-radius: 10px;
+	    	
+	   	}
+	   	.follow-dot.india {
+	   		margin-top: 90px;
 	   	}
 
 	   	.source-and-notes {
