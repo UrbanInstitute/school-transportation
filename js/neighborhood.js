@@ -10,39 +10,38 @@ function IS_PHONE(){
 	return d3.select("#isPhone").style("display") == "block";
 }
 	
-d3.csv("data/neighborhood.csv", function(err, data) {	
+d3.csv("data/neighborhood2.csv", function(err, data) {	
 	chartDraw(data);		
 });
 
 function chartDraw(data) {
-	data.forEach(function(d){
-		d.White = +d.White;
-		d.Black = +d.Black;
-		d.Hispanic = +d.Hispanic;
-		d.Asian = +d.Asian;
+	data.forEach(function(d){		
+		d.sixth = +d.sixth;
+		d.ninth = +d.ninth;
 	})
 
 	var zipped = [];
-	for (var i = data.length - 1; i >= 0; i--) {
-		zipped.push(data[i].Black)
-		zipped.push(data[i].White)
-		zipped.push(data[i].Hispanic)
-		zipped.push(data[i].Asian)
+
+	for (var i = 0; i < data.length; i++) {
+		zipped.push(data[i].sixth)
+		zipped.push(data[i].ninth)
 	}
 		
 	// initialize
     var margin = {top: 10, right: 100, bottom: 20, left: 130},
 	width = parseInt(d3.select("#map").style("width")),
 	// width = (parseInt(d3.select("#master_container").style("width")) > 1000) ? 1000 : parseInt(d3.select("#master_container").style("width")),
-	height = 240;
+	height = 225;
 
-	var labels = ["Black","White","Hispanic & Latino","Asian"];
-	var labels2 = ["K","6TH","9TH"];
+	var labels = ["Sixth","Ninth"];
+	var labels2 = ["Black","White","Hispanic","Asian"];
 
 	var colorScale = d3.scaleOrdinal()
-		.range(["#848081","#d5d5d4","#332d2f","#5c5859","#0096d2","#a2d4ec","#0a4c6a","#12719e","#fdbf11","#fce39e","#843215","#e88e2d"]);
+		// .range(["#848081","#d5d5d4","#332d2f","#5c5859","#0096d2","#a2d4ec","#0a4c6a","#12719e","#fdbf11","#fce39e","#843215","#e88e2d"]);
+		.range(["#0096d2","#fdbf11"])
 
 	
+
 	var gapBetweenBars = 5,
 		gapBetweenGroups = 20,
 		numOfRecs = zipped.length,
@@ -104,13 +103,16 @@ function chartDraw(data) {
 	bar.append("text")
 	    .attr("class", "Biglabel")
 	    .attr("x", function(d) { return - 100; })
-	    .attr("y", 5)
+	    .attr("y", barHeight)
 	    .attr("dy", ".35em")
 	    .text(function(d,i) {
-	    	if (i % numPerGroup === 0)
-		        return labels2[i % numOfgroups];
-		      else
-		        return ""
+	    	if (i % numPerGroup === 0) {
+		        return labels2[i/2];
+	    	}
+		    else {
+		    	return ""
+		    }
+		        
 		});	      
 	    
   	g.append("g")

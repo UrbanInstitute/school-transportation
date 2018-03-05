@@ -31,12 +31,12 @@ function chartDraw(data) {
 
 	var colorScale = d3.scaleOrdinal()
 		// .domain(data)
-		.range(["#fdbf11","#fce39e","#843215","#e88e2d"]);
+		.range(["#fdbf11","#0a4c6a","#ec008b","#000000"]);
 
 	var gapBetweenBars = 5,
 		gapBetweenGrades = 10,
 		gapBetweenGroups = 20,
-		extraAxisGap = 30,
+		extraAxisGap = 0,
 		numOfRecs = data.length,
 		barHeight = 10,
 		numOfgroups = labels3.length,
@@ -46,7 +46,7 @@ function chartDraw(data) {
     	spacer = 10,
     	groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-2)+gapBetweenGrades);
 
-	var chartHeight = ((groupHeight + gapBetweenGroups)*numOfgroups)+gapBetweenBars+gapBetweenBars+(extraAxisGap-15);	
+	var chartHeight = ((groupHeight + gapBetweenGroups)*numOfgroups)+gapBetweenBars+gapBetweenBars;	
 
 	// console.log(chartHeight)
 
@@ -72,7 +72,7 @@ function chartDraw(data) {
 	    .attr("transform", function(d, i) {
 	    	// console.log(0.5 + Math.floor(i/numPerGroup))
 	    	var n = i+1;
-	    	var Yheight = (n*barHeight)+((n-Math.floor((n+3)/4))*gapBetweenBars)+(Math.floor((n-1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups)+(Math.floor((n+95)/100)*(extraAxisGap-15));
+	    	var Yheight = (n*barHeight)+((n-Math.floor((n+3)/4))*gapBetweenBars)+(Math.floor((n-1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups);
 	      	return "translate(" + spaceForLabelsLeft + "," + Yheight + ")";
 	    });	
 
@@ -134,7 +134,7 @@ function chartDraw(data) {
 	bar.append("text")
 	    .attr("class", "Biglabel")
 	    .attr("x", function(d) { return - 100; })
-	    .attr("y", 5)
+	    .attr("y", barHeight*3-5)
 	    .attr("dy", ".35em")
 	    .text(function(d,i) {
 	    	if (i % numPerGroup === 0)
@@ -157,9 +157,6 @@ function chartDraw(data) {
       .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight) + ")")
       .call(d3.axisBottom(x).ticks(4));    
 
-    g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + ((barHeight*4)+(gapBetweenBars*4)+gapBetweenBars+gapBetweenBars) + ")")
-      .call(d3.axisBottom(x).ticks(4));          
 
 	// What to do when we get to the map in the parent container
 	pymChild.onMessage('arrival', onArrivalMessage);
