@@ -24,6 +24,25 @@ html, body {
   background-color: pink;
 }
 
+ @-webkit-keyframes pulse 
+    {       
+      0%   {
+        stroke-opacity: 1;
+        stroke-width:0;
+
+      }
+      100% {
+        stroke-opacity: 0;
+        stroke-width:20px;
+      }
+    }
+    
+    .pulse
+    {
+      /* Giving Animation Function */
+      -webkit-animation: pulse 2s linear infinite;
+    }
+
 #replay {
   position: absolute;
   left: 20px;
@@ -169,10 +188,12 @@ div.tooltip.top:before {
 
 .indiapoint {
   fill: $cerulean;
+  stroke: $cerulean;
 }
 
 .skylerpoint {
   fill: $orangey-yellow;
+  stroke: $orangey-yellow;
 }
 
 .dot.india {

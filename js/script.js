@@ -167,7 +167,7 @@ var wpf6 = new Waypoint({
   element: document.getElementById('fade6start'),
   handler: function() { 
     f[6] = {};
-    f[6].start = document.getElementById('fade6start').offsetTop-offsetAmount;
+    f[6].start = document.getElementById('fade6start').offsetTop-offsetAmount-100;
     f[6].end = document.getElementById('fade6end').offsetTop-offsetAmount;
     f[6].distance = f[6].end - f[6].start;
     f[6].direction = [0,1];
@@ -182,11 +182,41 @@ var wpf7 = new Waypoint({
   element: document.getElementById('fade7start'),
   handler: function() { 
     f[7] = {};
-    f[7].start = document.getElementById('fade7start').offsetTop-offsetAmount;
+    f[7].start = document.getElementById('fade7start').offsetTop-offsetAmount+50;
     f[7].end = document.getElementById('fade7end').offsetTop-offsetAmount;
     f[7].distance = f[7].end - f[7].start;
     f[7].direction = [1,-1];
-    f[7].type = "both"
+    f[7].type = "both";
+  },
+  offset: function(){
+    return offsetAmount;
+  }
+})
+
+var wpf8 = new Waypoint({
+  element: document.getElementById('fade8start'),
+  handler: function() { 
+    f[8] = {};
+    f[8].start = document.getElementById('fade8start').offsetTop-offsetAmount;
+    f[8].end = document.getElementById('fade8end').offsetTop-offsetAmount;
+    f[8].distance = f[8].end - f[8].start;
+    f[8].direction = [0,1];
+    f[8].type = "both";
+  },
+  offset: function(){
+    return offsetAmount;
+  }
+})
+
+var wpf9 = new Waypoint({
+  element: document.getElementById('fade9start'),
+  handler: function() { 
+    f[9] = {};
+    f[9].start = document.getElementById('fade9start').offsetTop-offsetAmount;
+    f[9].end = document.getElementById('fade9end').offsetTop-offsetAmount;
+    f[9].distance = f[9].end - f[9].start;
+    f[9].direction = [1,-1];
+    f[9].type = "india";
   },
   offset: function(){
     return offsetAmount;

@@ -71,24 +71,13 @@ function mapDraw(geojson,ward1) {
 
 	var point = map.project(new mapboxgl.LngLat(skylerLoc[0], skylerLoc[1]));
 
-	var skylerContainer = svg.append("g")
-	skylerContainer.append("circle")
-		.attr("class","skylerpoint")
-		// .attr("cx", function (d) { return 200})
-		// .attr("cy", function (d) { return -30})
-		.attr("cx", function (d) { return point.x})
-		.attr("cy", function (d) { return point.y})
-		.attr("r", 5)
-
-	var skylerPoint = skylerContainer.selectAll(".skylerpoint");
-
 	var PointsContainer = svg.append("g")
 
 	var ward1Points = PointsContainer.selectAll("circle")
 		.data(ward1)
 		.enter().append("circle")
 		.attr("class","dot skyler")
-        .attr("r", 3)
+        .attr("r", 2)
         .attr("cx", function(d) { 
         	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
         	return point.x; 
@@ -97,6 +86,18 @@ function mapDraw(geojson,ward1) {
 			var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
         	return point.y }
         );
+
+	var skylerContainer = svg.append("g")
+	
+	skylerContainer.append("circle")
+		.attr("class","skylerpoint pulse")
+		// .attr("cx", function (d) { return 200})
+		// .attr("cy", function (d) { return -30})
+		.attr("cx", function (d) { return point.x})
+		.attr("cy", function (d) { return point.y})
+		.attr("r", 5)
+
+	var skylerPoint = skylerContainer.selectAll(".skylerpoint");
 
 	// Functions!!!!
 

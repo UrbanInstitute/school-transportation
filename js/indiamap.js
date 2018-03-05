@@ -71,24 +71,13 @@ function mapDraw(geojson,ward7) {
 
 	var point = map.project(new mapboxgl.LngLat(indiaLoc[0], indiaLoc[1]));
 
-	var IndiaContainer = svg.append("g")
-	IndiaContainer.append("circle")
-		.attr("class","indiapoint")
-		// .attr("cx", function (d) { return 200})
-		// .attr("cy", function (d) { return -30})
-		.attr("cx", function (d) { return point.x})
-		.attr("cy", function (d) { return point.y})
-		.attr("r", 5)
-
-	var IndiaPoint = IndiaContainer.selectAll(".indiapoint");
-
 	var PointsContainer = svg.append("g")
 
 	var Ward7Points = PointsContainer.selectAll("circle")
 		.data(ward7)
 		.enter().append("circle")
 		.attr("class","dot india")
-        .attr("r", 3)
+        .attr("r", 2)
         .attr("cx", function(d) { 
         	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
         	return point.x; 
@@ -97,6 +86,18 @@ function mapDraw(geojson,ward7) {
 			var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
         	return point.y }
         );
+
+	var IndiaContainer = svg.append("g")
+	IndiaContainer.append("circle")
+		.attr("class","indiapoint pulse")
+		// .attr("cx", function (d) { return 200})
+		// .attr("cy", function (d) { return -30})
+		// .attr("style")
+		.attr("cx", function (d) { return point.x})
+		.attr("cy", function (d) { return point.y})
+		.attr("r", 5)
+
+	var IndiaPoint = IndiaContainer.selectAll(".indiapoint");
 
 	// Functions!!!!
 
