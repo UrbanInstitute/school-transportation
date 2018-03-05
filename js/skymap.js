@@ -42,7 +42,7 @@ function mapDraw(geojson,ward1) {
 	mapboxgl.accessToken = 'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ';
 	var map = new mapboxgl.Map({
 	  container: 'map', 
-	  style: 'mapbox://styles/urbaninstitute/cjdozdvbd02lv2sswwwuxsxmr', 
+	  style: 'mapbox://styles/urbaninstitute/cjeeflebw3jme2srvqzpghtr2', 
 	  // center: [-77.0265709, 38.8970754], 
 	  // zoom: 9,
 	  interactive: false

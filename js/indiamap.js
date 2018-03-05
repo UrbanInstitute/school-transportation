@@ -1,3 +1,14 @@
+// $(document).ready(function(){
+// 	$("#map").hide(0)
+// });
+
+// $(window).on("load", function() {
+// 	// $(".row").fadeIn(2000)
+// 	// console.log('hello')
+// 	$("#map").fadeIn(4000)
+// });
+
+
 var startIndex = 0;
 
 var pymChild = new pym.Child();
@@ -42,7 +53,7 @@ function mapDraw(geojson,ward7) {
 	mapboxgl.accessToken = 'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ';
 	var map = new mapboxgl.Map({
 	  container: 'map', 
-	  style: 'mapbox://styles/urbaninstitute/cjdozdvbd02lv2sswwwuxsxmr', 
+	  style: 'mapbox://styles/urbaninstitute/cjeeflebw3jme2srvqzpghtr2', 
 	  // center: [-77.0265709, 38.8970754], 
 	  // zoom: 9,
 	  interactive: false

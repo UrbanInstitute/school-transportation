@@ -176,6 +176,42 @@ body {
 	line-height: 1.27;	
 }	
 
+h3.job {
+	color: #000;
+}
+
+#footerbuttons {
+	.footer-button {
+		width: 33%;
+		line-height: 20px;
+		float: left;		
+
+		.inner-button {
+			text-align: center;
+			padding-top: 14px;
+			padding-bottom: 14px;
+			margin-right: 10px;
+			margin-left: 10px;
+			border: 1px solid #333333;			
+			cursor: pointer;
+
+			a {
+				color: #000 !important;
+				font-weight: 700;
+			}
+		}		
+	}
+
+	.footer-button:first-child .inner-button {
+		margin-left: 0px;
+	}
+
+	.footer-button:last-child .inner-button {
+		margin-right: 0px;
+	}
+}
+
+
 @media (max-width: $MaxDesktopSize){	
 	.content .follow-dot {
     	left: 80px;    	
