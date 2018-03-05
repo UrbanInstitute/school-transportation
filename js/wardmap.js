@@ -39,6 +39,10 @@ function mapDraw(geojson,demo) {
 	var ne = new mapboxgl.LngLat(-76.9116897, 38.9932155);
 	var llb = new mapboxgl.LngLatBounds(sw, ne);
 
+	//INDIA AND SKY
+	var indiaLoc = [-76.9274017,38.903382];
+	var skylerLoc = [-77.032724,38.930235]; 
+
 	// zoom to DC bounds
 	map.fitBounds(llb, { duration: 0, padding: 20 })
 
@@ -70,6 +74,21 @@ function mapDraw(geojson,demo) {
 	var tooltip = d3.select("body").append("div") 
 	    .attr("class", "tooltip");
 
+	var pointIndia = map.project(new mapboxgl.LngLat(indiaLoc[0], indiaLoc[1]));
+	var IndiaContainer = svg.append("g")
+	IndiaContainer.append("circle")
+		.attr("class","indiapoint pulse")
+		.attr("cx", function (d) { return pointIndia.x})
+		.attr("cy", function (d) { return pointIndia.y})
+		.attr("r", 8)
+
+	var pointskyler = map.project(new mapboxgl.LngLat(skylerLoc[0], skylerLoc[1]));
+	var skylerContainer = svg.append("g")
+	skylerContainer.append("circle")
+		.attr("class","skylerpoint pulse")
+		.attr("cx", function (d) { return pointskyler.x})
+		.attr("cy", function (d) { return pointskyler.y})
+		.attr("r", 8)		
 
 
 	// Functions!!!!
