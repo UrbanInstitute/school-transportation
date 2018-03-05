@@ -90,6 +90,13 @@ body {
     	z-index: -1;
     	opacity:0;
     	transition: width 1s ease-out, height 1s ease-out;
+
+    	span {
+    		display: block;
+		    margin: 0 auto;
+		    text-align: center;
+		    color: #fff;
+    	}
     }
 
     .follow-dot.sticky {

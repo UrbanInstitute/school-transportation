@@ -340,42 +340,49 @@ body {
   opacity: 0;
   transition: width 1s ease-out, height 1s ease-out;
 }
-/* line 95, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
+.content .follow-dot span {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+/* line 102, ../sass/main.scss */
 .content .follow-dot.sticky {
   top: 230px;
   position: fixed;
   margin-top: 0px !important;
 }
-/* line 101, ../sass/main.scss */
+/* line 108, ../sass/main.scss */
 .content .active {
   opacity: 1;
 }
-/* line 106, ../sass/main.scss */
+/* line 113, ../sass/main.scss */
 .content .follow-dot.india {
   margin-top: 103px;
   background-color: #0096d2;
 }
-/* line 111, ../sass/main.scss */
+/* line 118, ../sass/main.scss */
 .content .source-and-notes {
   margin-top: -35px;
   margin-bottom: 35px;
 }
 
-/* line 118, ../sass/main.scss */
+/* line 125, ../sass/main.scss */
 .chart-feature {
   width: 100%;
   display: table;
   margin: 0 auto;
   padding-bottom: 16px;
 }
-/* line 124, ../sass/main.scss */
+/* line 131, ../sass/main.scss */
 .chart-feature .full-feature-dist {
   width: 100%;
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 131, ../sass/main.scss */
+/* line 138, ../sass/main.scss */
 .full-feature {
   width: 100%;
   max-width: 1440px;
@@ -383,112 +390,112 @@ body {
   margin: 0 auto;
   padding-bottom: 36px;
 }
-/* line 138, ../sass/main.scss */
+/* line 145, ../sass/main.scss */
 .full-feature .full-feature-map {
   width: 60%;
   display: table-cell;
 }
-/* line 144, ../sass/main.scss */
+/* line 151, ../sass/main.scss */
 .full-feature .full-feature-map img {
   width: 100%;
 }
-/* line 149, ../sass/main.scss */
+/* line 156, ../sass/main.scss */
 .full-feature .full-feature-right-chart, .full-feature .full-feature-text {
   padding-left: 20px;
   display: table-cell;
   vertical-align: middle;
 }
-/* line 157, ../sass/main.scss */
+/* line 164, ../sass/main.scss */
 .full-feature .full-feature-text {
   padding-right: 20px;
 }
-/* line 161, ../sass/main.scss */
+/* line 168, ../sass/main.scss */
 .full-feature .full-feature-right-chart {
   padding-left: 0px;
 }
 
-/* line 167, ../sass/main.scss */
+/* line 174, ../sass/main.scss */
 .headerimage p {
   font-size: 11px;
   line-height: 1.27;
 }
 
 @media (max-width: 1100px) {
-  /* line 173, ../sass/main.scss */
+  /* line 180, ../sass/main.scss */
   .content .follow-dot {
     left: 80px;
   }
 }
 @media (max-width: 960px) {
-  /* line 180, ../sass/main.scss */
+  /* line 187, ../sass/main.scss */
   #main-content-text {
     padding-top: 32px;
   }
 
-  /* line 184, ../sass/main.scss */
+  /* line 191, ../sass/main.scss */
   .content {
     padding-left: 48px;
     padding-right: 48px;
   }
-  /* line 188, ../sass/main.scss */
+  /* line 195, ../sass/main.scss */
   .content .inset-image {
     margin-right: 0px;
     max-width: 300px;
     padding-left: 0px;
     padding-top: 10px;
   }
-  /* line 194, ../sass/main.scss */
+  /* line 201, ../sass/main.scss */
   .content .follow-dot {
     left: 5px;
   }
-  /* line 198, ../sass/main.scss */
+  /* line 205, ../sass/main.scss */
   .content .follow-dot.india {
     margin-top: 81px;
   }
 }
 @media (max-width: 768px) {
-  /* line 207, ../sass/main.scss */
+  /* line 214, ../sass/main.scss */
   .content {
     padding-left: 20px;
     padding-right: 20px;
   }
-  /* line 211, ../sass/main.scss */
+  /* line 218, ../sass/main.scss */
   .content .inset-image {
     width: 100%;
     max-width: none;
   }
-  /* line 215, ../sass/main.scss */
+  /* line 222, ../sass/main.scss */
   .content .follow-dot {
     left: 5px;
     width: 10px;
     height: 10px;
     border-radius: 10px;
   }
-  /* line 222, ../sass/main.scss */
+  /* line 229, ../sass/main.scss */
   .content .follow-dot.india {
     margin-top: 90px;
   }
-  /* line 226, ../sass/main.scss */
+  /* line 233, ../sass/main.scss */
   .content .source-and-notes {
     margin-top: -13px;
     margin-bottom: 14px;
   }
 
-  /* line 232, ../sass/main.scss */
+  /* line 239, ../sass/main.scss */
   .full-feature, .chart-feature {
     padding-bottom: 14px;
   }
 
-  /* line 236, ../sass/main.scss */
+  /* line 243, ../sass/main.scss */
   .full-feature {
     display: block;
   }
-  /* line 239, ../sass/main.scss */
+  /* line 246, ../sass/main.scss */
   .full-feature .full-feature-map {
     width: 100%;
     display: block;
   }
-  /* line 245, ../sass/main.scss */
+  /* line 252, ../sass/main.scss */
   .full-feature .full-feature-right-chart, .full-feature .full-feature-text {
     width: 100%;
     display: block;
@@ -496,7 +503,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
   }
-  /* line 253, ../sass/main.scss */
+  /* line 260, ../sass/main.scss */
   .full-feature .full-feature-right-chart {
     padding-left: 0px;
     padding-right: 0px;

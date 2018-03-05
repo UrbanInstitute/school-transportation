@@ -42,10 +42,12 @@ $(document).ready(function(){
       india_dot.classList.add("sticky")
       $("#india-dot").css('width', 18);
       $("#india-dot").css('height', 18);  
+      $("#india-dot span").css('display',"none")
     } else {
       india_dot.classList.remove("sticky");
       $("#india-dot").css('width', 30);
-      $("#india-dot").css('height', 30);  
+      $("#india-dot").css('height', 30); 
+      $("#india-dot span").css('display',"block") 
     }
 
     for (var i = 0; i < f.length; i++) {
@@ -233,12 +235,14 @@ var skyWaypoint = new Waypoint({
       $("#skyler-dot").css('width', 18);
       $("#skyler-dot").css('height', 18);  
       $("#india-dot").css('margin-left', -20);
+      $("#skyler-dot span").css('display',"none")
       // $("#india-dot").css('height', 18);  
     } else {
       skyler_dot.classList.remove("sticky");
       $("#skyler-dot").css('width', 30);
       $("#skyler-dot").css('height', 30);  
       $("#india-dot").css('margin-left', 0);
+      $("#skyler-dot span").css('display',"block")
     }
   },
   offset: function(){

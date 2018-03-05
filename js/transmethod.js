@@ -39,7 +39,11 @@ function chartDraw(data) {
   	// var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   	var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + 0 + ")");
 
+  	var IndiaTime = 60;
+  	var SkyTime = 30;
+
   	var spacer = 10;
+  	var nameSpacer = 15;
   	var numOfRecs = 2;
   	var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
   	var chartWidth = width - margin.left;
@@ -85,19 +89,41 @@ function chartDraw(data) {
       .call(d3.axisBottom(x).ticks(20));
 
 	// Functions!!!!
-	// var contents = "<p>Mean Time</p><h2>XX mins</h2>";
-	// var meanTop = d3.select("body").append("div") 
-	//     .attr("class", "meanTime")       
-	//     .html(contents)
-	//     .style("left", width - margin.right  + "px")
-	//     .style("top", margin.top+spacer+spacer + "px"); 
-	//     // This is from the above calculation (see notebook) PLUS two spacers
 
-	// var meanBottom = d3.select("body").append("div") 
-	//     .attr("class", "meanTime")       
-	//     .html(contents)
-	//     .style("left", width - margin.right  + "px")
-	//     .style("top",margin.top+chartHeight+spacer+spacer+spacer + "px"); 
+	var India = g.append("g")
+		.attr("class","aveBar")
+		.attr("transform", "translate(" + x(IndiaTime) +"," + (margin.top) + ")")
+
+	var Skyler = g.append("g")
+		.attr("class","aveBar")
+		.attr("transform", "translate(" + x(SkyTime) +"," + (margin.top+chartHeight+spacer) + ")")		
+
+	India.append("rect")
+		.attr("x", x(IndiaTime))
+		.attr("y", nameSpacer)
+		.attr("x", 0)
+		.attr("width", 3)
+		.attr("height", (chartHeight-nameSpacer))
+		.attr("fill","rgb(143,223,255");
+
+	Skyler.append("rect")
+		.attr("x", x(IndiaTime))
+		.attr("y", nameSpacer)
+		.attr("x", 0)
+		.attr("width", 3)
+		.attr("height", (chartHeight-nameSpacer))
+		.attr("fill","rgb(248,231,28)");
+
+	India.append("text")
+		.attr("class","nametext")
+		.attr("dy", "1em")
+		.text("India")
+
+	Skyler.append("text")
+		.attr("class","nametext")
+		.attr("dy", "1em")
+		.text("Skyler")
+
 
 	var nameTop = d3.select("body").append("div") 
 	    .attr("class", "name")       
@@ -110,18 +136,6 @@ function chartDraw(data) {
 	    .html("<p>Transit</p>")
 	    .style("left", spacer + "px")
 	    .style("top",margin.top+chartHeight+spacer+spacer+spacer+spacer + "px"); 	    
-
-
-    function update() {
-     	// update featured element;
-        // featureElement.attr("d",path);        
-    }	
-
-    // Event Listeners
-    // On page resize, update the view
-
-    update()
-
 
 
 	// What to do when we get to the map in the parent container
