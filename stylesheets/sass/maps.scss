@@ -140,7 +140,8 @@ div.tooltip {
   background: #fff;
   top:-1000px;
   left:-1000px;
-  border: 1px solid $cerulean;            
+  border: 1px solid $cerulean;    
+  pointer-events: none;        
 }
 
 
