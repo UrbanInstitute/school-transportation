@@ -26,10 +26,38 @@ function chartDraw(data) {
 	})
 
 	// initialize
-    var margin = {top: 10, right: 100, bottom: 40, left: 90},
-	width = parseInt(d3.select("#map").style("width")),
-	// width = (parseInt(d3.select("#master_container").style("width")) > 1000) ? 1000 : parseInt(d3.select("#master_container").style("width")),
-	height = 200;
+	var breakpoint = 768 - 40,
+		width = parseInt(d3.select("#map").style("width"));
+
+  	var IndiaTime = 60;
+  	var SkyTime = 30;
+  	var spacer = 10;
+  	var nameSpacer = 15;
+  	var numOfRecs = 2;
+
+	if (width > breakpoint) {
+
+		var margin = {top: 10, right: 100, bottom: 40, left: 90},
+			height = 200,
+			chartWidth = width - margin.right,
+			chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs,
+			BigLabelXTop = spacer,
+			BigLabelYTop = margin.top+spacer+spacer+spacer,
+			BigLabelXBottom = spacer,	
+	    	BigLabelYBottom = margin.top+chartHeight+spacer+spacer+spacer+spacer;
+
+	} else {
+		var margin = {top: 10, right: 10, bottom: 40, left: 10},
+			height = 200,
+			chartWidth = width - margin.right - margin.left,
+			chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs,
+			BigLabelXTop = spacer,
+			BigLabelYTop = (1*3)-5,
+			BigLabelXBottom = spacer,	    	
+	    	BigLabelYBottom = margin.top+chartHeight+spacer;
+	}
+
+
 
 	var svg = d3.select("#map").append("svg")
 	    .attr("width", width)
@@ -41,12 +69,11 @@ function chartDraw(data) {
 
   	var IndiaTime = 60;
   	var SkyTime = 30;
-
   	var spacer = 10;
   	var nameSpacer = 15;
   	var numOfRecs = 2;
   	var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
-  	var chartWidth = width - margin.right;
+  	
 
 	var x = d3.scaleLinear()
 	    .rangeRound([0, chartWidth]);
@@ -90,7 +117,7 @@ function chartDraw(data) {
 
 	g.append("text")
 		.attr("class","axis-label")
-    	.attr("transform", "translate(" + width/2 + "," + (height-margin.bottom+spacer+spacer+spacer+spacer) + ")")
+    	.attr("transform", "translate(" + chartWidth/2 + "," + (height-margin.bottom+spacer+spacer+spacer+spacer) + ")")
 		.text("Commute Time in Minutes") 
 
 	// Functions!!!!
@@ -133,14 +160,14 @@ function chartDraw(data) {
 	var nameTop = d3.select("body").append("div") 
 	    .attr("class", "name")       
 	    .html("<p>Driving<br>with Traffic</p>")
-	    .style("left", spacer + "px")
-	    .style("top", margin.top+spacer+spacer+spacer + "px"); 
+	    .style("left", BigLabelXTop + "px")
+	    .style("top", BigLabelYTop + "px"); 
 
 	var nameBottom = d3.select("body").append("div") 
 	    .attr("class", "name")       
 	    .html("<p>Transit</p>")
-	    .style("left", spacer + "px")
-	    .style("top",margin.top+chartHeight+spacer+spacer+spacer+spacer + "px"); 	    
+	    .style("left", BigLabelXBottom + "px")
+	    .style("top", BigLabelYBottom + "px"); 	   
 
 
 	// What to do when we get to the map in the parent container

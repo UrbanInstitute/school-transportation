@@ -20,33 +20,48 @@ function chartDraw(data) {
 	})
 
 	// initialize
-    var margin = {top: 10, right: 100, bottom: 20, left: 130},
-	width = parseInt(d3.select("#map").style("width")),
-	// width = (parseInt(d3.select("#master_container").style("width")) > 1000) ? 1000 : parseInt(d3.select("#master_container").style("width")),
-	height = 425;
+	var breakpoint = 768 - 40,
+		width = parseInt(d3.select("#map").style("width"));
 
-	var labels = ["White","Black","Hispanic/Latino","Asian"];
+	var labels = ["White","Black","Hispanic","Asian"];
 	var labels2 = ["9th","","",""];
 	var labels3 = ["Washington, DC","New York City","New Orleans","Detroit","Denver"];
 
-	var colorScale = d3.scaleOrdinal()
-		// .domain(data)
-		.range(["#fdbf11","#0a4c6a","#ec008b","#000000"]);
 
 	var gapBetweenBars = 5,
-		gapBetweenGrades = 10,
-		gapBetweenGroups = 20,
+		gapBetweenGrades = 0,
 		extraAxisGap = 0,
 		numOfRecs = data.length,
 		barHeight = 10,
 		numOfgroups = labels3.length,
 		numPerGroup = numOfRecs / (numOfgroups),
-		spaceForLabelsLeft   = 80,
-		spaceForLabelsRight = 30,
-    	spacer = 10,
-    	groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-2)+gapBetweenGrades);
+    	spacer = 10;
+
+	if (width > breakpoint) {
+		var margin = {top: 10, right: 100, bottom: 20, left: 130},
+			height = 425,
+			gapBetweenGroups = 20,
+			spaceForLabelsLeft   = 80,
+			spaceForLabelsRight = 30,
+			groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-2)+gapBetweenGrades),
+	    	BigLabelX = -100,
+	    	BigLabelY = (barHeight*3)-5;
+
+	} else {
+		var margin = {top: 10, right: 40, bottom: 10, left: 30},
+			height = 425,
+			gapBetweenGroups = 40,
+			spaceForLabelsLeft   = 30,
+			spaceForLabelsRight = 30,
+			groupHeight = (barHeight*numPerGroup)+(gapBetweenBars*(numPerGroup-2)+gapBetweenGrades),
+			BigLabelX = 0,
+	    	BigLabelY = -15;
+	}
 
 	var chartHeight = ((groupHeight + gapBetweenGroups)*numOfgroups)+gapBetweenBars+gapBetweenBars;	
+	var colorScale = d3.scaleOrdinal()
+		// .domain(data)
+		.range(["#fdbf11","#0a4c6a","#ec008b","#000000"]);
 
 	// console.log(chartHeight)
 
@@ -72,7 +87,7 @@ function chartDraw(data) {
 	    .attr("transform", function(d, i) {
 	    	// console.log(0.5 + Math.floor(i/numPerGroup))
 	    	var n = i+1;
-	    	var Yheight = (n*barHeight)+((n-Math.floor((n+3)/4))*gapBetweenBars)+(Math.floor((n-1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups);
+	    	var Yheight = margin.top + spacer + (n*barHeight)+((n-Math.floor((n+3)/4))*gapBetweenBars)+(Math.floor((n-1)/4)*gapBetweenGrades)+(Math.floor((n-1)/4)*gapBetweenGroups);
 	      	return "translate(" + spaceForLabelsLeft + "," + Yheight + ")";
 	    });	
 
@@ -133,8 +148,8 @@ function chartDraw(data) {
 
 	bar.append("text")
 	    .attr("class", "Biglabel")
-	    .attr("x", function(d) { return - 100; })
-	    .attr("y", barHeight*3-5)
+	    .attr("x", BigLabelX)
+	    .attr("y", BigLabelY)
 	    .attr("dy", ".35em")
 	    .text(function(d,i) {
 	    	if (i % numPerGroup === 0)
@@ -154,7 +169,7 @@ function chartDraw(data) {
 
 
   	g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight) + ")")
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+margin.top) + ")")
       .call(d3.axisBottom(x).ticks(4));    
 
 
