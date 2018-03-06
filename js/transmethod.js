@@ -26,7 +26,7 @@ function chartDraw(data) {
 	})
 
 	// initialize
-    var margin = {top: 10, right: 100, bottom: 20, left: 90},
+    var margin = {top: 10, right: 100, bottom: 40, left: 90},
 	width = parseInt(d3.select("#map").style("width")),
 	// width = (parseInt(d3.select("#master_container").style("width")) > 1000) ? 1000 : parseInt(d3.select("#master_container").style("width")),
 	height = 200;
@@ -46,7 +46,7 @@ function chartDraw(data) {
   	var nameSpacer = 15;
   	var numOfRecs = 2;
   	var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
-  	var chartWidth = width - margin.left;
+  	var chartWidth = width - margin.right;
 
 	var x = d3.scaleLinear()
 	    .rangeRound([0, chartWidth]);
@@ -87,6 +87,11 @@ function chartDraw(data) {
   	g.append("g")
       .attr("transform", "translate(0," + (height-margin.bottom) + ")")
       .call(d3.axisBottom(x).ticks(20));
+
+	g.append("text")
+		.attr("class","axis-label")
+    	.attr("transform", "translate(" + width/2 + "," + (height-margin.bottom+spacer+spacer+spacer+spacer) + ")")
+		.text("Commute Time in Minutes") 
 
 	// Functions!!!!
 

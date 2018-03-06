@@ -50,7 +50,7 @@ function chartDraw(transit,drive) {
 	// console.log(drive)
 
 	// initialize
-    var margin = {top: 10, right: 100, bottom: 40, left: 40},
+    var margin = {top: 10, right: 100, bottom: 90, left: 40},
 		width = parseInt(d3.select("#map").style("width")),
 		height = getHeight(width);
 
@@ -66,6 +66,8 @@ function chartDraw(transit,drive) {
 	  	numOfWards = 8,
 	  	chartHeight = ((height - margin.top - margin.bottom)-((numOfWards)*spacer)) / numOfWards,
 	  	chartWidth = width - margin.left;
+
+	// console.log(chartHeight)
 
 	var x = d3.scaleLinear()
 	    .rangeRound([0, (chartWidth-(4*spacer))]);
@@ -128,7 +130,13 @@ function chartDraw(transit,drive) {
 
 	 g.append("g")
       .attr("transform", "translate(0," + (height-margin.bottom) + ")")
-      .call(d3.axisBottom(x).ticks(2));
+      .call(d3.axisBottom(x).ticks(4));
+
+	g.append("text")
+		.attr("class","axis-label")
+    	.attr("transform", "translate(" + width/2 + "," + (height-margin.bottom+spacer+spacer+spacer+spacer) + ")")
+		.text("Commute Time in Minutes") 
+	  
 
     $("#drive").click(function(){
     	switchTo("drive");

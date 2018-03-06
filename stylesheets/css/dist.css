@@ -277,18 +277,25 @@ html, body {
 }
 
 /* line 27, ../sass/dist.scss */
+.axis-label {
+  font-family: Lato;
+  font-size: 12px;
+  text-anchor: middle;
+}
+
+/* line 33, ../sass/dist.scss */
 .nametext {
   font-family: Lato;
   font-size: 10px;
 }
 
-/* line 32, ../sass/dist.scss */
+/* line 38, ../sass/dist.scss */
 div.meanTime, div.name {
   position: fixed;
   font-family: Lato;
 }
 
-/* line 37, ../sass/dist.scss */
+/* line 43, ../sass/dist.scss */
 div.meanTime p, div.name p {
   font-size: 12px;
   text-align: center;
@@ -297,22 +304,22 @@ div.meanTime p, div.name p {
   font-weight: 700;
 }
 
-/* line 45, ../sass/dist.scss */
+/* line 51, ../sass/dist.scss */
 div.name {
   width: 70px;
 }
 
-/* line 49, ../sass/dist.scss */
+/* line 55, ../sass/dist.scss */
 div.meanTime {
   width: 100px;
 }
 
-/* line 53, ../sass/dist.scss */
+/* line 59, ../sass/dist.scss */
 div.name p {
   text-align: right;
 }
 
-/* line 57, ../sass/dist.scss */
+/* line 63, ../sass/dist.scss */
 div.meanTime h2 {
   font-size: 26px;
   text-align: center;
