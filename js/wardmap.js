@@ -77,18 +77,33 @@ function mapDraw(geojson,demo) {
 	var pointIndia = map.project(new mapboxgl.LngLat(indiaLoc[0], indiaLoc[1]));
 	var IndiaContainer = svg.append("g")
 	IndiaContainer.append("circle")
-		.attr("class","indiapoint pulse")
+		.attr("class","indiapoint stroker")
 		.attr("cx", function (d) { return pointIndia.x})
 		.attr("cy", function (d) { return pointIndia.y})
-		.attr("r", 8)
+		.attr("r", 8)	
+
+	IndiaContainer.append("text")
+		.attr("class","pointText")
+		.attr("transform", "translate(" + pointIndia.x + "," + pointIndia.y + ")")
+		.attr("dy",".45em")
+		.attr("dx","1em")
+		.text("India")
+
 
 	var pointskyler = map.project(new mapboxgl.LngLat(skylerLoc[0], skylerLoc[1]));
 	var skylerContainer = svg.append("g")
 	skylerContainer.append("circle")
-		.attr("class","skylerpoint pulse")
+		.attr("class","skylerpoint stroker")
 		.attr("cx", function (d) { return pointskyler.x})
 		.attr("cy", function (d) { return pointskyler.y})
-		.attr("r", 8)		
+		.attr("r", 8)
+
+	skylerContainer.append("text")
+		.attr("class","pointText")
+		.attr("transform", "translate(" + pointskyler.x + "," + pointskyler.y + ")")
+		.attr("dy",".45em")
+		.attr("dx","1em")
+		.text("Skyler")
 
 
 	// Functions!!!!

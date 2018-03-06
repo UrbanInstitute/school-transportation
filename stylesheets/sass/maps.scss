@@ -173,20 +173,6 @@ div.tooltip.top:before {
   
 }
 
-// .arrow_box:after {
-//   border-color: rgba(255, 255, 255, 0);
-//   border-top-color: #fff;
-//   border-width: 30px;
-//   margin-left: -30px;
-// }
-// .arrow_box:before {
-//   border-color: rgba(189, 245, 37, 0);
-//   border-top-color: #bdf525;
-//   border-width: 36px;
-//   margin-left: -36px;
-// }
-
-
 .indiapoint {
   fill: $cerulean;
   stroke: $cerulean;
@@ -195,6 +181,17 @@ div.tooltip.top:before {
 .skylerpoint {
   fill: $orangey-yellow;
   stroke: $orangey-yellow;
+}
+
+.stroker {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.pointText {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: Lato;
 }
 
 .dot.india {
