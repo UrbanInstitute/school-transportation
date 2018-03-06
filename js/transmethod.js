@@ -42,7 +42,7 @@ function chartDraw(data) {
 			chartWidth = width - margin.right,
 			chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs,
 			BigLabelXTop = spacer,
-			BigLabelYTop = margin.top+spacer+spacer+spacer,
+			BigLabelYTop = margin.top+spacer,
 			BigLabelXBottom = spacer,	
 	    	BigLabelYBottom = margin.top+chartHeight+spacer+spacer+spacer+spacer;
 
