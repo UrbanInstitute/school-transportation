@@ -163,8 +163,8 @@ function mapDraw(geojson,ward1) {
 						        	return point.y }
 						        )
 						        .on("end",function(){
-						        	d3.select(this).transition().ease(d3.easeLinear).duration(1000)
-						        		.style("fill","#f8e71c")
+						        	// d3.select(this).transition().ease(d3.easeLinear).duration(1000)
+						        	// 	.style("fill","#f8e71c")
 						        })
 						// })
 				// })

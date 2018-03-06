@@ -158,8 +158,8 @@ function mapDraw(geojson,ward7) {
 						        	return point.y }
 						        )
 						        .on("end",function(){
-						        	d3.select(this).transition().ease(d3.easeLinear).duration(1000)
-						        		.style("fill","#C5E4F3")
+						        	// d3.select(this).transition().ease(d3.easeLinear).duration(1000)
+						        	// 	.style("fill","#C5E4F3")
 						        	// if (replay === "yes") {
 						        	// 	return ""
 						        	// }
