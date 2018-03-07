@@ -169,7 +169,7 @@ function chartDraw(data) {
 
 
   	g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+margin.top) + ")")
+      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+margin.top+spacer+spacer) + ")")
       .call(d3.axisBottom(x).ticks(4));    
 
 

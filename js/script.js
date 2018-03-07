@@ -8,22 +8,14 @@ function IS_PHONE(){
 	return d3.select("#isPhone").style("display") == "block";
 }
 
-
-// var waypoint = new Waypoint({
-//   element: document.getElementById('main-content-text'),
-//   handler: function() {
-//     $(".follow-dot.india").toggleClass("moving")
-//   },
-//   offset: function(){
-//     return 155;
-//   }
-// })
-
 var offsetAmount = 230;
 
 // When the user scrolls the page, execute myFunction 
 
 $(document).ready(function(){
+
+  console.log(f)
+  console.log(wpf2)
 
   // Get the india_dot
   var india_dot = document.getElementById("india-dot");
@@ -37,7 +29,8 @@ $(document).ready(function(){
 
   // Add the sticky class to the india_dot when you reach its scroll position. Remove "sticky" when you leave the scroll position
   function stickyIndia() {
-    
+    var outside = "true"
+
     if (window.pageYOffset >= sticky) {    
       india_dot.classList.add("sticky")
       $("#india-dot").css('width', 18);
@@ -52,7 +45,10 @@ $(document).ready(function(){
 
     for (var i = 0; i < f.length; i++) {
       if (f[i] != "off") {
+        // console.log("go")
         if (window.pageYOffset >= f[i].start && window.pageYOffset <= (f[i].end+100)) {
+          outside = "false"
+
           var op = f[i].direction[0] + (f[i].direction[1]*((f[i].end-window.pageYOffset)/f[i].distance));    
           if (f[i].type === "india") {
             $("#india-dot").css('opacity', op);  
@@ -64,8 +60,23 @@ $(document).ready(function(){
           }
           
         }
+      }    
+    }
+
+    // cut???
+    if (outside === "true") {
+      if ($("#india-dot").css('opacity') <= 0.3 && $("#india-dot").css('opacity') > 0) {
+        $("#india-dot").css('opacity', 0);
+      } else if ($("#india-dot").css('opacity') >= 0.7 && $("#india-dot").css('opacity') < 1) {
+        $("#india-dot").css('opacity', 1);
+      }
+      if ($("#skyler-dot").css('opacity') <= 0.3 && $("#skyler-dot").css('opacity') > 0) {
+        $("#skyler-dot").css('opacity', 0);
+      } else if ($("#skyler-dot").css('opacity') >= 0.7 && $("#skyler-dot").css('opacity') < 1) {
+        $("#skyler-dot").css('opacity', 1);
       }
     }
+
   } 
 
 
