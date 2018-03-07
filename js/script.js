@@ -14,8 +14,8 @@ var offsetAmount = 230;
 
 $(document).ready(function(){
 
-  console.log(f)
-  console.log(wpf2)
+  // console.log(f)
+  // console.log(wpf2)
 
   // Get the india_dot
   var india_dot = document.getElementById("india-dot");
