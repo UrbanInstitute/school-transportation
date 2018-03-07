@@ -408,42 +408,43 @@ div.meanTime h2 {
 /* line 117, ../sass/allwardsdistro.scss */
 .tick text {
   font-family: Lato;
+  font-size: 12px;
 }
 
 @media (max-width: 307.2px) {
-  /* line 122, ../sass/allwardsdistro.scss */
+  /* line 123, ../sass/allwardsdistro.scss */
   #map_container {
     height: 300px;
   }
 
-  /* line 126, ../sass/allwardsdistro.scss */
+  /* line 127, ../sass/allwardsdistro.scss */
   #isPhone40 {
     display: block;
   }
 
-  /* line 130, ../sass/allwardsdistro.scss */
+  /* line 131, ../sass/allwardsdistro.scss */
   #isTablet40, #isDesktop40 {
     display: none;
   }
 }
 @media (max-width: 384px) {
-  /* line 136, ../sass/allwardsdistro.scss */
+  /* line 137, ../sass/allwardsdistro.scss */
   #map_container {
     height: 374px;
   }
 
-  /* line 140, ../sass/allwardsdistro.scss */
+  /* line 141, ../sass/allwardsdistro.scss */
   #isTablet {
     display: block;
   }
 
-  /* line 144, ../sass/allwardsdistro.scss */
+  /* line 145, ../sass/allwardsdistro.scss */
   #isPhone, #isDesktop {
     display: none;
   }
 }
 @media (max-width: 440px) {
-  /* line 151, ../sass/allwardsdistro.scss */
+  /* line 152, ../sass/allwardsdistro.scss */
   #map_container {
     height: 474px;
   }

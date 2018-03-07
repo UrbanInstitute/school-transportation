@@ -274,28 +274,29 @@ html, body {
 /* line 23, ../sass/dist.scss */
 .tick text {
   font-family: Lato;
+  font-size: 12px;
 }
 
-/* line 27, ../sass/dist.scss */
+/* line 28, ../sass/dist.scss */
 .axis-label {
   font-family: Lato;
   font-size: 12px;
   text-anchor: middle;
 }
 
-/* line 33, ../sass/dist.scss */
+/* line 34, ../sass/dist.scss */
 .nametext {
   font-family: Lato;
-  font-size: 10px;
+  font-size: 12px;
 }
 
-/* line 38, ../sass/dist.scss */
+/* line 39, ../sass/dist.scss */
 div.meanTime, div.name {
   position: fixed;
   font-family: Lato;
 }
 
-/* line 43, ../sass/dist.scss */
+/* line 44, ../sass/dist.scss */
 div.meanTime p, div.name p {
   font-size: 12px;
   text-align: center;
@@ -304,22 +305,22 @@ div.meanTime p, div.name p {
   font-weight: 700;
 }
 
-/* line 51, ../sass/dist.scss */
+/* line 52, ../sass/dist.scss */
 div.name {
   width: 70px;
 }
 
-/* line 55, ../sass/dist.scss */
+/* line 56, ../sass/dist.scss */
 div.meanTime {
   width: 100px;
 }
 
-/* line 59, ../sass/dist.scss */
+/* line 60, ../sass/dist.scss */
 div.name p {
   text-align: right;
 }
 
-/* line 63, ../sass/dist.scss */
+/* line 64, ../sass/dist.scss */
 div.meanTime h2 {
   font-size: 26px;
   text-align: center;

@@ -168,9 +168,9 @@ function chartDraw(data) {
 	// 	});	 
 
 
-  	g.append("g")
-      .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+margin.top+spacer+spacer) + ")")
-      .call(d3.axisBottom(x).ticks(4));    
+  	// g.append("g")
+   //    .attr("transform", "translate(" + spaceForLabelsLeft +"," + (chartHeight+margin.top+spacer+spacer) + ")")
+   //    .call(d3.axisBottom(x).ticks(4));    
 
 
 	// What to do when we get to the map in the parent container
