@@ -47,7 +47,7 @@ html, body {
   position: absolute;
   left: 20px;
   top:20px;
-  background-color: $orangey-yellow;
+  background-color: $cerulean;
   height: 36px;
   width: 46px;
   cursor: pointer;
@@ -59,6 +59,10 @@ html, body {
     width: 20px;
   }
 
+}
+
+#replay:hover {
+  background-color: $soft-blue;
 }
 
 svg {
