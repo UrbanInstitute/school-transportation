@@ -297,7 +297,7 @@ h3.job {
 @media (max-width: $MaxPhoneSize){	
 
 	.content {
-		padding-left: 20px;
+		padding-left: 27px;
 		padding-right: 20px;
 
     	.inset-image {
@@ -305,14 +305,14 @@ h3.job {
 			max-width: none;
     	}
     	.follow-dot {
-	    	left: 5px;
+	    	left: 13px;
 	    	width:10px;
 	    	height: 10px;
 	    	border-radius: 10px;
 	    	
 	   	}
 	   	.follow-dot.india {
-	   		margin-top: 90px;
+	   		margin-top: 105px;
 	   	}
 
 	   	.source-and-notes {
@@ -340,6 +340,11 @@ h3.job {
 			vertical-align: none;
 			padding-left: 20px;
 			padding-right: 20px;
+		}
+
+		.full-feature-text {
+			padding-bottom: 5px;
+			padding-top:5px;
 		}
 
 		.full-feature-right-chart {

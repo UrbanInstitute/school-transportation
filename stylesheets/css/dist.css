@@ -242,11 +242,6 @@ h3 {
     font-size: 16px;
     line-height: 1.31;
   }
-
-  /* line 177, ../sass/_typography.scss */
-  .chart-title {
-    padding-top: 32px;
-  }
 }
 /* line 4, ../sass/dist.scss */
 html, body {

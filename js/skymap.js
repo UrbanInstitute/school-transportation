@@ -4,15 +4,15 @@ var pymChild = new pym.Child();
 
 // https://bl.ocks.org/shimizu/5f4cee0fddc7a64b55a9
 
-function IS_DESKTOP(){
-	return d3.select("#isDesktop").style("display") == "block";
-}
-function IS_TABLET(){
-	return d3.select("#isTablet").style("display") == "block";
-}
-function IS_PHONE(){
-	return d3.select("#isPhone").style("display") == "block";
-}
+// function IS_DESKTOP(){
+// 	return d3.select("#isDesktop").style("display") == "block";
+// }
+// function IS_TABLET(){
+// 	return d3.select("#isTablet").style("display") == "block";
+// }
+// function IS_PHONE(){
+// 	return d3.select("#isPhone").style("display") == "block";
+// }
 	
 d3.json("data/wards.geojson", function(err, data) {
 	d3.csv("data/ward1.csv",function(err,ward1){
@@ -78,6 +78,7 @@ function mapDraw(geojson,ward1) {
 		.enter().append("circle")
 		.attr("class","dot skyler")
         .attr("r", 2)
+        .attr("style","opacity: 0")
         .attr("cx", function(d) { 
         	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
         	return point.x; 
@@ -91,11 +92,17 @@ function mapDraw(geojson,ward1) {
 	
 	skylerContainer.append("circle")
 		.attr("class","skylerpoint pulse")
-		// .attr("cx", function (d) { return 200})
-		// .attr("cy", function (d) { return -30})
 		.attr("cx", function (d) { return point.x})
 		.attr("cy", function (d) { return point.y})
 		.attr("r", 5)
+
+	skylerContainer.append("text")
+		.attr("class","pointText")
+		.attr("dy",".4em")
+		.attr("dx","0.7em")
+		.attr("transform", "translate(" + point.x +"," + point.y + ")")
+		.text("Skyler")
+
 
 	var skylerPoint = skylerContainer.selectAll(".skylerpoint");
 
@@ -137,15 +144,20 @@ function mapDraw(geojson,ward1) {
 			// 	.style("opacity","1")
 			// 	.attr("r",5)
 			// 	.on("end",function(){
+					
+					var Numofpoints = ward1Points._groups[0].length - 1;
 
-					// d3.select(this).transition().delay(1000).ease(d3.easeLinear).duration(3000)
-					// 	.attr("cx", function (d) { return point.x})
-					// 	.attr("cy", function (d) { return point.y})
-					// 	.on("end",function(){
+					skylerContainer.selectAll("text").attr("opacity",1)
 
+					ward1Points.transition().ease(d3.easeLinear).duration(3000)
+						.attr("style","opacity: 1")
+						.on("end",function(d,i){	
+							if (i === Numofpoints) {								
 							var point = map.project(new mapboxgl.LngLat(skylerSchool[0], skylerSchool[1]));
 
 							// d3.select(this).transition().ease(d3.easeLinear).duration(200*35)
+
+							skylerContainer.selectAll("text").attr("opacity",0)
 
 							skylerPoint.transition().ease(d3.easeLinear).duration(speed*30)
 								.attr("cx", function (d) { return point.x})
@@ -163,10 +175,10 @@ function mapDraw(geojson,ward1) {
 						        	return point.y }
 						        )
 						        .on("end",function(){
-						        	// d3.select(this).transition().ease(d3.easeLinear).duration(1000)
-						        	// 	.style("fill","#f8e71c")
+						        	
 						        })
-						// })
+							}
+						})
 				// })
 		}
 	}

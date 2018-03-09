@@ -89,24 +89,29 @@ function mapDraw(geojson,ward7) {
 		.enter().append("circle")
 		.attr("class","dot india")
         .attr("r", 2)
+        .attr("style","opacity: 0")
         .attr("cx", function(d) { 
         	var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
         	return point.x; 
         })
         .attr("cy", function(d) { 
 			var point = map.project(new mapboxgl.LngLat(d.tractLon,d.tractLat));
-        	return point.y }
-        );
+        	return point.y });
+
 
 	var IndiaContainer = svg.append("g")
 	IndiaContainer.append("circle")
 		.attr("class","indiapoint pulse")
-		// .attr("cx", function (d) { return 200})
-		// .attr("cy", function (d) { return -30})
-		// .attr("style")
 		.attr("cx", function (d) { return point.x})
 		.attr("cy", function (d) { return point.y})
 		.attr("r", 5)
+
+	IndiaContainer.append("text")
+		.attr("class","pointText")
+		.attr("dy",".4em")
+		.attr("dx","0.7em")
+		.attr("transform", "translate(" + point.x +"," + point.y + ")")
+		.text("India")
 
 	var IndiaPoint = IndiaContainer.selectAll(".indiapoint");
 
@@ -132,15 +137,19 @@ function mapDraw(geojson,ward7) {
 			// 	.style("opacity","1")
 			// 	.attr("r",5)
 			// 	.on("end",function(){
+					var Numofpoints = Ward7Points._groups[0].length - 1;
 
-					// d3.select(this).transition().delay(1000).ease(d3.easeLinear).duration(3000)
-					// 	.attr("cx", function (d) { return point.x})
-					// 	.attr("cy", function (d) { return point.y})
-					// 	.on("end",function(){
+					IndiaContainer.selectAll("text").attr("opacity",1)
 
+					Ward7Points.transition().ease(d3.easeLinear).duration(3000)
+						.attr("style","opacity: 1")
+						.on("end",function(d,i){	
+							if (i === Numofpoints) {
 							var point = map.project(new mapboxgl.LngLat(indiaSchool[0], indiaSchool[1]));
 
 							// d3.select(this).transition().ease(d3.easeLinear).duration(200*35)
+
+							IndiaContainer.selectAll("text").attr("opacity",0)
 
 							IndiaPoint.transition().ease(d3.easeLinear).duration(speed*60)
 								.attr("cx", function (d) { return point.x})
@@ -158,13 +167,12 @@ function mapDraw(geojson,ward7) {
 						        	return point.y }
 						        )
 						        .on("end",function(){
-						        	// d3.select(this).transition().ease(d3.easeLinear).duration(1000)
-						        	// 	.style("fill","#C5E4F3")
-						        	// if (replay === "yes") {
-						        	// 	return ""
-						        	// }
 						        })
-						// })
+
+
+
+							}							
+						})
 				// })
 		}
 	}

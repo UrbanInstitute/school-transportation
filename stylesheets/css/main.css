@@ -246,11 +246,6 @@ h3 {
     font-size: 16px;
     line-height: 1.31;
   }
-
-  /* line 177, ../sass/_typography.scss */
-  .chart-title {
-    padding-top: 32px;
-  }
 }
 /*
 body {
@@ -538,7 +533,7 @@ h3.job {
 @media (max-width: 768px) {
   /* line 299, ../sass/main.scss */
   .content {
-    padding-left: 20px;
+    padding-left: 27px;
     padding-right: 20px;
   }
   /* line 303, ../sass/main.scss */
@@ -548,14 +543,14 @@ h3.job {
   }
   /* line 307, ../sass/main.scss */
   .content .follow-dot {
-    left: 5px;
+    left: 13px;
     width: 10px;
     height: 10px;
     border-radius: 10px;
   }
   /* line 314, ../sass/main.scss */
   .content .follow-dot.india {
-    margin-top: 90px;
+    margin-top: 105px;
   }
   /* line 318, ../sass/main.scss */
   .content .source-and-notes {
@@ -586,6 +581,11 @@ h3.job {
     padding-right: 20px;
   }
   /* line 345, ../sass/main.scss */
+  .full-feature .full-feature-text {
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+  /* line 350, ../sass/main.scss */
   .full-feature .full-feature-right-chart {
     padding-left: 0px;
     padding-right: 0px;

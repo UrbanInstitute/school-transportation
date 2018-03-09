@@ -9,6 +9,19 @@ function IS_PHONE(){
 }
 
 var offsetAmount = 230;
+width = parseInt($(window).width());
+var dotInfo = {}
+if (width > 768) {
+  dotInfo.dotBig = 30;
+  dotInfo.dotSmall = 18;
+  dotInfo.letterDisp = "block";
+  dotInfo.leftDot = -20;
+} else {
+  dotInfo.dotBig = 10;
+  dotInfo.dotSmall = 10; 
+  dotInfo.letterDisp = "none";
+  dotInfo.leftDot = -11;
+}
 
 // When the user scrolls the page, execute myFunction 
 
@@ -33,14 +46,14 @@ $(document).ready(function(){
 
     if (window.pageYOffset >= sticky) {    
       india_dot.classList.add("sticky")
-      $("#india-dot").css('width', 18);
-      $("#india-dot").css('height', 18);  
-      $("#india-dot span").css('display',"none")
+      $("#india-dot").css('width', dotInfo.dotSmall);
+      $("#india-dot").css('height', dotInfo.dotSmall);  
+      $("#india-dot span").css('display',dotInfo.letterDisp)
     } else {
       india_dot.classList.remove("sticky");
-      $("#india-dot").css('width', 30);
-      $("#india-dot").css('height', 30); 
-      $("#india-dot span").css('display',"block") 
+      $("#india-dot").css('width', dotInfo.dotBig);
+      $("#india-dot").css('height', dotInfo.dotBig); 
+      $("#india-dot span").css('display',dotInfo.letterDisp) 
     }
 
     for (var i = 0; i < f.length; i++) {
@@ -243,17 +256,16 @@ var skyWaypoint = new Waypoint({
     var skyler_dot = document.getElementById("skyler-dot");
     if (direction === "down") {  
       skyler_dot.classList.add("sticky")
-      $("#skyler-dot").css('width', 18);
-      $("#skyler-dot").css('height', 18);  
-      $("#india-dot").css('margin-left', -20);
-      $("#skyler-dot span").css('display',"none")
-      // $("#india-dot").css('height', 18);  
+      $("#skyler-dot").css('width', dotInfo.dotSmall);
+      $("#skyler-dot").css('height', dotInfo.dotSmall);  
+      $("#india-dot").css('margin-left', dotInfo.leftDot);
+      $("#skyler-dot span").css('display',dotInfo.letterDisp)
     } else {
       skyler_dot.classList.remove("sticky");
-      $("#skyler-dot").css('width', 30);
-      $("#skyler-dot").css('height', 30);  
+      $("#skyler-dot").css('width', dotInfo.dotBig);
+      $("#skyler-dot").css('height', dotInfo.dotBig);  
       $("#india-dot").css('margin-left', 0);
-      $("#skyler-dot span").css('display',"block")
+      $("#skyler-dot span").css('display',dotInfo.letterDisp)
     }
   },
   offset: function(){
