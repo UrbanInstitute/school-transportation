@@ -48,7 +48,7 @@ $(document).ready(function(){
       india_dot.classList.add("sticky")
       $("#india-dot").css('width', dotInfo.dotSmall);
       $("#india-dot").css('height', dotInfo.dotSmall);  
-      $("#india-dot span").css('display',dotInfo.letterDisp)
+      $("#india-dot span").css('display',"none")
     } else {
       india_dot.classList.remove("sticky");
       $("#india-dot").css('width', dotInfo.dotBig);
@@ -259,7 +259,7 @@ var skyWaypoint = new Waypoint({
       $("#skyler-dot").css('width', dotInfo.dotSmall);
       $("#skyler-dot").css('height', dotInfo.dotSmall);  
       $("#india-dot").css('margin-left', dotInfo.leftDot);
-      $("#skyler-dot span").css('display',dotInfo.letterDisp)
+      $("#skyler-dot span").css('display',"none")
     } else {
       skyler_dot.classList.remove("sticky");
       $("#skyler-dot").css('width', dotInfo.dotBig);
