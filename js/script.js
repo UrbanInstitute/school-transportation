@@ -27,7 +27,7 @@ if (width > 768) {
 
 $(document).ready(function(){
 
-  // console.log(f)
+  // console.log(sff)
   // console.log(wpf2)
 
   // Get the india_dot
@@ -44,6 +44,8 @@ $(document).ready(function(){
   function stickyIndia() {
     var outside = "true"
 
+    // console.log(sff)
+
     if (window.pageYOffset >= sticky) {    
       india_dot.classList.add("sticky")
       $("#india-dot").css('width', dotInfo.dotSmall);
@@ -56,16 +58,16 @@ $(document).ready(function(){
       $("#india-dot span").css('display',dotInfo.letterDisp) 
     }
 
-    for (var i = 0; i < f.length; i++) {
-      if (f[i] != "off") {
+    for (var i = 0; i < sff.length; i++) {
+      if (sff[i] != "off") {
         // console.log("go")
-        if (window.pageYOffset >= f[i].start && window.pageYOffset <= (f[i].end+100)) {
+        if (window.pageYOffset >= sff[i].start && window.pageYOffset <= (sff[i].end+100)) {
           outside = "false"
 
-          var op = f[i].direction[0] + (f[i].direction[1]*((f[i].end-window.pageYOffset)/f[i].distance));    
-          if (f[i].type === "india") {
+          var op = sff[i].direction[0] + (sff[i].direction[1]*((sff[i].end-window.pageYOffset)/sff[i].distance));    
+          if (sff[i].type === "india") {
             $("#india-dot").css('opacity', op);  
-          } else if(f[i].type === "sky") {
+          } else if(sff[i].type === "sky") {
             $("#skyler-dot").css('opacity', op);  
           } else {
             $("#india-dot").css('opacity', op);
@@ -97,17 +99,17 @@ $(document).ready(function(){
 
 })
 
-var f = ["off","off","off","off","off","off","off","off","off","off","off","off"]
+var sff = ["off","off","off","off","off","off","off","off","off","off","off","off"]
 
 var wpf0 = new Waypoint({
   element: document.getElementById('fade0start'),
   handler: function() { 
-    f[0] = {};
-    f[0].start = document.getElementById('fade0start').offsetTop-offsetAmount;
-    f[0].end = document.getElementById('fade0end').offsetTop-offsetAmount;
-    f[0].distance = f[0].end - f[0].start;
-    f[0].direction = [0,1];
-    f[0].type = "india"
+    sff[0] = {};
+    sff[0].start = document.getElementById('fade0start').offsetTop-offsetAmount;
+    sff[0].end = document.getElementById('fade0end').offsetTop-offsetAmount;
+    sff[0].distance = sff[0].end - sff[0].start;
+    sff[0].direction = [0,1];
+    sff[0].type = "india"
   },
   offset: function(){
     return offsetAmount;
@@ -117,12 +119,12 @@ var wpf0 = new Waypoint({
 var wpf1 = new Waypoint({
   element: document.getElementById('fade1start'),
   handler: function() { 
-    f[1] = {};
-    f[1].start = document.getElementById('fade1start').offsetTop-offsetAmount;
-    f[1].end = document.getElementById('fade1end').offsetTop-offsetAmount;
-    f[1].distance = f[1].end - f[1].start;
-    f[1].direction = [1,-1];
-    f[1].type = "india"
+    sff[1] = {};
+    sff[1].start = document.getElementById('fade1start').offsetTop-offsetAmount;
+    sff[1].end = document.getElementById('fade1end').offsetTop-offsetAmount;
+    sff[1].distance = sff[1].end - sff[1].start;
+    sff[1].direction = [1,-1];
+    sff[1].type = "india"
   },
   offset: function(){
     return offsetAmount;
@@ -132,12 +134,12 @@ var wpf1 = new Waypoint({
 var wpf2 = new Waypoint({
   element: document.getElementById('fade2start'),
   handler: function() { 
-    f[2] = {};
-    f[2].start = document.getElementById('fade2start').offsetTop-offsetAmount;
-    f[2].end = document.getElementById('fade2end').offsetTop-offsetAmount;
-    f[2].distance = f[2].end - f[2].start;
-    f[2].direction = [0,1];
-    f[2].type = "india"
+    sff[2] = {};
+    sff[2].start = document.getElementById('fade2start').offsetTop-offsetAmount;
+    sff[2].end = document.getElementById('fade2end').offsetTop-offsetAmount;
+    sff[2].distance = sff[2].end - sff[2].start;
+    sff[2].direction = [0,1];
+    sff[2].type = "india"
   },
   offset: function(){
     return offsetAmount;
@@ -147,12 +149,12 @@ var wpf2 = new Waypoint({
 var wpf3 = new Waypoint({
   element: document.getElementById('fade3start'),
   handler: function() { 
-    f[3] = {};
-    f[3].start = document.getElementById('fade3start').offsetTop-offsetAmount;
-    f[3].end = document.getElementById('fade3end').offsetTop-offsetAmount;
-    f[3].distance = f[3].end - f[3].start;
-    f[3].direction = [0,1];
-    f[3].type = "sky"
+    sff[3] = {};
+    sff[3].start = document.getElementById('fade3start').offsetTop-offsetAmount;
+    sff[3].end = document.getElementById('fade3end').offsetTop-offsetAmount;
+    sff[3].distance = sff[3].end - sff[3].start;
+    sff[3].direction = [0,1];
+    sff[3].type = "sky"
   },
   offset: function(){
     return offsetAmount;
@@ -162,12 +164,12 @@ var wpf3 = new Waypoint({
 var wpf4 = new Waypoint({
   element: document.getElementById('fade4start'),
   handler: function() { 
-    f[4] = {};
-    f[4].start = document.getElementById('fade4start').offsetTop-offsetAmount;
-    f[4].end = document.getElementById('fade4end').offsetTop-offsetAmount;
-    f[4].distance = f[4].end - f[4].start;
-    f[4].direction = [1,-1];
-    f[4].type = "sky"
+    sff[4] = {};
+    sff[4].start = document.getElementById('fade4start').offsetTop-offsetAmount;
+    sff[4].end = document.getElementById('fade4end').offsetTop-offsetAmount;
+    sff[4].distance = sff[4].end - sff[4].start;
+    sff[4].direction = [1,-1];
+    sff[4].type = "sky"
   },
   offset: function(){
     return offsetAmount;
@@ -177,12 +179,12 @@ var wpf4 = new Waypoint({
 var wpf5 = new Waypoint({
   element: document.getElementById('fade5start'),
   handler: function() { 
-    f[5] = {};
-    f[5].start = document.getElementById('fade5start').offsetTop-offsetAmount;
-    f[5].end = document.getElementById('fade5end').offsetTop-offsetAmount;
-    f[5].distance = f[5].end - f[5].start;
-    f[5].direction = [1,-1];
-    f[5].type = "india"
+    sff[5] = {};
+    sff[5].start = document.getElementById('fade5start').offsetTop-offsetAmount;
+    sff[5].end = document.getElementById('fade5end').offsetTop-offsetAmount;
+    sff[5].distance = sff[5].end - sff[5].start;
+    sff[5].direction = [1,-1];
+    sff[5].type = "india"
   },
   offset: function(){
     return offsetAmount;
@@ -192,12 +194,12 @@ var wpf5 = new Waypoint({
 var wpf6 = new Waypoint({
   element: document.getElementById('fade6start'),
   handler: function() { 
-    f[6] = {};
-    f[6].start = document.getElementById('fade6start').offsetTop-offsetAmount-100;
-    f[6].end = document.getElementById('fade6end').offsetTop-offsetAmount;
-    f[6].distance = f[6].end - f[6].start;
-    f[6].direction = [0,1];
-    f[6].type = "both"
+    sff[6] = {};
+    sff[6].start = document.getElementById('fade6start').offsetTop-offsetAmount-100;
+    sff[6].end = document.getElementById('fade6end').offsetTop-offsetAmount;
+    sff[6].distance = sff[6].end - sff[6].start;
+    sff[6].direction = [0,1];
+    sff[6].type = "both"
   },
   offset: function(){
     return offsetAmount;
@@ -207,12 +209,12 @@ var wpf6 = new Waypoint({
 var wpf7 = new Waypoint({
   element: document.getElementById('fade7start'),
   handler: function() { 
-    f[7] = {};
-    f[7].start = document.getElementById('fade7start').offsetTop-offsetAmount+50;
-    f[7].end = document.getElementById('fade7end').offsetTop-offsetAmount;
-    f[7].distance = f[7].end - f[7].start;
-    f[7].direction = [1,-1];
-    f[7].type = "both";
+    sff[7] = {};
+    sff[7].start = document.getElementById('fade7start').offsetTop-offsetAmount+50;
+    sff[7].end = document.getElementById('fade7end').offsetTop-offsetAmount;
+    sff[7].distance = sff[7].end - sff[7].start;
+    sff[7].direction = [1,-1];
+    sff[7].type = "both";
   },
   offset: function(){
     return offsetAmount;
@@ -222,12 +224,12 @@ var wpf7 = new Waypoint({
 var wpf8 = new Waypoint({
   element: document.getElementById('fade8start'),
   handler: function() { 
-    f[8] = {};
-    f[8].start = document.getElementById('fade8start').offsetTop-offsetAmount;
-    f[8].end = document.getElementById('fade8end').offsetTop-offsetAmount;
-    f[8].distance = f[8].end - f[8].start;
-    f[8].direction = [0,1];
-    f[8].type = "both";
+    sff[8] = {};
+    sff[8].start = document.getElementById('fade8start').offsetTop-offsetAmount;
+    sff[8].end = document.getElementById('fade8end').offsetTop-offsetAmount;
+    sff[8].distance = sff[8].end - sff[8].start;
+    sff[8].direction = [0,1];
+    sff[8].type = "both";
   },
   offset: function(){
     return offsetAmount;
@@ -237,12 +239,12 @@ var wpf8 = new Waypoint({
 var wpf9 = new Waypoint({
   element: document.getElementById('fade9start'),
   handler: function() { 
-    f[9] = {};
-    f[9].start = document.getElementById('fade9start').offsetTop-offsetAmount;
-    f[9].end = document.getElementById('fade9end').offsetTop-offsetAmount;
-    f[9].distance = f[9].end - f[9].start;
-    f[9].direction = [1,-1];
-    f[9].type = "india";
+    sff[9] = {};
+    sff[9].start = document.getElementById('fade9start').offsetTop-offsetAmount;
+    sff[9].end = document.getElementById('fade9end').offsetTop-offsetAmount;
+    sff[9].distance = sff[9].end - sff[9].start;
+    sff[9].direction = [1,-1];
+    sff[9].type = "india";
   },
   offset: function(){
     return offsetAmount;
