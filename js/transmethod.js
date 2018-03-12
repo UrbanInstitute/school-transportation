@@ -45,7 +45,7 @@ function chartDraw(data) {
 			BigLabelYTop = margin.top+spacer,
 			BigLabelXBottom = spacer,				
 	    	BigLabelYBottom = margin.top+chartHeight+spacer+spacer+spacer+spacer,
-	    	htmlLLL = "<p>Driving<br>with Traffic</p>",
+	    	htmlLLL = "<p>Driving<br>with traffic</p>",
 	    	tickNum = 20;
 
 	} else {
@@ -57,7 +57,7 @@ function chartDraw(data) {
 			BigLabelYTop = (1*3)-5,
 			BigLabelXBottom = spacer,	    	
 	    	BigLabelYBottom = margin.top+chartHeight+spacer,
-	    	htmlLLL = "<p>Driving with Traffic</p>",
+	    	htmlLLL = "<p>Driving with traffic</p>",
 	    	tickNum = 10;
 	}
 
@@ -122,7 +122,7 @@ function chartDraw(data) {
 	g.append("text")
 		.attr("class","axis-label")
     	.attr("transform", "translate(" + chartWidth/2 + "," + (height-margin.bottom+spacer+spacer+spacer+spacer) + ")")
-		.text("Commute Time in Minutes") 
+		.text("Commute time in minutes") 
 
 	// Functions!!!!
 
