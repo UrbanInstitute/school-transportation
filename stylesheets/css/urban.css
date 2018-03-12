@@ -299,7 +299,7 @@ footer {
   display: block;
   width: 100%;
     background-color: #f1f2f2;
-    margin-top: 185px;
+    margin-top: 0px;
     padding-top: 50px;
     padding-bottom: 25px;
     bottom: 0;
@@ -308,9 +308,17 @@ footer {
      z-index: 10000;  
  
 }
+.headerimage.bottomImg {
+    background: #f1f2f2;
+    border-bottom: 185px solid #f1f2f2;
+}
 @media (max-height: 880px){
   footer{
-    margin-top: 25px;
+    margin-top: 0px;
+  }
+  .headerimage.bottomImg {
+      background: #f1f2f2;
+      border-bottom: 25px solid #f1f2f2;  
   }
 }
 footer .content{
@@ -371,6 +379,7 @@ h4 {
 .footerTopP{
   clear: both;
   padding-top: 14px;
+  margin-bottom: 16px;
 }
 #learnMore{
     display: inline-block;

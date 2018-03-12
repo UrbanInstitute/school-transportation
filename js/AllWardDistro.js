@@ -108,17 +108,30 @@ function chartDraw(transit,drive) {
 
 	for (var i = 0; i < numOfWards; i++) {
 		g.append("rect")
-	      // .datum(transit)
+	      .datum(i+1)
 	      .attr("class","hoverbox w" + (i+1))
 	      .attr("y", function(d) { return margin.top+(chartHeight*(i))+(spacer*(i))+spacer/2; })
 		  .attr("x", -(2.5*spacer))
 		  .attr("width",(width-30))
-		  .attr("height",chartHeight);
+		  .attr("height",chartHeight)
+		  .on("mouseover", function(d){
+		  	pymChild.sendMessage('hover', d);
+		  })
+		  .on("mouseout", function(d){
+		  	pymChild.sendMessage('hover', "")
+		  });
 
 		g.append("path")
 	      .datum(drive)
 	      .attr("class","ward wardmap w" + (i+1))
-	      .attr("d", area["w"+(i+1)]);
+	      .attr("d", area["w"+(i+1)])
+	      .on("mouseover", function(d){
+	      	var ward = d3.select(this).attr("class").replace(/ward/g,"").replace("map","").replace(/\s/g,"").replace("w","")
+		  	pymChild.sendMessage('hover', ward);
+		  })
+		  .on("mouseout", function(d){
+		  	pymChild.sendMessage('hover', "")
+		  });
 
 		g.append("text")
 		    .attr("class", "numYO")

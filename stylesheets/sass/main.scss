@@ -16,6 +16,8 @@ body {
 
 
 .headerimage {
+    background: #f1f2f2;
+    border-bottom: 185px solid #f1f2f2;
 	img {
 		width: 100%;
 		margin:0 auto;
@@ -161,7 +163,7 @@ body {
 
     .source-and-notes {
     	margin-top: -35px;
-    	margin-bottom: 35px;
+    	margin-bottom: 44px;
     }
 
 }
@@ -179,6 +181,13 @@ body {
 	    margin-left: -140px;		
 	}
 }
+.chart-feature.transmethod{
+	padding-bottom: 32px;
+}
+.chart-feature.race{
+	padding-bottom: 0px;
+}
+
 
 .full-feature {
 	width: 100%;
@@ -336,12 +345,18 @@ h3.job {
 
 	   	.source-and-notes {
 	   		margin-top: -13px;
-	   		margin-bottom: 14px;
+	   		margin-bottom: 34px;
 	   	}
     }
 
 	.full-feature, .chart-feature {		
 		padding-bottom: 14px;
+	}
+	.chart-feature.transmethod{
+		padding-bottom: 32px;
+	}
+	.chart-feature.race{
+		padding-bottom: 0px;
 	}
 
     .full-feature {

@@ -403,7 +403,7 @@ body {
 /* line 162, ../sass/main.scss */
 .content .source-and-notes {
   margin-top: -35px;
-  margin-bottom: 35px;
+  margin-bottom: 44px;
 }
 
 /* line 169, ../sass/main.scss */
@@ -417,7 +417,17 @@ body {
   margin-left: -140px;
 }
 
-/* line 183, ../sass/main.scss */
+/* line 182, ../sass/main.scss */
+.chart-feature.transmethod {
+  padding-bottom: 32px;
+}
+
+/* line 185, ../sass/main.scss */
+.chart-feature.race {
+  padding-bottom: 0px;
+}
+
+/* line 190, ../sass/main.scss */
 .full-feature {
   width: 100%;
   max-width: 1440px;
@@ -425,56 +435,56 @@ body {
   margin: 0 auto;
   padding-bottom: 36px;
 }
-/* line 190, ../sass/main.scss */
+/* line 197, ../sass/main.scss */
 .full-feature .full-feature-map {
   width: 60%;
   display: table-cell;
 }
-/* line 196, ../sass/main.scss */
+/* line 203, ../sass/main.scss */
 .full-feature .full-feature-map img {
   width: 100%;
 }
-/* line 201, ../sass/main.scss */
+/* line 208, ../sass/main.scss */
 .full-feature .full-feature-right-chart, .full-feature .full-feature-text {
   padding-left: 20px;
   display: table-cell;
   vertical-align: middle;
 }
-/* line 209, ../sass/main.scss */
+/* line 216, ../sass/main.scss */
 .full-feature .full-feature-text {
   padding-right: 20px;
 }
-/* line 213, ../sass/main.scss */
+/* line 220, ../sass/main.scss */
 .full-feature .full-feature-text.pullBlue {
   background-color: #a2d4ec;
 }
-/* line 217, ../sass/main.scss */
+/* line 224, ../sass/main.scss */
 .full-feature .full-feature-text.pullYellow {
   background-color: #fce39e;
 }
-/* line 221, ../sass/main.scss */
+/* line 228, ../sass/main.scss */
 .full-feature .full-feature-right-chart {
   padding-left: 0px;
 }
 
-/* line 227, ../sass/main.scss */
+/* line 234, ../sass/main.scss */
 .headerimage p {
   font-size: 12px;
   line-height: 1.27;
 }
 
-/* line 232, ../sass/main.scss */
+/* line 239, ../sass/main.scss */
 h3.job {
   color: #000;
 }
 
-/* line 237, ../sass/main.scss */
+/* line 244, ../sass/main.scss */
 #footerbuttons .footer-button {
   width: 100%;
   line-height: 20px;
   float: left;
 }
-/* line 242, ../sass/main.scss */
+/* line 249, ../sass/main.scss */
 #footerbuttons .footer-button .inner-button {
   text-align: center;
   padding-top: 14px;
@@ -486,107 +496,117 @@ h3.job {
   font-weight: 700;
   color: #000 !important;
 }
-/* line 253, ../sass/main.scss */
+/* line 260, ../sass/main.scss */
 #footerbuttons .footer-button .inner-button:hover {
   color: #fff !important;
   background-color: #0096d2;
 }
-/* line 260, ../sass/main.scss */
+/* line 267, ../sass/main.scss */
 #footerbuttons .footer-button:first-child .inner-button {
   margin-left: 0px;
 }
-/* line 264, ../sass/main.scss */
+/* line 271, ../sass/main.scss */
 #footerbuttons .footer-button:last-child .inner-button {
   margin-right: 0px;
 }
 
 @media (max-width: 1100px) {
-  /* line 271, ../sass/main.scss */
+  /* line 278, ../sass/main.scss */
   .content .follow-dot {
     left: 80px;
   }
 
-  /* line 275, ../sass/main.scss */
+  /* line 282, ../sass/main.scss */
   .chart-feature {
     padding-left: 5px !important;
     padding-right: 10px !important;
   }
-  /* line 280, ../sass/main.scss */
+  /* line 287, ../sass/main.scss */
   .chart-feature .full-feature-dist {
     width: 100%;
     margin: 0 auto;
   }
 }
 @media (max-width: 960px) {
-  /* line 291, ../sass/main.scss */
+  /* line 298, ../sass/main.scss */
   #main-content-text {
     padding-top: 32px;
   }
 
-  /* line 295, ../sass/main.scss */
+  /* line 302, ../sass/main.scss */
   .content {
     padding-left: 48px;
     padding-right: 48px;
   }
-  /* line 299, ../sass/main.scss */
+  /* line 306, ../sass/main.scss */
   .content .inset-image {
     margin-right: 0px;
     max-width: 300px;
     padding-left: 0px;
     padding-top: 10px;
   }
-  /* line 305, ../sass/main.scss */
+  /* line 312, ../sass/main.scss */
   .content .follow-dot {
     left: 5px;
   }
-  /* line 309, ../sass/main.scss */
+  /* line 316, ../sass/main.scss */
   .content .follow-dot.india {
     margin-top: 81px;
   }
 }
 @media (max-width: 768px) {
-  /* line 318, ../sass/main.scss */
+  /* line 325, ../sass/main.scss */
   .content {
     padding-left: 27px;
     padding-right: 20px;
   }
-  /* line 322, ../sass/main.scss */
+  /* line 329, ../sass/main.scss */
   .content .inset-image {
     width: 100%;
     max-width: none;
   }
-  /* line 326, ../sass/main.scss */
+  /* line 333, ../sass/main.scss */
   .content .follow-dot {
     left: 13px;
     width: 10px;
     height: 10px;
     border-radius: 10px;
   }
-  /* line 333, ../sass/main.scss */
+  /* line 340, ../sass/main.scss */
   .content .follow-dot.india {
     margin-top: 105px;
   }
-  /* line 337, ../sass/main.scss */
+  /* line 344, ../sass/main.scss */
   .content .source-and-notes {
     margin-top: -13px;
-    margin-bottom: 14px;
+    margin-bottom: 34px;
   }
 
-  /* line 343, ../sass/main.scss */
+  /* line 350, ../sass/main.scss */
   .full-feature, .chart-feature {
     padding-bottom: 14px;
   }
 
-  /* line 347, ../sass/main.scss */
+  /* line 353, ../sass/main.scss */
+  .chart-feature.transmethod {
+    padding-bottom: 32px;
+  }
+
+  /* line 356, ../sass/main.scss */
+  .chart-feature.race {
+    padding-bottom: 0px;
+  }
+
+  /* line 360, ../sass/main.scss */
   .full-feature {
     display: block;
   }
-  /* line 350, ../sass/main.scss */
+  /* line 363, ../sass/main.scss */
   .full-feature .full-feature-map {
     width: 100%;
     display: block;
   }
-  /* line 356, ../sass/main.scss */
+  /* line 369, ../sass/main.scss */
   .full-feature .full-feature-right-chart, .full-feature .full-feature-text {
     width: 100%;
     display: block;
@@ -594,12 +614,12 @@ h3.job {
     padding-left: 20px;
     padding-right: 20px;
   }
-  /* line 364, ../sass/main.scss */
+  /* line 377, ../sass/main.scss */
   .full-feature .full-feature-text {
     padding-bottom: 5px;
     padding-top: 5px;
   }
-  /* line 369, ../sass/main.scss */
+  /* line 382, ../sass/main.scss */
   .full-feature .full-feature-right-chart {
     padding-left: 0px;
     padding-right: 0px;

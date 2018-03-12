@@ -190,14 +190,22 @@ function mapDraw(geojson,demo) {
     update()
 
 
-
-	// What to do when we get to the map in the parent container
-	pymChild.onMessage('arrival', onArrivalMessage);
-	function onArrivalMessage(message){	
-		// this fires on arrival from the parent
+  	// What to do when we get to the map in the parent container
+	pymChild.onMessage('hover', onHover);
+	function onHover(wardID){	
+		if(wardID == ""){
+			removeTooltip();
+			d3.selectAll(".wardmap.ward").classed("active", false);
+		}else{
+	        removeTooltip();
+	        var datum = geojson.features.filter(function(d){ return d.properties.WARD == +wardID  })[0];
+	        d3.selectAll(".wardmap.ward").classed("active", false);
+	        d3.selectAll(".wardmap.ward.w" + wardID).classed("active", true);
+	        createTooltip(datum);
+	    }
 	}
+
 
 
 }
 
-  

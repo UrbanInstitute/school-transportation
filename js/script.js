@@ -65,7 +65,6 @@ $(document).ready(function(){
           outside = "false"
 
           var op = Math.max(.15, sff[i].direction[0] + (sff[i].direction[1]*((sff[i].end-window.pageYOffset)/sff[i].distance)));    
-          console.log(op)
           if (sff[i].type === "india") {
             $("#india-dot").css('opacity', op);  
           } else if(sff[i].type === "sky") {
@@ -301,9 +300,11 @@ var map2waypoint = new Waypoint({
 })
 
 pymParent5.onMessage('hover', onHover);
+pymParent6.onMessage('hover', onHover);
 
 function onHover(ward){ 
-    pymParent6.sendMessage('hover', ward);  
+    pymParent6.sendMessage('hover', ward);
+    pymParent5.sendMessage('hover', ward);  
   }
 
 // var map3waypoint = new Waypoint({
