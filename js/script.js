@@ -64,7 +64,8 @@ $(document).ready(function(){
         if (window.pageYOffset >= sff[i].start && window.pageYOffset <= (sff[i].end+100)) {
           outside = "false"
 
-          var op = sff[i].direction[0] + (sff[i].direction[1]*((sff[i].end-window.pageYOffset)/sff[i].distance));    
+          var op = Math.max(.15, sff[i].direction[0] + (sff[i].direction[1]*((sff[i].end-window.pageYOffset)/sff[i].distance)));    
+          console.log(op)
           if (sff[i].type === "india") {
             $("#india-dot").css('opacity', op);  
           } else if(sff[i].type === "sky") {
