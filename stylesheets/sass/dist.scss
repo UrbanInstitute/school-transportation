@@ -42,15 +42,16 @@ div.meanTime, div.name {
 }
 
 div.meanTime p, div.name p {
-	font-size: 12px;
-	text-align: center;       
 	margin: 0px;
-	padding: 0px;
-	font-weight: 700;
+	padding: 0px;	
+	font-family: Lato;
+	font-size: 15px;  
+	color: $cerulean;
+	text-anchor: end; 
 }
 
 div.name {
-	width: 70px;
+	width: 100px;
 }
 
 div.meanTime{
@@ -66,4 +67,10 @@ div.meanTime h2 {
 	text-align: center;       
 	margin: 0px;
 	padding: 0px;
+}
+
+@media (max-width: $MaxPhoneSize){	
+	div.name {
+		width: 200px;
+	}
 }

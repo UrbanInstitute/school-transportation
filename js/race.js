@@ -20,7 +20,7 @@ function chartDraw(data) {
 	})
 
 	// initialize
-	var breakpoint = 768 - 40,
+	var breakpoint = 768 - 14,
 		width = parseInt(d3.select("#map").style("width"));
 
 	var labels = ["White","Black","Hispanic","Asian"];
@@ -38,7 +38,7 @@ function chartDraw(data) {
     	spacer = 10;
 
 	if (width > breakpoint) {
-		var margin = {top: 10, right: 100, bottom: 20, left: 130},
+		var margin = {top: 10, right: 40, bottom: 20, left: 130},
 			height = 425,
 			gapBetweenGroups = 20,
 			spaceForLabelsLeft   = 80,

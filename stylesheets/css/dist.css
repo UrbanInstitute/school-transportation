@@ -293,32 +293,40 @@ div.meanTime, div.name {
 
 /* line 44, ../sass/dist.scss */
 div.meanTime p, div.name p {
-  font-size: 12px;
-  text-align: center;
   margin: 0px;
   padding: 0px;
-  font-weight: 700;
+  font-family: Lato;
+  font-size: 15px;
+  color: #0096d2;
+  text-anchor: end;
 }
 
-/* line 52, ../sass/dist.scss */
+/* line 53, ../sass/dist.scss */
 div.name {
-  width: 70px;
+  width: 100px;
 }
 
-/* line 56, ../sass/dist.scss */
+/* line 57, ../sass/dist.scss */
 div.meanTime {
   width: 100px;
 }
 
-/* line 60, ../sass/dist.scss */
+/* line 61, ../sass/dist.scss */
 div.name p {
   text-align: right;
 }
 
-/* line 64, ../sass/dist.scss */
+/* line 65, ../sass/dist.scss */
 div.meanTime h2 {
   font-size: 26px;
   text-align: center;
   margin: 0px;
   padding: 0px;
+}
+
+@media (max-width: 768px) {
+  /* line 73, ../sass/dist.scss */
+  div.name {
+    width: 200px;
+  }
 }

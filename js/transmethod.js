@@ -26,7 +26,7 @@ function chartDraw(data) {
 	})
 
 	// initialize
-	var breakpoint = 768 - 40,
+	var breakpoint = 768 - 14,
 		width = parseInt(d3.select("#map").style("width"));
 
   	var IndiaTime = 60;
@@ -37,24 +37,28 @@ function chartDraw(data) {
 
 	if (width > breakpoint) {
 
-		var margin = {top: 10, right: 100, bottom: 40, left: 90},
+		var margin = {top: 10, right: 10, bottom: 40, left: 150},
 			height = 200,
-			chartWidth = width - margin.right,
+			chartWidth = width - margin.left - margin.right,
 			chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs,
 			BigLabelXTop = spacer,
 			BigLabelYTop = margin.top+spacer,
-			BigLabelXBottom = spacer,	
-	    	BigLabelYBottom = margin.top+chartHeight+spacer+spacer+spacer+spacer;
+			BigLabelXBottom = spacer,				
+	    	BigLabelYBottom = margin.top+chartHeight+spacer+spacer+spacer+spacer,
+	    	htmlLLL = "<p>Driving<br>with Traffic</p>",
+	    	tickNum = 20;
 
 	} else {
 		var margin = {top: 10, right: 10, bottom: 40, left: 10},
-			height = 200,
+			height = 300,
 			chartWidth = width - margin.right - margin.left,
 			chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs,
 			BigLabelXTop = spacer,
 			BigLabelYTop = (1*3)-5,
 			BigLabelXBottom = spacer,	    	
-	    	BigLabelYBottom = margin.top+chartHeight+spacer;
+	    	BigLabelYBottom = margin.top+chartHeight+spacer,
+	    	htmlLLL = "<p>Driving with Traffic</p>",
+	    	tickNum = 10;
 	}
 
 
@@ -72,17 +76,17 @@ function chartDraw(data) {
   	var spacer = 10;
   	var nameSpacer = 15;
   	var numOfRecs = 2;
-  	var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
+  	// var chartHeight = ((height - margin.top - margin.bottom)-((numOfRecs)*spacer)) / numOfRecs;
   	
 
 	var x = d3.scaleLinear()
 	    .rangeRound([0, chartWidth]);
 
 	var ydrive = d3.scaleLinear()
-	    .rangeRound([(chartHeight+margin.top), margin.top]);
+	    .rangeRound([(chartHeight+margin.top), (margin.top+spacer)]);
 
 	var ytransit = d3.scaleLinear()
-	    .rangeRound([((2*chartHeight)+spacer+margin.top), (margin.top+chartHeight+spacer)]);
+	    .rangeRound([((2*chartHeight)+spacer+margin.top), (margin.top+chartHeight+spacer+spacer)]);
 
 	var areadrive = d3.area()
 	    .x(function(d) { return x(d.time); })
@@ -113,7 +117,7 @@ function chartDraw(data) {
 
   	g.append("g")
       .attr("transform", "translate(0," + (height-margin.bottom) + ")")
-      .call(d3.axisBottom(x).ticks(20));
+      .call(d3.axisBottom(x).ticks(tickNum));
 
 	g.append("text")
 		.attr("class","axis-label")
@@ -159,7 +163,7 @@ function chartDraw(data) {
 
 	var nameTop = d3.select("body").append("div") 
 	    .attr("class", "name")       
-	    .html("<p>Driving<br>with Traffic</p>")
+	    .html(htmlLLL)
 	    .style("left", BigLabelXTop + "px")
 	    .style("top", BigLabelYTop + "px"); 
 
