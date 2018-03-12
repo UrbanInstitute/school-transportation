@@ -1,20 +1,6 @@
 @import "variables";
 @import "typography";
 
-#isPhone40, #isTablet40, #isDesktop40 {
-  display: none;
-  pointer-events: 5one;
-  width: 0;
-  height: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-#isDesktop40 {
-  display: block;
-}
-
 html, body {
   // width: 100%;
   // height: 100%;  
@@ -118,6 +104,8 @@ div.meanTime h2 {
   font-family: Lato;
   font-size: 12px;
 }
+
+
 
 @media (max-width: $MaxPhoneSize * 0.4){
   #map_container {

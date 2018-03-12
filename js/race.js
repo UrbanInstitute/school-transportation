@@ -25,7 +25,7 @@ function chartDraw(data) {
 
 	var labels = ["White","Black","Hispanic","Asian"];
 	var labels2 = ["9th","","",""];
-	var labels3 = ["Washington, DC","New York City","New Orleans","Detroit","Denver"];
+	var labels3 = ["DC","New York City","New Orleans","Detroit","Denver"];
 
 
 	var gapBetweenBars = 5,

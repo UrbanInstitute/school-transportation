@@ -105,8 +105,11 @@ body {
 	   			margin: 0 auto;
 			    width: 180px;
 			    text-align: center;
-			    margin-top: 15px;
+			    margin-top: 15px;			    
+	   		}
 
+	   		div:hover {
+	   			background-color: #e6e5e5;
 	   		}
 
 	   		p {	   			
@@ -244,10 +247,12 @@ h3.job {
 			margin-left: 10px;
 			border: 1px solid #333333;			
 			cursor: pointer;
+			font-weight: 700;
+			color: #000 !important;
 
-			a {
-				color: #000 !important;
-				font-weight: 700;
+			&:hover {
+				color: #fff !important;
+				background-color: $cerulean;
 			}
 		}		
 	}
