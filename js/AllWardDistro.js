@@ -135,7 +135,7 @@ function chartDraw(transit,drive) {
 	g.append("text")
 		.attr("class","axis-label")
     	.attr("transform", "translate(" + width/2 + "," + (height-margin.bottom+spacer+spacer+spacer+spacer) + ")")
-		.text("Commute Time in Minutes") 
+		.text("Commute time in minutes") 
 	  
 
     $("#drive").click(function(){

@@ -114,24 +114,24 @@ function mapDraw(geojson,demo) {
 
 		var x = d.properties.WARD - 1;
 
-        var contents = "<div><h2> Ward " + d.properties.WARD + "</h2><p><strong>Total Population: " + d3.format(",")(demo[x].pop) + "</strong></p>" 
+        var contents = "<div><h2> Ward " + d.properties.WARD + "</h2><p><strong>Total population: " + d3.format(",")(demo[x].pop) + "</strong></p>" 
         + "<div class='racial'><p>" 
-        + d3.format(".0%")(demo[x].black) + " Black&nbsp;&nbsp;&nbsp;"
-		+ d3.format(".0%")(demo[x].white) + " White&nbsp;&nbsp;&nbsp;"
+        + d3.format(".0%")(demo[x].black) + " black&nbsp;&nbsp;&nbsp;"
+		+ d3.format(".0%")(demo[x].white) + " white&nbsp;&nbsp;&nbsp;"
 		+ d3.format(".0%")(demo[x].asian) + " Asian&nbsp;&nbsp;&nbsp;"
-		+ d3.format(".0%")(demo[x].latino) + " Hispanic/Latino&nbsp;&nbsp;&nbsp;"
+		+ d3.format(".0%")(demo[x].latino) + " Hispanic&nbsp;&nbsp;&nbsp;"
         +"</p></div>"
         +"<div class='times'>"
 	       	+"<div class='times-left times-subset'>"
 	        // + left times
-		        + "<p><strong>6th grade average<br>time to school</strong>"
+		        + "<p><strong>6th-grade average<br>time to school</strong>"
 		        + "<br>Driving: " + Math.round(demo[x].drive6) + " min"
 		        + "<br>Transit: " + Math.round(demo[x].transit6) + " min"
 		        + "</p>"
 	        +"</div>"
 	        +"<div class='times-right times-subset'>"
 	        // + right times
-				+ "<p><strong>9th grade average<br>time to school</strong>"
+				+ "<p><strong>9th-grade average<br>time to school</strong>"
 		        + "<br>Driving: " + Math.round(demo[x].drive9) + " min"
 		        + "<br>Transit: " + Math.round(demo[x].transit9) + " min"
 		        + "</p>"

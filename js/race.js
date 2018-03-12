@@ -126,7 +126,7 @@ function chartDraw(data) {
 	    .text(function(d) { 
 	    	if (d.value <= 0) {
 	    		// if (d.entry.substring(d.entry.length-3,d.entry.length) === "Low") {
-					return "Data Unavailable"	    			
+					return "Data unavailable"	    			
 	    		// } else {
 	    			// return ""
 	    		// }
