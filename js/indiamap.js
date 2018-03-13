@@ -157,7 +157,7 @@ function mapDraw(geojson,ward7) {
 						        	return point.y }
 						        )
 						        .on("end",function(){
-						        	d3.select(this).classed("onepulse",true)
+						        	// d3.select(this).classed("onepulse",true)
 						        })
 
 

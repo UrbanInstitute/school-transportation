@@ -118,6 +118,36 @@ var wpf0 = new Waypoint({
   }
 })
 
+var wpf10 = new Waypoint({
+  element: document.getElementById('fade10start'),
+  handler: function() { 
+    sff[10] = {};
+    sff[10].start = document.getElementById('fade10start').offsetTop-offsetAmount;
+    sff[10].end = document.getElementById('fade10end').offsetTop-offsetAmount;
+    sff[10].distance = sff[10].end - sff[10].start;
+    sff[10].direction = [1,-1];
+    sff[10].type = "india";
+  },
+  offset: function(){
+    return offsetAmount;
+  }
+})
+
+var wpf11 = new Waypoint({
+  element: document.getElementById('fade11start'),
+  handler: function() { 
+    sff[11] = {};
+    sff[11].start = document.getElementById('fade11start').offsetTop-offsetAmount;
+    sff[11].end = document.getElementById('fade11end').offsetTop-offsetAmount;
+    sff[11].distance = sff[11].end - sff[11].start;
+    sff[11].direction = [0,1];
+    sff[11].type = "india";
+  },
+  offset: function(){
+    return offsetAmount;
+  }
+})
+
 var wpf1 = new Waypoint({
   element: document.getElementById('fade1start'),
   handler: function() { 
