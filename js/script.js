@@ -15,11 +15,13 @@ if (width > 768) {
   dotInfo.dotBig = 30;
   dotInfo.dotSmall = 18;
   dotInfo.letterDisp = "block";
+  dotInfo.pushRight = 7;
   dotInfo.leftDot = -20;
 } else {
   dotInfo.dotBig = 10;
   dotInfo.dotSmall = 10; 
   dotInfo.letterDisp = "none";
+  dotInfo.pushRight = 0;
   dotInfo.leftDot = -11;
 }
 
@@ -50,12 +52,14 @@ $(document).ready(function(){
       india_dot.classList.add("sticky")
       $("#india-dot").css('width', dotInfo.dotSmall);
       $("#india-dot").css('height', dotInfo.dotSmall);  
+      $("#india-dot").css('margin-left', dotInfo.pushRight);  
       $("#india-dot span").css('display',"none")
     } else {
       india_dot.classList.remove("sticky");
       $("#india-dot").css('width', dotInfo.dotBig);
       $("#india-dot").css('height', dotInfo.dotBig); 
       $("#india-dot span").css('display',dotInfo.letterDisp) 
+      $("#india-dot").css('margin-left', 0);  
     }
 
     for (var i = 0; i < sff.length; i++) {

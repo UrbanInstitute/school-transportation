@@ -7,17 +7,10 @@
 @import "variables";
 @import "typography";
 
-/*
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
-}
-*/
-
-
 .headerimage {
     background: #f1f2f2;
-    border-bottom: 185px solid #f1f2f2;
+    // border-bottom: 185px solid #f1f2f2;
+
 	img {
 		width: 100%;
 		margin:0 auto;
@@ -135,7 +128,7 @@ body {
     	border-radius:30px;    	
     	z-index: -1;
     	opacity:0;
-    	transition: width 1s ease-out, height 1s ease-out;
+    	transition: width 1s ease-out, height 1s ease-out, margin-left 1s ease-out;
 
     	span {
     		display: block;
@@ -312,11 +305,11 @@ h3.job {
     		padding-top: 10px;
     	}
     	.follow-dot {
-	    	left: 5px;
+	    	left:16px;
 	    	
 	   	}
 	   	.follow-dot.india {
-	   		margin-top: 81px;
+	   		margin-top: 94px;
 	   	}
     }
 
