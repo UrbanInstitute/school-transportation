@@ -403,9 +403,10 @@ text.plusText {
   font-weight: 700;
   font-size: 18px;
   display: none;
+  pointer-events: none;
 }
 
-/* line 132, ../sass/maps.scss */
+/* line 133, ../sass/maps.scss */
 div.tooltip h2 {
   font-size: 12px !important;
   margin: 0px;
@@ -416,14 +417,14 @@ div.tooltip h2 {
   padding-bottom: 5px;
 }
 
-/* line 142, ../sass/maps.scss */
+/* line 143, ../sass/maps.scss */
 div.tooltip p {
   font-size: 12px !important;
   margin: 0px;
   padding: 0px;
 }
 
-/* line 148, ../sass/maps.scss */
+/* line 149, ../sass/maps.scss */
 div.tooltip {
   position: fixed;
   width: 260px;
@@ -435,7 +436,7 @@ div.tooltip {
   pointer-events: none;
 }
 
-/* line 159, ../sass/maps.scss */
+/* line 160, ../sass/maps.scss */
 div.tooltip.bottom:after, div.tooltip.bottom:before, div.tooltip.top:after, div.tooltip.top:before {
   top: 100%;
   left: 50%;
@@ -451,7 +452,17 @@ div.tooltip.bottom:after, div.tooltip.bottom:before, div.tooltip.top:after, div.
   margin-left: -6px;
 }
 
-/* line 174, ../sass/maps.scss */
+/* line 175, ../sass/maps.scss */
+div.tooltip.w3:after, div.tooltip.w3:before {
+  left: 39.5%;
+}
+
+/* line 179, ../sass/maps.scss */
+div.tooltip.w7:after, div.tooltip.w7:before {
+  left: 61.5%;
+}
+
+/* line 183, ../sass/maps.scss */
 div.tooltip.bottom:after, div.tooltip.bottom:before {
   top: unset;
   bottom: 100%;
@@ -459,7 +470,7 @@ div.tooltip.bottom:after, div.tooltip.bottom:before {
   border-top: unset;
 }
 
-/* line 181, ../sass/maps.scss */
+/* line 190, ../sass/maps.scss */
 div.tooltip.top:before {
   border-color: rgba(0, 150, 210, 0);
   border-top-color: #0096d2;
@@ -467,7 +478,7 @@ div.tooltip.top:before {
   margin-left: -8px;
 }
 
-/* line 188, ../sass/maps.scss */
+/* line 197, ../sass/maps.scss */
 div.tooltip.bottom:before {
   border-color: rgba(0, 150, 210, 0);
   border-bottom-color: #0096d2;
@@ -475,39 +486,40 @@ div.tooltip.bottom:before {
   margin-left: -8px;
 }
 
-/* line 195, ../sass/maps.scss */
+/* line 204, ../sass/maps.scss */
 .plus {
   display: none;
   fill: #fff;
+  pointer-events: none;
 }
 
-/* line 200, ../sass/maps.scss */
+/* line 210, ../sass/maps.scss */
 .times-subset {
   width: 50%;
   float: left;
 }
 
-/* line 206, ../sass/maps.scss */
+/* line 216, ../sass/maps.scss */
 .indiapoint {
   fill: #0096d2;
   stroke: #0096d2;
   pointer-events: none;
 }
 
-/* line 212, ../sass/maps.scss */
+/* line 222, ../sass/maps.scss */
 .skylerpoint {
   fill: #fdbf11;
   stroke: #fdbf11;
   pointer-events: none;
 }
 
-/* line 218, ../sass/maps.scss */
+/* line 228, ../sass/maps.scss */
 .stroker {
   stroke: #fff;
   stroke-width: 2px;
 }
 
-/* line 223, ../sass/maps.scss */
+/* line 233, ../sass/maps.scss */
 .pointText {
   font-size: 12px;
   font-weight: 700;
@@ -515,36 +527,36 @@ div.tooltip.bottom:before {
   pointer-events: none;
 }
 
-/* line 230, ../sass/maps.scss */
+/* line 240, ../sass/maps.scss */
 .dot.india {
   fill: #73bfe2;
   stroke: #73bfe2;
 }
 
-/* line 235, ../sass/maps.scss */
+/* line 245, ../sass/maps.scss */
 .dot.skyler {
   fill: #e88e2d;
 }
 
 @media (max-width: 460.8px) {
-  /* line 241, ../sass/maps.scss */
+  /* line 251, ../sass/maps.scss */
   #map {
     height: 300px;
   }
 
-  /* line 245, ../sass/maps.scss */
+  /* line 255, ../sass/maps.scss */
   .plus, text.plusText {
     display: block;
   }
 }
 @media (max-width: 576px) {
-  /* line 252, ../sass/maps.scss */
+  /* line 262, ../sass/maps.scss */
   #map {
     height: 374px;
   }
 }
 @media (max-width: 660px) {
-  /* line 259, ../sass/maps.scss */
+  /* line 269, ../sass/maps.scss */
   #map {
     height: 474px;
   }

@@ -182,16 +182,19 @@ function mapDraw(geojson,demo) {
     	var props = {
     		x: centroidXer(centroid[0],width),
     		y: centroidYer(centroid[1]),
-    		class: centroid[1] < 250 ? "bottom" : "top"
+    		class1: centroid[1] < 250 ? "bottom" : "top",
+    		class2: "w" + d.properties.WARD
     	}	
 
-		tooltip.classed(props.class,true)
+    	props.arrow = props.x - 10;
+
+		tooltip.classed(props.class1,true).classed(props.class2,true)
             .style("left", function(d){
             	return props.x + "px";
             })   
       		.style("top", function(d){
       			return props.y + "px";
-      		});      	
+      		});      	     
 	}
 
 	function centroidXer(pointx,width) {
@@ -218,7 +221,16 @@ function mapDraw(geojson,demo) {
 	function removeTooltip() {
 		tooltip.style("left", "-1000px").style("top","-1000px"); 
 	  	tooltip.classed("top",false);
-	  	tooltip.classed("bottom",false);
+	  	tooltip.classed("bottom",false);	  	
+		tooltip.classed("w1",false);
+		tooltip.classed("w2",false);
+		tooltip.classed("w3",false);
+		tooltip.classed("w4",false);
+		tooltip.classed("w5",false);
+		tooltip.classed("w6",false);
+		tooltip.classed("w7",false);
+		tooltip.classed("w8",false);
+
 	}
 
     function update() {

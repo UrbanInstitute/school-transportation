@@ -127,6 +127,7 @@ text.plusText {
   font-weight: 700;
   font-size: 18px;
   display: none;
+  pointer-events: none;
 }
 
 div.tooltip h2 {
@@ -171,6 +172,14 @@ div.tooltip.bottom:after, div.tooltip.bottom:before, div.tooltip.top:after, div.
   margin-left: -6px;
 }
 
+div.tooltip.w3:after,div.tooltip.w3:before {
+  left:39.5%;
+}
+
+div.tooltip.w7:after,div.tooltip.w7:before {
+  left:61.5%;
+}
+
 div.tooltip.bottom:after, div.tooltip.bottom:before {
   top: unset;
   bottom: 100%;
@@ -195,6 +204,7 @@ div.tooltip.bottom:before {
 .plus {
   display: none;
   fill: #fff;
+  pointer-events: none;
 }
 
 .times-subset {
