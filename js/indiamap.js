@@ -14,16 +14,6 @@ var startIndex = 0;
 var pymChild = new pym.Child();
 
 // https://bl.ocks.org/shimizu/5f4cee0fddc7a64b55a9
-
-function IS_DESKTOP(){
-	return d3.select("#isDesktop").style("display") == "block";
-}
-function IS_TABLET(){
-	return d3.select("#isTablet").style("display") == "block";
-}
-function IS_PHONE(){
-	return d3.select("#isPhone").style("display") == "block";
-}
 	
 d3.json("data/wards.geojson", function(err, data) {
 	d3.csv("data/ward7_2.csv",function(err,ward7){
@@ -167,6 +157,7 @@ function mapDraw(geojson,ward7) {
 						        	return point.y }
 						        )
 						        .on("end",function(){
+						        	// d3.select(this).classed("onepulse",true)
 						        })
 
 

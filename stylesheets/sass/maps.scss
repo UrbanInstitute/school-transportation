@@ -36,11 +36,28 @@ html, body {
         stroke-width:20px;
       }
     }
+
+     @-webkit-keyframes pulse1
+    {       
+      0%   {
+        stroke-opacity: 0.7;
+        stroke-width:0;
+
+      }
+      100% {
+        stroke-opacity: 0;
+        stroke-width:10px;
+      }
+    }
     
     .pulse
     {
       /* Giving Animation Function */
       -webkit-animation: pulse 2s linear infinite;
+    }
+
+    .onepulse {
+      // -webkit-animation: pulse1 2s linear 1; 
     }
 
 #replay {
@@ -199,7 +216,8 @@ div.tooltip.top:before {
 }
 
 .dot.india {
-  fill: $soft-blue
+  fill: $soft-blue;
+  stroke: $soft-blue;
 }
 
 .dot.skyler {
