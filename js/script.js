@@ -16,7 +16,7 @@ if (width > 768) {
   dotInfo.dotSmall = 18;
   dotInfo.letterDisp = "block";
   dotInfo.pushRight = 7;
-  dotInfo.leftDot = -15;
+  dotInfo.leftDot = -14;
 } else {
   dotInfo.dotBig = 10;
   dotInfo.dotSmall = 10; 
@@ -45,23 +45,6 @@ $(document).ready(function(){
   // Add the sticky class to the india_dot when you reach its scroll position. Remove "sticky" when you leave the scroll position
   function stickyIndia() {
     var outside = "true"
-
-    // console.log(sff)
-
-    // if (window.pageYOffset >= sticky) {    
-    //   india_dot.classList.add("sticky")
-    //   $("#india-dot").css('width', dotInfo.dotSmall);
-    //   $("#india-dot").css('height', dotInfo.dotSmall);  
-    //   $("#india-dot").css('margin-left', dotInfo.pushRight);  
-    //   $("#india-dot span").css('display',"none")
-    // } else {
-    //   india_dot.classList.remove("sticky");
-    //   $("#india-dot").css('width', dotInfo.dotBig);
-    //   $("#india-dot").css('height', dotInfo.dotBig); 
-    //   $("#india-dot").css('margin-left', 0);  
-    //   $("#india-dot span").css('display',dotInfo.letterDisp) 
-      
-    // }
 
     for (var i = 0; i < sff.length; i++) {
       if (sff[i] != "off") {
@@ -367,15 +350,3 @@ function onHover(ward){
     pymParent6.sendMessage('hover', ward);
     pymParent5.sendMessage('hover', ward);  
   }
-
-// var map3waypoint = new Waypoint({
-//   element: document.getElementById('ff3'),
-//   handler: function() {    
-//     // send a message to the map1 child IF it hasn't been done yet (only send it first time. Then have play button on map?)
-//     pymParent3.sendMessage('arrival', "messageGoesHere");
-    
-//   },
-//   offset: function(){
-//   	return offsetAmount;
-//   }
-// })

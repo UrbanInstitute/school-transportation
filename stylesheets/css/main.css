@@ -570,41 +570,45 @@ h3.job {
     height: 10px;
     border-radius: 10px;
   }
-  /* line 335, ../sass/main.scss */
+  /* line 334, ../sass/main.scss */
+  .content .follow-dot span {
+    display: none;
+  }
+  /* line 338, ../sass/main.scss */
   .content .follow-dot.india {
     margin-top: 105px;
   }
-  /* line 339, ../sass/main.scss */
+  /* line 342, ../sass/main.scss */
   .content .source-and-notes {
     margin-top: -13px;
     margin-bottom: 34px;
   }
 
-  /* line 345, ../sass/main.scss */
+  /* line 348, ../sass/main.scss */
   .full-feature, .chart-feature {
     padding-bottom: 14px;
   }
 
-  /* line 348, ../sass/main.scss */
+  /* line 351, ../sass/main.scss */
   .chart-feature.transmethod {
     padding-bottom: 32px;
   }
 
-  /* line 351, ../sass/main.scss */
+  /* line 354, ../sass/main.scss */
   .chart-feature.race {
     padding-bottom: 0px;
   }
 
-  /* line 355, ../sass/main.scss */
+  /* line 358, ../sass/main.scss */
   .full-feature {
     display: block;
   }
-  /* line 358, ../sass/main.scss */
+  /* line 361, ../sass/main.scss */
   .full-feature .full-feature-map {
     width: 100%;
     display: block;
   }
-  /* line 364, ../sass/main.scss */
+  /* line 367, ../sass/main.scss */
   .full-feature .full-feature-right-chart, .full-feature .full-feature-text {
     width: 100%;
     display: block;
@@ -612,12 +616,12 @@ h3.job {
     padding-left: 20px;
     padding-right: 20px;
   }
-  /* line 372, ../sass/main.scss */
+  /* line 375, ../sass/main.scss */
   .full-feature .full-feature-text {
     padding-bottom: 5px;
     padding-top: 5px;
   }
-  /* line 377, ../sass/main.scss */
+  /* line 380, ../sass/main.scss */
   .full-feature .full-feature-right-chart {
     padding-left: 0px;
     padding-right: 0px;
