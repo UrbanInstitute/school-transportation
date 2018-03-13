@@ -16,7 +16,7 @@ if (width > 768) {
   dotInfo.dotSmall = 18;
   dotInfo.letterDisp = "block";
   dotInfo.pushRight = 7;
-  dotInfo.leftDot = -20;
+  dotInfo.leftDot = -15;
 } else {
   dotInfo.dotBig = 10;
   dotInfo.dotSmall = 10; 
@@ -48,19 +48,20 @@ $(document).ready(function(){
 
     // console.log(sff)
 
-    if (window.pageYOffset >= sticky) {    
-      india_dot.classList.add("sticky")
-      $("#india-dot").css('width', dotInfo.dotSmall);
-      $("#india-dot").css('height', dotInfo.dotSmall);  
-      $("#india-dot").css('margin-left', dotInfo.pushRight);  
-      $("#india-dot span").css('display',"none")
-    } else {
-      india_dot.classList.remove("sticky");
-      $("#india-dot").css('width', dotInfo.dotBig);
-      $("#india-dot").css('height', dotInfo.dotBig); 
-      $("#india-dot span").css('display',dotInfo.letterDisp) 
-      $("#india-dot").css('margin-left', 0);  
-    }
+    // if (window.pageYOffset >= sticky) {    
+    //   india_dot.classList.add("sticky")
+    //   $("#india-dot").css('width', dotInfo.dotSmall);
+    //   $("#india-dot").css('height', dotInfo.dotSmall);  
+    //   $("#india-dot").css('margin-left', dotInfo.pushRight);  
+    //   $("#india-dot span").css('display',"none")
+    // } else {
+    //   india_dot.classList.remove("sticky");
+    //   $("#india-dot").css('width', dotInfo.dotBig);
+    //   $("#india-dot").css('height', dotInfo.dotBig); 
+    //   $("#india-dot").css('margin-left', 0);  
+    //   $("#india-dot span").css('display',dotInfo.letterDisp) 
+      
+    // }
 
     for (var i = 0; i < sff.length; i++) {
       if (sff[i] != "off") {
@@ -287,6 +288,28 @@ var wpf9 = new Waypoint({
   }
 })
 
+var indiaWaypoint = new Waypoint({
+  element: document.getElementById('india-dot-cont'),
+  handler: function(direction) {
+    var india_dot = document.getElementById("india-dot");
+    if (direction === "down") {  
+      india_dot.classList.add("sticky")
+      $("#india-dot").css('width', dotInfo.dotSmall);
+      $("#india-dot").css('height', dotInfo.dotSmall);  
+      $("#india-dot").css('margin-left', dotInfo.pushRight);  
+      $("#india-dot span").css('display',"none")
+    } else {
+      india_dot.classList.remove("sticky");
+      $("#india-dot").css('width', dotInfo.dotBig);
+      $("#india-dot").css('height', dotInfo.dotBig); 
+      $("#india-dot").css('margin-left', 0);  
+      $("#india-dot span").css('display',dotInfo.letterDisp)
+    }
+  },
+  offset: function(){
+    return offsetAmount-110;
+  }
+})
 
 var skyWaypoint = new Waypoint({
   element: document.getElementById('sky-dot-cont'),
@@ -295,13 +318,15 @@ var skyWaypoint = new Waypoint({
     if (direction === "down") {  
       skyler_dot.classList.add("sticky")
       $("#skyler-dot").css('width', dotInfo.dotSmall);
-      $("#skyler-dot").css('height', dotInfo.dotSmall);  
+      $("#skyler-dot").css('height', dotInfo.dotSmall);        
+      $("#skyler-dot").css('margin-left', dotInfo.pushRight);  
       $("#india-dot").css('margin-left', dotInfo.leftDot);
       $("#skyler-dot span").css('display',"none")
     } else {
       skyler_dot.classList.remove("sticky");
       $("#skyler-dot").css('width', dotInfo.dotBig);
-      $("#skyler-dot").css('height', dotInfo.dotBig);  
+      $("#skyler-dot").css('height', dotInfo.dotBig);
+      $("#skyler-dot").css('margin-left', 0);    
       $("#india-dot").css('margin-left', 0);
       $("#skyler-dot span").css('display',dotInfo.letterDisp)
     }
