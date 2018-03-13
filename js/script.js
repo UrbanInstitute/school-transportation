@@ -29,8 +29,6 @@ if (width > 768) {
 
 $(document).ready(function(){
 
-  // console.log(sff)
-  // console.log(wpf2)
 
   // Get the india_dot
   var india_dot = document.getElementById("india-dot");

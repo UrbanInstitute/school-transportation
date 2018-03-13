@@ -140,27 +140,51 @@ function mapDraw(geojson,demo) {
         +"</div>"      
 
         tooltip.html(contents);
-
-        if (centroid[1] < 250) {
-	        tooltip.classed("bottom",true)
-	            .style("left", function(d){
-	            	// console.log(centroid[0])
-	            	return (centroid[0] - 150) + "px";
-	            })   
-	      		.style("top", function(d){
-	      			// console.log(centroid[1])
-	      			return (centroid[1] + 20) + "px";
-	      		});  
-        } else {
-			tooltip.classed("top",true)
-	            .style("left", function(d){
-	            	// console.log(centroid[0])
-	            	return (centroid[0] - 130) + "px";
-	            })   
-	      		.style("top", function(d){
-	      			// console.log(centroid[1])
-	      			return (centroid[1] - 150) + "px";
-	      		});          	
+        if (centroid[0] < 150) {
+        	if (centroid[1] < 250) {
+		        tooltip.classed("bottom",true)
+		            .style("left", function(d){
+		            	// console.log(centroid[0])
+		            	return (0) + "px";
+		            })   
+		      		.style("top", function(d){
+		      			// console.log(centroid[1])
+		      			return (centroid[1] + 20) + "px";
+		      		});  
+		    } else {
+				tooltip.classed("top",true)
+		            .style("left", function(d){
+		            	// console.log(centroid[0])
+		            	return (centroid[0] - 130) + "px";
+		            })   
+		      		.style("top", function(d){
+		      			// console.log(centroid[1])
+		      			return (centroid[1] - 150) + "px";
+		      		});          	
+		    }
+        } 
+        else {
+        	if (centroid[1] < 250) {
+		        tooltip.classed("bottom",true)
+		            .style("left", function(d){
+		            	// console.log(centroid[0])
+		            	return (centroid[0] - 150) + "px";
+		            })   
+		      		.style("top", function(d){
+		      			// console.log(centroid[1])
+		      			return (centroid[1] + 20) + "px";
+		      		});  
+	        } else {
+				tooltip.classed("top",true)
+		            .style("left", function(d){
+		            	// console.log(centroid[0])
+		            	return (centroid[0] - 130) + "px";
+		            })   
+		      		.style("top", function(d){
+		      			// console.log(centroid[1])
+		      			return (centroid[1] - 150) + "px";
+		      		});          	
+	        }
         }
 	}
 

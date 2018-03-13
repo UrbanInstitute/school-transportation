@@ -626,4 +626,9 @@ h3.job {
     padding-left: 0px;
     padding-right: 0px;
   }
+
+  /* line 386, ../sass/main.scss */
+  footer {
+    padding-top: 0px;
+  }
 }
