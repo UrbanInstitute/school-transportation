@@ -139,21 +139,6 @@ div.tooltip p {
   padding: 0px;
 }
 
-// div.tooltip.bottom:after {
-//   bottom: 100%;
-//   left: 50%;
-//   border: solid transparent;
-//   content: " ";
-//   height: 0;
-//   width: 0;
-//   position: absolute;
-//   pointer-events: none;
-//   border-color: pink;
-//   border-bottom-color: pink;
-//   border-width: 11px;
-//   margin-left: -11px;
-// }
-
 div.tooltip { 
   position: fixed;     
   // width: 260px;               
@@ -165,8 +150,7 @@ div.tooltip {
   pointer-events: none;        
 }
 
-
-div.tooltip.top:after, div.tooltip.top:before {
+div.tooltip.bottom:after, div.tooltip.bottom:before, div.tooltip.top:after, div.tooltip.top:before {
   top: 100%;
   left: 50%;
   border: solid transparent;
@@ -181,11 +165,25 @@ div.tooltip.top:after, div.tooltip.top:before {
   margin-left: -6px;
 }
 
+div.tooltip.bottom:after, div.tooltip.bottom:before {
+  top: unset;
+  bottom: 100%;
+  border-bottom-color: #fff;
+  border-top: unset;
+}
+
 div.tooltip.top:before {
   border-color: rgba(0, 150, 210,0);
   border-top-color: $cerulean;
   border-width: 8px;
   margin-left: -8px;
+}
+
+div.tooltip.bottom:before {
+  border-color: rgba(0, 150, 210,0);
+  border-bottom-color: $cerulean;
+  border-width: 8px;
+  margin-left: -8px; 
 }
 
 .times-subset {

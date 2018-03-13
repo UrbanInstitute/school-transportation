@@ -411,7 +411,7 @@ div.tooltip p {
   padding: 0px;
 }
 
-/* line 157, ../sass/maps.scss */
+/* line 142, ../sass/maps.scss */
 div.tooltip {
   position: fixed;
   padding: 11px;
@@ -422,8 +422,8 @@ div.tooltip {
   pointer-events: none;
 }
 
-/* line 169, ../sass/maps.scss */
-div.tooltip.top:after, div.tooltip.top:before {
+/* line 153, ../sass/maps.scss */
+div.tooltip.bottom:after, div.tooltip.bottom:before, div.tooltip.top:after, div.tooltip.top:before {
   top: 100%;
   left: 50%;
   border: solid transparent;
@@ -438,7 +438,15 @@ div.tooltip.top:after, div.tooltip.top:before {
   margin-left: -6px;
 }
 
-/* line 184, ../sass/maps.scss */
+/* line 168, ../sass/maps.scss */
+div.tooltip.bottom:after, div.tooltip.bottom:before {
+  top: unset;
+  bottom: 100%;
+  border-bottom-color: #fff;
+  border-top: unset;
+}
+
+/* line 175, ../sass/maps.scss */
 div.tooltip.top:before {
   border-color: rgba(0, 150, 210, 0);
   border-top-color: #0096d2;
@@ -446,62 +454,70 @@ div.tooltip.top:before {
   margin-left: -8px;
 }
 
-/* line 191, ../sass/maps.scss */
+/* line 182, ../sass/maps.scss */
+div.tooltip.bottom:before {
+  border-color: rgba(0, 150, 210, 0);
+  border-bottom-color: #0096d2;
+  border-width: 8px;
+  margin-left: -8px;
+}
+
+/* line 189, ../sass/maps.scss */
 .times-subset {
   width: 50%;
   float: left;
 }
 
-/* line 197, ../sass/maps.scss */
+/* line 195, ../sass/maps.scss */
 .indiapoint {
   fill: #0096d2;
   stroke: #0096d2;
 }
 
-/* line 202, ../sass/maps.scss */
+/* line 200, ../sass/maps.scss */
 .skylerpoint {
   fill: #fdbf11;
   stroke: #fdbf11;
 }
 
-/* line 207, ../sass/maps.scss */
+/* line 205, ../sass/maps.scss */
 .stroker {
   stroke: #fff;
   stroke-width: 2px;
 }
 
-/* line 212, ../sass/maps.scss */
+/* line 210, ../sass/maps.scss */
 .pointText {
   font-size: 12px;
   font-weight: 700;
   font-family: Lato;
 }
 
-/* line 218, ../sass/maps.scss */
+/* line 216, ../sass/maps.scss */
 .dot.india {
   fill: #73bfe2;
   stroke: #73bfe2;
 }
 
-/* line 223, ../sass/maps.scss */
+/* line 221, ../sass/maps.scss */
 .dot.skyler {
   fill: #e88e2d;
 }
 
 @media (max-width: 460.8px) {
-  /* line 229, ../sass/maps.scss */
+  /* line 227, ../sass/maps.scss */
   #map {
     height: 300px;
   }
 }
 @media (max-width: 576px) {
-  /* line 236, ../sass/maps.scss */
+  /* line 234, ../sass/maps.scss */
   #map {
     height: 374px;
   }
 }
 @media (max-width: 660px) {
-  /* line 243, ../sass/maps.scss */
+  /* line 241, ../sass/maps.scss */
   #map {
     height: 474px;
   }

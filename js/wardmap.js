@@ -116,8 +116,8 @@ function mapDraw(geojson,demo) {
 
         var contents = "<div><h2> Ward " + d.properties.WARD + "</h2><p><strong>Total population: " + d3.format(",")(demo[x].pop) + "</strong></p>" 
         + "<div class='racial'><p>" 
-        + d3.format(".0%")(demo[x].black) + " black&nbsp;&nbsp;&nbsp;"
-		+ d3.format(".0%")(demo[x].white) + " white&nbsp;&nbsp;&nbsp;"
+        + d3.format(".0%")(demo[x].black) + " Black&nbsp;&nbsp;&nbsp;"
+		+ d3.format(".0%")(demo[x].white) + " White&nbsp;&nbsp;&nbsp;"
 		+ d3.format(".0%")(demo[x].asian) + " Asian&nbsp;&nbsp;&nbsp;"
 		+ d3.format(".0%")(demo[x].latino) + " Hispanic&nbsp;&nbsp;&nbsp;"
         +"</p></div>"
@@ -141,15 +141,27 @@ function mapDraw(geojson,demo) {
 
         tooltip.html(contents);
 
-        tooltip.classed("top",true)
-            .style("left", function(d){
-            	// console.log(centroid[0])
-            	return (centroid[0] - 130) + "px";
-            })   
-      		.style("top", function(d){
-      			// console.log(centroid[1])
-      			return (centroid[1] - 150) + "px";
-      		});  
+        if (centroid[1] < 250) {
+	        tooltip.classed("bottom",true)
+	            .style("left", function(d){
+	            	// console.log(centroid[0])
+	            	return (centroid[0] - 150) + "px";
+	            })   
+	      		.style("top", function(d){
+	      			// console.log(centroid[1])
+	      			return (centroid[1] + 20) + "px";
+	      		});  
+        } else {
+			tooltip.classed("top",true)
+	            .style("left", function(d){
+	            	// console.log(centroid[0])
+	            	return (centroid[0] - 130) + "px";
+	            })   
+	      		.style("top", function(d){
+	      			// console.log(centroid[1])
+	      			return (centroid[1] - 150) + "px";
+	      		});          	
+        }
 	}
 
 	function removeTooltip() {
