@@ -452,16 +452,6 @@ div.tooltip.bottom:after, div.tooltip.bottom:before, div.tooltip.top:after, div.
   margin-left: -6px;
 }
 
-/* line 175, ../sass/maps.scss */
-div.tooltip.w3:after, div.tooltip.w3:before {
-  left: 39.5%;
-}
-
-/* line 179, ../sass/maps.scss */
-div.tooltip.w7:after, div.tooltip.w7:before {
-  left: 61.5%;
-}
-
 /* line 183, ../sass/maps.scss */
 div.tooltip.bottom:after, div.tooltip.bottom:before {
   top: unset;
@@ -548,15 +538,20 @@ div.tooltip.bottom:before {
   .plus, text.plusText {
     display: block;
   }
+
+  /* line 259, ../sass/maps.scss */
+  div.tooltip.bottom:after, div.tooltip.bottom:before, div.tooltip.top:after, div.tooltip.top:before {
+    display: none;
+  }
 }
 @media (max-width: 576px) {
-  /* line 262, ../sass/maps.scss */
+  /* line 266, ../sass/maps.scss */
   #map {
     height: 374px;
   }
 }
 @media (max-width: 660px) {
-  /* line 269, ../sass/maps.scss */
+  /* line 273, ../sass/maps.scss */
   #map {
     height: 474px;
   }

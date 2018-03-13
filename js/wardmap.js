@@ -201,8 +201,10 @@ function mapDraw(geojson,demo) {
 		if (pointx < 158) {
 			return 0;
 		}
-		else if (pointx > (width-150)){	
-			return  158;
+		else if (pointx > (width-158)){	
+			console.log(pointx)
+			console.log(width)
+			return  (pointx-142)-(158-(width-pointx));
 		} else {
 			return pointx - (142);
 		}
