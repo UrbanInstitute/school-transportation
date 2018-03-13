@@ -62,12 +62,21 @@ function mapDraw(geojson,demo) {
 		.on("mouseenter", function(d) {
             removeTooltip()
             d3.select(this).classed("active", true);
-            createTooltip(d)
-            // console.log(d)
+            createTooltip(d)            
             pymChild.sendMessage('hover', d.properties.WARD);
+            d3.select("text.w" + d.properties.WARD)
+            	.attr("transform", function(d){
+            		return "translate(" + path.centroid(d)[0] + "," + path.centroid(d)[1] + "),rotate(45)"
+            	})
+            	
         })
-        .on("mouseleave", function() {
+        .on("mouseleave", function(d) {
             d3.select(this).classed("active", false);            	
+            removeTooltip()
+			d3.select("text.w" + d.properties.WARD)
+        	.attr("transform", function(d){
+        		return "translate(" + path.centroid(d)[0] + "," + path.centroid(d)[1] + "),rotate(0)"
+        	})
             
         })
 
@@ -105,13 +114,39 @@ function mapDraw(geojson,demo) {
 		.attr("dx","1em")
 		.text("Skyler")
 
+	svg.selectAll(".plus")
+		.data(geojson.features)
+		.enter()
+		.append("circle")		
+		.attr("class",function(d){
+			return "plus w" + d.properties.WARD;
+		})
+		.attr("r",10)
+		.attr("cx", function (d) { return path.centroid(d)[0]})
+		.attr("cy", function (d) { return path.centroid(d)[1]});
+
+	svg.selectAll(".plusText")
+		.data(geojson.features)
+		.enter()
+		.append("text")		
+		.attr("class",function(d){
+			return "plusText w" + d.properties.WARD;
+		})
+		.text("+")	
+		.attr("dy",".25em")
+		.attr("dx","-.3em")
+		.attr("transform", function(d){
+			return "translate(" + path.centroid(d)[0] + "," + path.centroid(d)[1] + ")"
+	})
+			// .attr("x",function(d){ return })
+		// .attr("y",function(d){ return })	
+
 
 	// Functions!!!!
 
 	function createTooltip(d) {
 		var centroid = path.centroid(d);
 		
-
 		var x = d.properties.WARD - 1;
 
         var contents = "<div><h2> Ward " + d.properties.WARD + "</h2><p><strong>Total population: " + d3.format(",")(demo[x].pop) + "</strong></p>" 
@@ -152,36 +187,12 @@ function mapDraw(geojson,demo) {
 
 		tooltip.classed(props.class,true)
             .style("left", function(d){
-            	// console.log(centroid[0])
             	return props.x + "px";
             })   
       		.style("top", function(d){
-      			// console.log(centroid[1])
       			return props.y + "px";
       		});      	
 	}
-
-	  //    if (centroid[1] < 250) {
-	  //       tooltip.classed("bottom",true)
-	  //           .style("left", function(d){
-	  //           	// console.log(centroid[0])
-	  //           	return (centroid[0] - 150) + "px";
-	  //           })   
-	  //     		.style("top", function(d){
-	  //     			// console.log(centroid[1])
-	  //     			return (centroid[1] + 20) + "px";
-	  //     		});  
-   //      } else {
-			// tooltip.classed("top",true)
-	  //           .style("left", function(d){
-	  //           	// console.log(centroid[0])
-	  //           	return (centroid[0] - 130) + "px";
-	  //           })   
-	  //     		.style("top", function(d){
-	  //     			// console.log(centroid[1])
-	  //     			return (centroid[1] - 150) + "px";
-	  //     		});          	
-   //      }
 
 	function centroidXer(pointx,width) {
 		if (pointx < 158) {
@@ -190,7 +201,7 @@ function mapDraw(geojson,demo) {
 		else if (pointx > (width-150)){	
 			return  158;
 		} else {
-			return pointx - (145);
+			return pointx - (142);
 		}
 	}
 
@@ -198,7 +209,7 @@ function mapDraw(geojson,demo) {
 		if (pointy < 250) {
 			return pointy + 20;
 		} else {
-			return pointy - 160;
+			return pointy - 180;
 		}	
 	}
 

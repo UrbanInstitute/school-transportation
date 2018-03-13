@@ -113,15 +113,21 @@ svg {
   fill-opacity: 0.9;
 }
 
-.ward.distro.w1, .ward.wardmap.w1 {fill: $orangey-yellow}
-.ward.distro.w2, .ward.wardmap.w2 {fill: $nice-blue}
-.ward.distro.w3, .ward.wardmap.w3 {fill: $soft-green}
-.ward.distro.w4, .ward.wardmap.w4 {fill: $purple-grey}
-.ward.distro.w5, .ward.wardmap.w5 {fill: $dark-orange}
-.ward.distro.w6, .ward.wardmap.w6 {fill: #e25552}
-.ward.distro.w7, .ward.wardmap.w7 {fill: $cerulean}
-.ward.distro.w8, .ward.wardmap.w8 {fill: #e88e2d}
+.ward.distro.w1, .ward.wardmap.w1, text.w1 {fill: $orangey-yellow}
+.ward.distro.w2, .ward.wardmap.w2, text.w2 {fill: $nice-blue}
+.ward.distro.w3, .ward.wardmap.w3, text.w3 {fill: $soft-green}
+.ward.distro.w4, .ward.wardmap.w4, text.w4 {fill: $purple-grey}
+.ward.distro.w5, .ward.wardmap.w5, text.w5 {fill: $dark-orange}
+.ward.distro.w6, .ward.wardmap.w6, text.w6 {fill: #e25552}
+.ward.distro.w7, .ward.wardmap.w7, text.w7 {fill: $cerulean}
+.ward.distro.w8, .ward.wardmap.w8, text.w8 {fill: #e88e2d}
 
+
+text.plusText {
+  font-weight: 700;
+  font-size: 18px;
+  display: none;
+}
 
 div.tooltip h2 {
   font-size: 12px !important;
@@ -186,6 +192,11 @@ div.tooltip.bottom:before {
   margin-left: -8px; 
 }
 
+.plus {
+  display: none;
+  fill: #fff;
+}
+
 .times-subset {
   width: 50%;
   float: left;
@@ -195,11 +206,13 @@ div.tooltip.bottom:before {
 .indiapoint {
   fill: $cerulean;
   stroke: $cerulean;
+  pointer-events: none;
 }
 
 .skylerpoint {
   fill: $orangey-yellow;
   stroke: $orangey-yellow;
+  pointer-events: none;
 }
 
 .stroker {
@@ -211,6 +224,7 @@ div.tooltip.bottom:before {
   font-size: 12px;
   font-weight: 700;
   font-family: Lato;
+  pointer-events: none;
 }
 
 .dot.india {
@@ -228,6 +242,10 @@ div.tooltip.bottom:before {
     // width: 600px;
     height: 300px;  
   }
+  .plus, text.plusText {
+    display: block;
+  }
+
 }
 
 @media (max-width: $MaxTabletSize * 0.6){
