@@ -63,8 +63,8 @@ $(document).ready(function(){
         // console.log("go")
         if (window.pageYOffset >= sff[i].start && window.pageYOffset <= (sff[i].end+100)) {
           outside = "false"
-
-          var op = Math.max(.15, sff[i].direction[0] + (sff[i].direction[1]*((sff[i].end-window.pageYOffset)/sff[i].distance)));    
+          var op = sff[i].direction[0] + (sff[i].direction[1]*((sff[i].end-window.pageYOffset)/sff[i].distance));
+          // var op = Math.max(.15, sff[i].direction[0] + (sff[i].direction[1]*((sff[i].end-window.pageYOffset)/sff[i].distance)));    
           if (sff[i].type === "india") {
             $("#india-dot").css('opacity', op);  
           } else if(sff[i].type === "sky") {
@@ -80,14 +80,16 @@ $(document).ready(function(){
 
     // cut???
     if (outside === "true") {
-      if ($("#india-dot").css('opacity') <= 0.3 && $("#india-dot").css('opacity') > 0) {
+      
+      if ($("#india-dot").css('opacity') <= 0.3 && $("#india-dot").css('opacity') != 0) {
         $("#india-dot").css('opacity', 0);
-      } else if ($("#india-dot").css('opacity') >= 0.7 && $("#india-dot").css('opacity') < 1) {
+      } else if ($("#india-dot").css('opacity') >= 0.7 && $("#india-dot").css('opacity') != 1) {
         $("#india-dot").css('opacity', 1);
       }
-      if ($("#skyler-dot").css('opacity') <= 0.3 && $("#skyler-dot").css('opacity') > 0) {
+
+      if ($("#skyler-dot").css('opacity') <= 0.3 && $("#skyler-dot").css('opacity') != 0) {
         $("#skyler-dot").css('opacity', 0);
-      } else if ($("#skyler-dot").css('opacity') >= 0.7 && $("#skyler-dot").css('opacity') < 1) {
+      } else if ($("#skyler-dot").css('opacity') >= 0.7 && $("#skyler-dot").css('opacity') != 1) {
         $("#skyler-dot").css('opacity', 1);
       }
     }

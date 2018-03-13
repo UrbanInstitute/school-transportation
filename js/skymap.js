@@ -149,7 +149,7 @@ function mapDraw(geojson,ward1) {
 
 					skylerContainer.selectAll("text").attr("opacity",1)
 
-					ward1Points.transition().ease(d3.easeLinear).duration(3000)
+					ward1Points.transition().ease(d3.easeLinear).duration(2000)
 						.attr("style","opacity: 1")
 						.on("end",function(d,i){	
 							if (i === Numofpoints) {								

@@ -40,13 +40,13 @@ html, body {
      @-webkit-keyframes pulse1
     {       
       0%   {
-        stroke-opacity: 0.7;
+        stroke-opacity: 0.2;
         stroke-width:0;
 
       }
       100% {
         stroke-opacity: 0;
-        stroke-width:10px;
+        stroke-width:50px;
       }
     }
     
@@ -57,7 +57,7 @@ html, body {
     }
 
     .onepulse {
-      // -webkit-animation: pulse1 2s linear 1; 
+      -webkit-animation: pulse1 1s linear 1; 
     }
 
 #replay {

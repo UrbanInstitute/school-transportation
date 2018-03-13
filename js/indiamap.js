@@ -131,7 +131,7 @@ function mapDraw(geojson,ward7) {
 
 					IndiaContainer.selectAll("text").attr("opacity",1)
 
-					Ward7Points.transition().ease(d3.easeLinear).duration(3000)
+					Ward7Points.transition().ease(d3.easeLinear).duration(2000)
 						.attr("style","opacity: 1")
 						.on("end",function(d,i){	
 							if (i === Numofpoints) {
@@ -157,7 +157,7 @@ function mapDraw(geojson,ward7) {
 						        	return point.y }
 						        )
 						        .on("end",function(){
-						        	// d3.select(this).classed("onepulse",true)
+						        	d3.select(this).classed("onepulse",true)
 						        })
 
 
