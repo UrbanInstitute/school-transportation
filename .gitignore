@@ -1,4 +1,7 @@
 .DS_Store
 */.DS_Store
 .sass-cache
+todo_list.xlsx
+sketches/
+stylesheets/legacy
 
