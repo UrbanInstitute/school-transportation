@@ -14,3 +14,9 @@ Url: [https://apps.urban.org/features/school-transportation](https://apps.urban.
 - [Pym.js v1.3.2](http://blog.apps.npr.org/pym.js/)
 - [D3v4](https://d3js.org/)
 
+Find previous versions, sketches, and chartes in the sketches branch.
+
+## Known Issues/To Do List
+- Dot fade experience could be less brittle
+- Fade in of maps on load
+- charts and maps do not properly resize on window drag
